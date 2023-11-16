@@ -53,6 +53,11 @@
     nerdfonts
   ];
 
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+  };
+
   services = {
     pipewire = {
       enable = true;
