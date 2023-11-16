@@ -30,7 +30,6 @@
   
   sound.enable = true;
   hardware = {
-    pulseaudio.enable = true;
     opengl.enable = true;
   };
   
@@ -53,6 +52,14 @@
   fonts.fonts = with pkgs; [
     nerdfonts
   ];
+
+  services = {
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+    };
+  };
 
   nixpkgs.config.allowUnfree = true;
   programs = {
