@@ -9,8 +9,10 @@
     /etc/nixos/hardware-configuration.nix
   ];
 
-  system.copySystemConfiguration = true;
-  system.stateVersion = "23.05";
+  system = {
+    copySystemConfiguration = true;
+    stateVersion = "23.05";
+  };
   
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
