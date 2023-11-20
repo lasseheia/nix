@@ -5,16 +5,12 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    /etc/nixos/hardware-configuration.nix
-  ];
-
-  system = {
-    copySystemConfiguration = true;
-    stateVersion = "23.05";
-  };
+  imports = [ ./hardware-configuration.nix ];
   
-  # Use the systemd-boot EFI boot loader.
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  system.stateVersion = "23.05";
+  
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
@@ -29,9 +25,7 @@
   };
   
   sound.enable = true;
-  hardware = {
-    opengl.enable = true;
-  };
+  hardware.opengl.enable = true;
   
   time.timeZone = "Europe/Oslo";
   i18n = {
@@ -49,13 +43,15 @@
       terminus_font
     ];
   };
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     nerdfonts
   ];
 
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
+  xdg = {
+    portal = {
+      enable = true;
+      wlr.enable = true;
+    };
   };
 
   services = {
@@ -67,63 +63,39 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  programs = {
-    hyprland.enable = true;
-    waybar.enable = true;
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-    };
-    git = {
-      enable = true;
-      config = {
-        user.name = "Lasse Heia";
-	user.email = "23742718+lasseheia@users.noreply.github.com";
-      };
-    };
-    zsh = {
-      enable = true;
-      loginShellInit = "if [ \"$(tty)\" = \"/dev/tty1\" ]; then exec Hyprland; fi";
-      shellInit = ''
-        bindkey '^P' up-history
-        bindkey '^N' down-history
-      '';
-      shellAliases = {
-        ll = "ls -la";
-      };
-      #autosuggestions.enable = true;
-    };
-    starship = {
-      enable = true;
-      settings = {
-        add_newline = false;
-        username = {
-          style_user = "bright-white bold";
-          style_root = "bright-red bold";
-        };
-        hostname = {
-          ssh_only = true;
-          format = "[$ssh_symbol](bold blue) on [$hostname](bold red) ";
-          trim_at = ".companyname.com";
-          disabled = false;
-        };
-      };
-    };
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    kitty
-    wofi
-    brave
-    gh
-  ];
+  programs.waybar.enable = true;
 
-# This did not work to set the default browser for opening urls from the terminal
-#  xdg.mime.defaultApplications = {
-#    "text/html" = ["brave.desktop"];
-#  };
+  programs.zsh = {
+    enable = true;
+    loginShellInit = ''
+      if [ "$(tty)" = "/dev/tty1" ]; then
+        exec Hyprland
+      fi
+    '';
+    shellInit = ''
+      bindkey '^P' up-history
+      bindkey '^N' down-history
+    '';
+  };
+
+  programs.starship.enable = true;
+
+  programs.tmux.enable = true;
+
+  programs.git.enable = true;
+  
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+  };
 
   users = {
     defaultUserShell = pkgs.zsh;
