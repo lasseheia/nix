@@ -1,33 +1,10 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running `nixos-help`).
-
 { config, pkgs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
 
-  boot.initrd.luks.devices = {
-    "root" = {
-      device = "/dev/disk/by-uuid/94bb9b17-5de3-4f84-a196-67fa00dcc17f";
-      preLVM = true;
-      allowDiscards = true;
-    };
-  };
+  services.lvm.enable = true;
 
-  boot.initrd.lvm = {
-    enable = true;
-  };
-
-  fileSystems."/" = {
-    device = "/dev/vg/root";
-    fsType = "ext4";
-  };
-  fileSystems."/home" = {
-    device = "/dev/vg/home";
-    fsType = "ext4";
-  };
- 
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;

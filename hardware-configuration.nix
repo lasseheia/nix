@@ -10,20 +10,29 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-#  fileSystems."/" =
-#    { device = "/dev/disk/by-uuid/0472188d-eccc-4260-b0b5-c109ac285d9e";
-#      fsType = "ext4";
-#    };
-#
-#  fileSystems."/home" =
-#    { device = "/dev/disk/by-uuid/62d5f266-8a31-44cf-a3d9-4ab3040d17f2";
-#      fsType = "ext4";
-#    };
-#
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/5AFB-1FD8";
+  boot.initrd.luks.devices = {
+    root = {
+      device = "/dev/disk/by-uuid/94bb9b17-5de3-4f84-a196-67fa00dcc17f";
+      preLVM = true;
+      allowDiscards = true;
+    };
+  };
+  
+  fileSystems = {
+    "/boot" = {
+      device = "/dev/disk/by-uuid/5AFB-1FD8";
       fsType = "vfat";
     };
+    "/" = {
+      device = "/dev/vg/root";
+      fsType = "ext4";
+    };
+    "/home" = {
+      device = "/dev/vg/home";
+      fsType = "ext4";
+    };
+  };
+
 
   swapDevices = [ ];
 
