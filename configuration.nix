@@ -6,16 +6,38 @@
 
 {
   imports = [ ./hardware-configuration.nix ];
-  
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  system.stateVersion = "23.05";
-  
+  boot.initrd.luks.devices = {
+    "root" = {
+      device = "/dev/disk/by-label/boot";
+      preLVM = true;
+      allowDiscards = true;
+    };
+  };
+
+  boot.initrd.lvm = {
+    enable = true;
+  };
+
+  fileSystems."/" = {
+    device = "/dev/vg/root";
+    fsType = "ext4";
+  };
+  fileSystems."/home" = {
+    device = "/dev/vg/home";
+    fsType = "ext4";
+  };
+ 
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
 
+  
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  system.stateVersion = "23.05";
+  
   networking = {
     hostName = "nixos-orange";
     wireless.iwd.enable = true;
