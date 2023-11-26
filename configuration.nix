@@ -9,7 +9,7 @@
 
   boot.initrd.luks.devices = {
     "root" = {
-      device = "/dev/disk/by-label/boot";
+      device = "/dev/disk/by-uuid/94bb9b17-5de3-4f84-a196-67fa00dcc17f";
       preLVM = true;
       allowDiscards = true;
     };
@@ -33,7 +33,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.stateVersion = "23.05";
