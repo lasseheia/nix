@@ -114,19 +114,19 @@
     '';
     initExtra = ''
       [[ -z \"$TMUX\" ]] && tmux
-      
+
       bindkey '^P' up-history
       bindkey '^N' down-history
     '';
     shellAliases = {
       ll = "ls -lah";
     };
-    zsh-abbr = {
-      enable = true;
-      abbreviations = {
-        k = "kubectl";
-      };
-    };
+#    zsh-abbr = {
+#      enable = true;
+#      abbreviations = {
+#        k = "kubectl";
+#      };
+#    };
   };
   
   programs.starship = {
