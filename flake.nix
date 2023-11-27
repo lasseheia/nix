@@ -24,15 +24,14 @@
     nixosConfigurations = {
       nixos-orange = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = { inherit inputs; };
-	modules = [
-	  ./hardware-configuration.nix
-	  ./configuration.nix
+	      specialArgs = { inherit inputs; };
+	      modules = [
+	        ./hardware-configuration.nix
+	        ./configuration.nix
 
-	  hyprland.nixosModules.default {
-	    programs.hyprland.enable = true;
-	  }
-
+	        hyprland.nixosModules.default {
+	          programs.hyprland.enable = true;
+	        }
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -40,12 +39,6 @@
           }
         ];
       };
-    };
-    homeConfigurations."lasse@nixos-orange" = home-manager.lib.homeManagerConfiguration {
-      modules = [
-        hyprland.homeManagerModules.default
-        {wayland.windowManager.hyprland.enable = true;}
-      ];
     };
   };
 }
