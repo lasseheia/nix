@@ -112,8 +112,9 @@
         exec Hyprland
       fi
     '';
-    initExtra = "[[ -z \"$TMUX\" ]] && tmux";
-    shellInit = ''
+    initExtra = ''
+      [[ -z \"$TMUX\" ]] && tmux
+      
       bindkey '^P' up-history
       bindkey '^N' down-history
     '';
