@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
-
   services.lvm.enable = true;
 
   boot.loader = {
@@ -104,4 +102,3 @@
   };
 
 }
-
