@@ -58,7 +58,6 @@
 
   programs.waybar = {
     enable = true;
-#    settings = {};
     style = ''
       * {
           border: none;
@@ -108,7 +107,16 @@
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
+    programs.zsh.loginExtra = ''
+      if [ "$(tty)" = "/dev/tty1" ]; then
+        exec Hyprland
+      fi
+    '';
     initExtra = "[[ -z \"$TMUX\" ]] && tmux";
+    shellInit = ''
+      bindkey '^P' up-history
+      bindkey '^N' down-history
+    '';
     shellAliases = {
       ll = "ls -lah";
     };
@@ -119,32 +127,10 @@
       };
     };
   };
-
+  
   programs.starship = {
     enable = true;
     settings.add_newline = false;
-  };
-  
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    extraConfig = ''
-      colorscheme slate
-      set relativenumber 
-      set numberwidth=1
-      highlight LineNr ctermfg=White
-      
-      set autoindent
-      set tabstop=2
-      set shiftwidth=2
-      set softtabstop=2
-      set smarttab
-      set smartcase
-      set expandtab
-      set encoding=utf-8
-    '';
   };
 
   programs.tmux = {
@@ -178,6 +164,28 @@
     '';
   };
   
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    extraConfig = ''
+      colorscheme slate
+      set relativenumber 
+      set numberwidth=1
+      highlight LineNr ctermfg=White
+      
+      set autoindent
+      set tabstop=2
+      set shiftwidth=2
+      set softtabstop=2
+      set smarttab
+      set smartcase
+      set expandtab
+      set encoding=utf-8
+    '';
+  };
+
   programs.git = {
     enable = true;
     userName = "Lasse Heia";

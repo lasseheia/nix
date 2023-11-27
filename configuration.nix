@@ -65,25 +65,6 @@
     xwayland.enable = true;
   };
 
-  programs.waybar.enable = true;
-
-  programs.zsh = {
-    enable = true;
-    loginShellInit = ''
-      if [ "$(tty)" = "/dev/tty1" ]; then
-        exec Hyprland
-      fi
-    '';
-    shellInit = ''
-      bindkey '^P' up-history
-      bindkey '^N' down-history
-    '';
-  };
-
-  programs.starship.enable = true;
-
-  programs.tmux.enable = true;
-
   programs.git.enable = true;
   
   programs.neovim = {
@@ -100,5 +81,4 @@
       extraGroups = [ "wheel" ];
     };
   };
-
 }
