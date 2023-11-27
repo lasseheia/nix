@@ -20,23 +20,28 @@
     home-manager,
     hyprland,
     ...
-  }@inputs: {
+  } @ inputs: let
+    inherit (self) outputs;
+  in {
     nixosConfigurations = {
       nixos-orange = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-	      specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs outputs;
+        };
 	      modules = [
 	        ./hardware-configuration.nix
 	        ./configuration.nix
-
-	        hyprland.nixosModules.default {
-	          programs.hyprland.enable = true;
-	        }
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.lasse = import ./home.nix;
-          }
+        ];
+      };
+    };
+    homeConfigurations = {
+      "lasse@nixos-orange" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+          inherit inputs outputs;
+        };
+        modules = [
+          ./home.nix
         ];
       };
     };
