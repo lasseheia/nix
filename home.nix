@@ -107,7 +107,7 @@
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
-    programs.zsh.loginExtra = ''
+    loginExtra = ''
       if [ "$(tty)" = "/dev/tty1" ]; then
         exec Hyprland
       fi
