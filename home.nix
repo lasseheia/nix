@@ -21,10 +21,10 @@
         "$mod, R, exec, bemenu-run -p 'Run:'"
         "$mod, F, fullscreen"
 
-        "$mod, h, move, l"
-        "$mod, l, move, r"
-        "$mod, k, move, u"
-        "$mod, j, move, d"
+        "$mod, h, movewindow, l"
+        "$mod, l, movewindow, r"
+        "$mod, k, movewindow, u"
+        "$mod, j, movewindow, d"
 
         "$mod, h, movefocus, l"
         "$mod, l, movefocus, r"
