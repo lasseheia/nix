@@ -9,6 +9,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
+      monitor = ",highres,auto,1";
       exec-once = "waybar";
       "$mod" = "SUPER";
       input = {
