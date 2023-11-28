@@ -59,3 +59,9 @@ gh repo clone lasseheia/nix
 
 ## Install nixos using flake
 sudo nixos-install --flake .#nixos-orange --impure
+
+sudo mkdir -p /mnt/home/lasse/git/github/lasseheia
+sudo mv ../nix /mnt/home/lasse/git/github/lasseheia
+nixos-enter
+chown -R lasse /home/lasse/git/github/lasseheia/nix
+passwd lasse
