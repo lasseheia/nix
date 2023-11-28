@@ -1,12 +1,11 @@
 # Remote installation
 ## Set up wifi connection
 sudo systemctl start wpa_supplicant
-wpa_cli
-add_network
-set_network 0 ssid ""
-set_network 0 psk ""
-set_network 0 key_mgmt WPA-PSK
-enable_network 0
+wpa_cli add_network
+wpa_cli set_network 0 ssid ""
+wpa_cli set_network 0 psk ""
+wpa_cli set_network 0 key_mgmt WPA-PSK
+wpa_cli enable_network 0
 
 ## Set user password
 passwd
