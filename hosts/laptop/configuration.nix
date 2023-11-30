@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, outputs, ... }:
+{ config, pkgs, ... }:
 
 {
   services.lvm.enable = true;
@@ -76,22 +76,13 @@
     vimAlias = true;
   };
 
+  programs.firefox.enable = true;
+
   users = {
     defaultUserShell = pkgs.zsh;
     users.lasse = {
       isNormalUser = true;
       extraGroups = [ "wheel" ];
-    };
-  };
-
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-  ];
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
-    users = {
-      lasse = import ./home.nix;
     };
   };
 }
