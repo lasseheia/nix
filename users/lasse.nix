@@ -24,15 +24,15 @@
         "$mod, R, exec, bemenu-run -p 'Run:'"
         "$mod, F, fullscreen"
 
-        "$mod, h, movewindow, l"
-        "$mod, l, movewindow, r"
-        "$mod, k, movewindow, u"
-        "$mod, j, movewindow, d"
-
         "$mod, h, movefocus, l"
         "$mod, l, movefocus, r"
         "$mod, k, movefocus, u"
         "$mod, j, movefocus, d"
+
+        "$mod SHIFT, h, movewindow, l"
+        "$mod SHIFT, l, movewindow, r"
+        "$mod SHIFT, k, movewindow, u"
+        "$mod SHIFT, j, movewindow, d"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
