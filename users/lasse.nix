@@ -63,46 +63,79 @@
     enable = true;
     style = ''
       * {
-          border: none;
-          border-radius: 0;
-          font-family: Roboto, Helvetica, Arial, sans-serif;
-          font-size: 13px;
-          min-height: 0;
+        font-size: 12px;
+        font-family: monospace;
+        margin: 0px 5px;
       }
-      
+
       window#waybar {
-          background: rgba(43, 48, 59, 0.5);
-          border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-          color: white;
+        background: #292b2e;
+        color: #fdf6e3;
       }
-      
-      tooltip {
-        background: rgba(43, 48, 59, 0.5);
-        border: 1px solid rgba(100, 114, 125, 0.5);
+
+      #custom-right-arrow-dark,
+      #custom-left-arrow-dark {
+        color: #1a1a1a;
       }
-      tooltip label {
-        color: white;
+      #custom-right-arrow-light,
+      #custom-left-arrow-light {
+        color: #292b2e;
+        background: #1a1a1a;
       }
-      
+
+      #workspaces,
+      #clock.1,
+      #clock.2,
+      #clock.3,
+      #pulseaudio,
+      #memory,
+      #cpu,
+      #battery,
+      #disk,
+      #tray {
+        background: #1a1a1a;
+      }
+
       #workspaces button {
-          padding: 0 5px;
-          background: transparent;
-          color: white;
-          border-bottom: 3px solid transparent;
+        padding: 0 2px;
+        color: #fdf6e3;
       }
-      
       #workspaces button.focused {
-          background: #64727D;
-          border-bottom: 3px solid white;
+        color: #268bd2;
       }
-      
-      #mode, #clock, #battery {
-          padding: 0 10px;
+      #workspaces button:hover {
+        box-shadow: inherit;
+        text-shadow: inherit;
       }
-      
-      #mode {
-          background: #64727D;
-          border-bottom: 3px solid white;
+      #workspaces button:hover {
+        background: #1a1a1a;
+        border: #1a1a1a;
+        padding: 0 3px;
+      }
+
+      #pulseaudio {
+        color: #268bd2;
+      }
+      #memory {
+        color: #2aa198;
+      }
+      #cpu {
+        color: #6c71c4;
+      }
+      #battery {
+        color: #859900;
+      }
+      #disk {
+        color: #b58900;
+      }
+
+      #clock,
+      #pulseaudio,
+      #memory,
+      #cpu,
+      #battery,
+      #disk {
+      	padding: 0 10px;
       }
     '';
   };
