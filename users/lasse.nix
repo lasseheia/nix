@@ -1,13 +1,15 @@
 { config, pkgs, ... }:
 
 {
+  programs.home-manager.enable = true;
+  
   home.stateVersion = "23.05";
   home.username = "lasse";
   home.homeDirectory = "/home/lasse";
-  
-  programs.home-manager.enable = true;
+
   wayland.windowManager.hyprland = {
     enable = true;
+    enableNvidiaPatches = true;
     settings = {
       monitor = ",highres,auto,1";
       exec-once = "waybar";

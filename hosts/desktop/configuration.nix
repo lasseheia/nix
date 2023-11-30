@@ -13,7 +13,7 @@
   system.stateVersion = "23.05";
   
   networking = {
-    hostName = "nixos-orange";
+    hostName = "desktop";
     wireless.iwd.enable = true;
     firewall = {
       enable = true;
@@ -81,17 +81,6 @@
     users.lasse = {
       isNormalUser = true;
       extraGroups = [ "wheel" ];
-    };
-  };
-
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-  ];
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
-    users = {
-      lasse = import ./home.nix;
     };
   };
 }

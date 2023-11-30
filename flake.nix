@@ -25,13 +25,30 @@
     inherit (self) outputs;
   in {
     nixosConfigurations = {
-      nixos-orange = nixpkgs.lib.nixosSystem {
+      desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs outputs;
         };
 	      modules = [
-	        ./hardware-configuration.nix
-	        ./configuration.nix
+	        ./hosts/desktop
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.lasse = import ./users/lasse.nix;
+          }
+        ];
+      };
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs outputs;
+        };
+	      modules = [
+	        ./hosts/laptop
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.lasse = import ./users/lasse.nix;
+          }
         ];
       };
     };
