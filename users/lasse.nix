@@ -228,6 +228,9 @@
     userName = "Lasse Heia";
     userEmail = "23742718+lasseheia@users.noreply.github.com";
     extraConfig = {
+      pull = {
+        rebase = true;
+      };
       credential = { # https://github.com/NixOS/nixpkgs/issues/169115
         "https://github.com" = {
           helper = "!gh auth git-credential";
