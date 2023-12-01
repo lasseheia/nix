@@ -1,6 +1,7 @@
 {
   imports = [
-    ./configuration.nix
     ./hardware-configuration.nix
+    ./configuration.nix
+    ../../modules/steam.nix
   ];
 }
