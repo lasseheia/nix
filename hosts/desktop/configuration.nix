@@ -1,6 +1,10 @@
-{ config, pkgs, inputs, outputs, ... }:
+{ config, pkgs, ... }:
 
 {
+  system.stateVersion = "23.05";
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
+
   services.lvm.enable = true;
 
   boot.loader = {
@@ -8,10 +12,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  system.stateVersion = "23.05";
-  
   networking = {
     hostName = "desktop";
     wireless.iwd.enable = true;
@@ -56,8 +56,6 @@
       pulse.enable = true;
     };
   };
-
-  nixpkgs.config.allowUnfree = true;
 
   programs.hyprland = {
     enable = true;
