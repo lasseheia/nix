@@ -9,7 +9,6 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    enableNvidiaPatches = true;
     settings = {
       monitor = ",highres,auto,1";
       exec-once = "waybar";
