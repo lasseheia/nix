@@ -267,8 +267,7 @@
     tldr
   ];
 
-  xdg.mimeApps.defaultApplications = {
-    "x-scheme-handler/http" = "brave.desktop";
+  home.sessionVariables = {
+    BROWSER = "brave";
   };
-  
 }
