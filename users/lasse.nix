@@ -142,6 +142,8 @@
       }
     '';
   };
+
+  services.pasystray.enable = true;
   
   programs.zsh = {
     enable = true;
