@@ -242,8 +242,6 @@
         "https://github.com" = {
           helper = "!gh auth git-credential";
         };
-      };
-      credential = { # https://github.com/NixOS/nixpkgs/issues/169115
         "https://gist.github.com" = {
           helper = "!gh auth git-credential";
         };
