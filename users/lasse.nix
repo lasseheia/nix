@@ -169,6 +169,11 @@
 #      };
 #    };
   };
+
+  programs.kitty = {
+    enable = true;
+    theme = "GitHub Dark Dimmed";
+  };
   
   programs.starship = {
     enable = true;
