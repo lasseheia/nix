@@ -11,7 +11,11 @@
     enable = true;
     settings = {
       monitor = ",highres,auto,1";
-      exec-once = "waybar";
+      exec-once = [
+        "waybar"
+        "swww init"
+      ];
+      exec = "swww img /home/lasse/_MG_2485-mod_APOD.jpg";
       "$mod" = "SUPER";
       input = {
         kb_layout = "no";
@@ -249,6 +253,7 @@
   };
 
   home.packages = with pkgs; [
+    swww
     kitty
     bemenu
     brave
