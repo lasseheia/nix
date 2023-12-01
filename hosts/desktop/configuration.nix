@@ -21,7 +21,6 @@
   };
   
   sound.enable = true;
-  hardware.opengl.enable = true;
   
   time.timeZone = "Europe/Oslo";
   i18n = {
