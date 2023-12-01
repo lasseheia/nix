@@ -155,9 +155,6 @@
     '';
     initExtra = ''
       [[ -z \"$TMUX\" ]] && tmux
-
-      bindkey '^P' up-history
-      bindkey '^N' down-history
     '';
     shellAliases = {
       ll = "ls -lah";
