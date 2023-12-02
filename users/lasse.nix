@@ -149,9 +149,7 @@
     enable = true;
     enableAutosuggestions = true;
     loginExtra = ''
-      if [ "$(tty)" = "/dev/tty1" ]; then
-        exec Hyprland
-      fi
+      [[ "$(tty)" = "/dev/tty1" ]] && exec Hyprland
     '';
     initExtra = ''
       [[ -z \"$TMUX\" ]] && tmux
