@@ -37,7 +37,9 @@ jobs:
 
           # Extract content after the tree section
           sed -n '/<!--END_SECTION:tree-->/,$p' README.md
-        } > README.md
+        } > new_README.md
+
+        mv new_README.md README.md
 
     - name: Commit and push if changed
       run: |
