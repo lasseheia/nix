@@ -27,3 +27,8 @@ The script performs the following actions:
 6. Downloads this repository
 7. Installs NixOS
 
+# Manual fixes
+
+## Mouse problems when playing World of Warcraft in Wayland
+- https://github.com/doitsujin/dxvk/issues/966#issuecomment-555699559
+- Add `SET rawMouseEnable "1"` to `/home/lasse/Games/battlenet/drive_c/Program Files (x86)/World of Warcraft/_classic_era_/WTF/Config.wtf`
