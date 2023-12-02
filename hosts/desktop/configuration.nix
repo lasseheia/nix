@@ -57,12 +57,6 @@
     };
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    enableNvidiaPatches = true;
-  };
-
   programs.zsh.enable = true;
 
   programs.git.enable = true;
