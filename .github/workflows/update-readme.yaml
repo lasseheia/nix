@@ -16,11 +16,8 @@ jobs:
     - name: Install Nix
       uses: cachix/install-nix-action@v12
     
-    - name: Install tree using Nix
-      run: nix-env -iA nixpkgs.tree
-
     - name: Generate directory tree
-      run: tree -a -I '.git|LICENSE|README.md' > tree.txt
+      run: nix-shell -p tree --run "tree -a -I '.git|LICENSE|README.md' > tree.txt"
 
     - name: Update README
       run: |
