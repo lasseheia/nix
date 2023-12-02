@@ -19,10 +19,16 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@v8
 
       - name: Update flake.lock
+        id: update
         uses: DeterminateSystems/update-flake-lock@v20
         with:
           pr-title: Update flake.lock
           pr-labels: |
             dependencies
             automated
+          pr-assignees: lasseheia
+          pr-reviewers: lasseheia
+
+      - name: Enable auto-merge on Pull request
+        run: gh pr merge --auto --merge "${{ steps.update.outputs.pull-request-number }}"
 
