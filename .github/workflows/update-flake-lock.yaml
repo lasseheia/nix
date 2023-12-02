@@ -30,5 +30,7 @@ jobs:
           pr-reviewers: lasseheia
 
       - name: Enable auto-merge on Pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: gh pr merge --auto --merge "${{ steps.update.outputs.pull-request-number }}"
 
