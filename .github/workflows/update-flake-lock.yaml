@@ -1,4 +1,4 @@
-name: Update flake lock file
+name: Update flake.lock
 
 on:
   workflow_dispatch: # allows manual triggering
@@ -7,7 +7,7 @@ on:
 
 jobs:
   update:
-    name: Update the `flake.lock` file
+    name: Update the flake.lock file and create a Pull Request
     runs-on: ubuntu-latest
 
     steps:
