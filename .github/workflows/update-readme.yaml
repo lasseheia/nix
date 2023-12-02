@@ -30,12 +30,14 @@ jobs:
 
           # Add the tree section markers and tree content
           echo '<!--START_SECTION:tree-->'
+          echo '```bash'
           cat tree.txt
+          echo '```'
           echo '<!--END_SECTION:tree-->'
 
           # Extract content after the tree section
           sed -n '/<!--END_SECTION:tree-->/,$p' README.md
-        } >> README.md
+        } > README.md
 
     - name: Commit and push if changed
       run: |
