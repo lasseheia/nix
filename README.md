@@ -36,5 +36,37 @@ The script performs the following actions:
 # Repository file structure
 
 <!--START_SECTION:tree-->
+<!--START_SECTION:tree-->
+```bash
+.
+├── .github
+│   ├── dependabot.yaml
+│   └── workflows
+│       ├── update-flake-lock.yaml
+│       └── update-readme.yaml
+├── flake.lock
+├── flake.nix
+├── hosts
+│   ├── desktop
+│   │   ├── configuration.nix
+│   │   ├── default.nix
+│   │   └── hardware-configuration.nix
+│   └── laptop
+│       ├── configuration.nix
+│       ├── default.nix
+│       └── hardware-configuration.nix
+├── modules
+│   ├── hyprland.nix
+│   ├── lutris.nix
+│   └── steam.nix
+├── scripts
+│   └── install.sh
+├── tree.txt
+└── users
+    └── lasse.nix
+
+9 directories, 17 files
+```
+<!--END_SECTION:tree-->
 <!--END_SECTION:tree-->
 
