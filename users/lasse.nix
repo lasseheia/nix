@@ -62,6 +62,8 @@
     };
   };
 
+  services.dunst.enable = true;
+
   programs.waybar = {
     enable = true;
     style = ''
