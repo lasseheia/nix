@@ -1,67 +1,75 @@
-# Remote installation
-## Set up wifi connection
-sudo systemctl start wpa_supplicant
-wpa_cli add_network
-wpa_cli set_network 0 ssid ""
-wpa_cli set_network 0 psk ""
-wpa_cli set_network 0 key_mgmt WPA-PSK
-wpa_cli enable_network 0
+#!/bin/bash
 
-## Set user password
-passwd
+# Check if the script is run as root
+if [ "$(id -u)" != "0" ]; then
+   echo "This script must be run as root" 1>&2
+   exit 1
+fi
+
+# Inputs
+hard_drive="/dev/$1"
+hostname="$2"
+
+# Validate inputs
+if [ -z "$hard_drive" ] || [ -z "$hostname" ]; then
+    echo "Usage: $0 <hard drive> <hostname>"
+    exit 1
+fi
+
+# Determine partition naming scheme based on the disk type
+if [[ $hard_drive == *"nvme"* ]]; then
+    partition_suffix="p"
+else
+    partition_suffix=""
+fi
+
+# Confirmation before proceeding
+read -p "This will wipe the entire disk $hard_drive. Are you sure? (y/N): " -n 1 -r
+echo
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    exit 1
+fi
 
 # Partitioning
-## Wipe the current disk
-sudo blkdiscard /dev/nvme0n1
+blkdiscard $hard_drive
 
-## Partition the disk
-sudo parted /dev/nvme0n1 --script -- \
+# Create partitions
+parted $hard_drive --script -- \
   mklabel gpt \
-  mkpart ESP fat32 1MiB 1GiB \
+  mkpart ESP fat32 1MiB 512MiB \
   set 1 esp on \
-  mkpart primary 1GiB 100%
+  mkpart primary 512MiB 100%
+
+# Assign partition names
+boot_partition="${hard_drive}${partition_suffix}1"
+root_partition="${hard_drive}${partition_suffix}2"
 
 # Format and encrypt the partitions
-## Format the EFI partition and label it
-sudo mkfs.fat -F 32 /dev/nvme0n1p1
+mkfs.fat -F 32 $boot_partition
+cryptsetup luksFormat --type luks2 $root_partition
+cryptsetup open $root_partition nixos-enc
 
-## Set up LUKS2 encryption for the root partition
-sudo cryptsetup luksFormat --type luks2 /dev/nvme0n1p2
-sudo cryptsetup open /dev/nvme0n1p2 nixos-enc
+# LVM setup
+pvcreate /dev/mapper/nixos-enc
+vgcreate vg /dev/mapper/nixos-enc
+lvcreate -L 50G vg -n root
+lvcreate -l +100%FREE vg -n home
 
-# Set up LVM
-## Create a physical volume on top of the opened LUKS container
-sudo pvcreate /dev/mapper/nixos-enc
+# Format and mount partitions
+mkfs.ext4 /dev/vg/root
+mkfs.ext4 /dev/vg/home
+mount /dev/vg/root /mnt
+mkdir -p /mnt/home
+mount /dev/vg/home /mnt/home
+mkdir -p /mnt/boot
+mount $boot_partition /mnt/boot
 
-## Create a volume group
-sudo vgcreate vg /dev/mapper/nixos-enc
+# NixOS installation
+nixos-install --flake "github:lasseheia/nix#$hostname"
 
-## Create logical volumes
-sudo lvcreate -L 50G vg -n root
-sudo lvcreate -l +100%FREE vg -n home
+# Clean up: Unmount partitions
+umount /mnt/boot /mnt/home /mnt
 
-## Format logical volumes
-sudo mkfs.ext4 /dev/vg/root
-sudo mkfs.ext4 /dev/vg/home
+# Close encrypted partition
+cryptsetup close nixos-enc
 
-## Mount the logical volumes
-sudo mount /dev/vg/root /mnt
-sudo mkdir /mnt/home
-sudo mount /dev/vg/home /mnt/home
-sudo mkdir /mnt/boot
-sudo mount /dev/nvme0n1p1 /mnt/boot
-
-# Configure NixOS
-## Clone GitHub repository
-nix-env -iA nixos.git nixos.gh
-gh auth login
-gh repo clone lasseheia/nix
-
-## Install nixos using flake
-sudo nixos-install --flake .#nixos-orange --impure
-
-sudo mkdir -p /mnt/home/lasse/git/github/lasseheia
-sudo mv ../nix /mnt/home/lasse/git/github/lasseheia
-nixos-enter
-chown -R lasse /home/lasse/git/github/lasseheia/nix
-passwd lasse
