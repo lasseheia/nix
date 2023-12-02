@@ -31,7 +31,6 @@ jobs:
           # Add the tree section markers and tree content
           echo '<!--START_SECTION:tree-->'
           cat tree.txt
-          cat flake.txt
           echo '<!--END_SECTION:tree-->'
 
           # Extract content after the tree section
