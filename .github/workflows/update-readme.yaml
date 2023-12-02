@@ -1,0 +1,46 @@
+name: Update README with Directory Tree
+
+on:
+  push:
+    paths:
+      - '**/*'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Install Nix
+      uses: cachix/install-nix-action@v12
+    
+    - name: Install tree using Nix
+      run: nix-env -iA nixpkgs.tree
+
+    - name: Generate directory tree
+      run: tree -a -I '.git|LICENSE|README.md' > tree.txt
+
+    - name: Update README
+      run: |
+        {
+          # Extract content before the tree section
+          sed '/<!--START_SECTION:tree-->/q' README.md
+
+          # Add the tree section markers and tree content
+          echo '<!--START_SECTION:tree-->'
+          cat tree.txt
+          cat flake.txt
+          echo '<!--END_SECTION:tree-->'
+
+          # Extract content after the tree section
+          sed -n '/<!--END_SECTION:tree-->/,$p' README.md
+        } >> README.md
+
+    - name: Commit and push if changed
+      run: |
+        git add README.md
+        git diff --staged --quiet || git commit -m "Automatically update directory tree"
+        git push
+
