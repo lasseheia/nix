@@ -11,7 +11,7 @@ hard_drive="/dev/$1"
 hostname="$2"
 
 # Validate inputs
-if [ -z "$hard_drive" ] || [ -z "$hostname" ]; then
+if [ -z "$1" ] || [ -z "$2" ]; then
     echo "Usage: $0 <hard drive> <hostname>"
     exit 1
 fi
@@ -29,6 +29,9 @@ echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     exit 1
 fi
+
+# Start executing commands with error handling
+set -e
 
 # Partitioning
 blkdiscard $hard_drive
@@ -72,4 +75,7 @@ umount /mnt/boot /mnt/home /mnt
 
 # Close encrypted partition
 cryptsetup close nixos-enc
+
+# End of script
+echo "Installation complete."
 
