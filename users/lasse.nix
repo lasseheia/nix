@@ -255,6 +255,16 @@
     };
   };
 
+  programs.autojump = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.thefuck = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   programs.kitty = {
     enable = true;
     theme = "GitHub Dark Dimmed";
