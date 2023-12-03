@@ -20,63 +20,64 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out repository
-      uses: actions/checkout@v2
 
-    - name: Configure Git
-      run: |
-        git config user.name 'github-actions[bot]'
-        git config user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: Check out repository
+        uses: actions/checkout@v2
 
-    - name: Install Nix
-      uses: cachix/install-nix-action@v24
-      with:
-        nix_path: nixpkgs=channel:nixos-unstable
+      - name: Configure Git
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
 
-    - name: Install tree using Nix
-      run: nix-env --file '<nixpkgs>' --install tree
+      - name: Install Nix
+        uses: cachix/install-nix-action@v24
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
 
-    - name: Generate directory tree
-      run: tree -a --filesfirst --noreport --prune -I '.git|LICENSE|README.md|tree.txt' | tee tree.txt
+      - name: Install tree using Nix
+        run: nix-env --file '<nixpkgs>' --install tree
 
-    - name: Update README for tree
-      run: |
-        {
-          sed '/<!--START_SECTION:tree-->/q' README.md
-          echo '```bash'
-          cat tree.txt
-          echo '```'
-          sed -n '/<!--END_SECTION:tree-->/,$p' README.md
-        } > new_README.md
-        
-        cat new_README.md
-        mv new_README.md README.md
+      - name: Generate directory tree
+        run: tree -a --filesfirst --noreport --prune -I '.git|LICENSE|README.md|tree.txt' | tee tree.txt
 
-    - name: Commit and push if changed
-      run: |
-        git add README.md
-        git diff --staged --quiet || git commit -m "Automatically update directory tree"
-        git pull && git push
-    
-    - name: Generate flake output
-      run: nix flake show | awk '/nixosConfigurations/{flag=1} flag' | sed 's/\x1b\[[0-9;]*m//g' | tee flake.txt
+      - name: Update README for tree
+        run: |
+          {
+            sed '/<!--START_SECTION:tree-->/q' README.md
+            echo '```bash'
+            cat tree.txt
+            echo '```'
+            sed -n '/<!--END_SECTION:tree-->/,$p' README.md
+          } > new_README.md
 
-    - name: Update README for flake
-      run: |
-        {
-          sed '/<!--START_SECTION:flake-->/q' README.md
-          echo '```bash'
-          cat flake.txt
-          echo '```'
-          sed -n '/<!--END_SECTION:flake-->/,$p' README.md
-        } > new_README.md
+          cat new_README.md
+          mv new_README.md README.md
 
-        cat new_README.md
-        mv new_README.md README.md
+      - name: Commit and push if changed
+        run: |
+          git add README.md
+          git diff --staged --quiet || git commit -m "Automatically update directory tree"
+          git pull && git push
 
-    - name: Commit and push if changed
-      run: |
-        git add README.md
-        git diff --staged --quiet || git commit -m "Automatically update flake output"
-        git pull && git push
+      - name: Generate flake output
+        run: nix flake show | awk '/nixosConfigurations/{flag=1} flag' | sed 's/\x1b\[[0-9;]*m//g' | tee flake.txt
+
+      - name: Update README for flake
+        run: |
+          {
+            sed '/<!--START_SECTION:flake-->/q' README.md
+            echo '```bash'
+            cat flake.txt
+            echo '```'
+            sed -n '/<!--END_SECTION:flake-->/,$p' README.md
+          } > new_README.md
+
+          cat new_README.md
+          mv new_README.md README.md
+
+      - name: Commit and push if changed
+        run: |
+          git add README.md
+          git diff --staged --quiet || git commit -m "Automatically update flake output"
+          git pull && git push
 
