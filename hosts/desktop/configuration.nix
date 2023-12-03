@@ -7,11 +7,6 @@
 
   services.lvm.enable = true;
 
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
-
   networking = {
     hostName = "desktop";
     wireless.iwd.enable = true;

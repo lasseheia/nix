@@ -71,7 +71,6 @@
         layer = "top";
         position = "top";
         modules-left = [
-          "sway/workspaces"
           "custom/right-arrow-dark"
         ];
         modules-center = [
@@ -96,9 +95,6 @@
           "cpu"
           "custom/left-arrow-light"
           "custom/left-arrow-dark"
-          "battery"
-          "custom/left-arrow-light"
-          "custom/left-arrow-dark"
           "disk"
           "custom/left-arrow-light"
           "custom/left-arrow-dark"
@@ -119,11 +115,6 @@
         "custom/right-arrow-light" = {
           "format" = "";
           "tooltip" = false;
-        };
-
-        "sway/workspaces" = {
-          "disable-scroll" = true;
-          "format" = "{name}";
         };
 
         "clock#1" = {
@@ -161,21 +152,6 @@
         "cpu" = {
           "interval" = 5;
           "format" = "CPU {usage:2}%";
-        };
-        "battery" = {
-          "states" = {
-            "good" = 95;
-            "warning" = 30;
-            "critical" = 15;
-          };
-          "format" = "{icon} {capacity}%";
-          "format-icons" = [
-            ""
-            ""
-            ""
-            ""
-            ""
-          ];
         };
         "disk" = {
           "interval" = 5;
@@ -216,7 +192,6 @@
       #pulseaudio,
       #memory,
       #cpu,
-      #battery,
       #disk,
       #tray {
         background: #1a1a1a;
@@ -248,9 +223,6 @@
       #cpu {
         color: #6c71c4;
       }
-      #battery {
-        color: #859900;
-      }
       #disk {
         color: #b58900;
       }
@@ -259,7 +231,6 @@
       #pulseaudio,
       #memory,
       #cpu,
-      #battery,
       #disk {
         padding: 0 10px;
       }

@@ -36,6 +36,7 @@
           nixos-hardware.nixosModules.common-pc
           nixos-hardware.nixosModules.common-pc-ssd
           nixos-hardware.nixosModules.common-cpu-amd
+          ./modules/boot
           ./hosts/desktop
           ./modules/hyprland
           ./modules/steam
