@@ -17,11 +17,10 @@ jobs:
     - name: Install Nix
       uses: cachix/install-nix-action@v12
       with:
-        install_url: https://nixos.org/nix/install
         nix_path: nixpkgs=channel:nixos-unstable
 
     - name: Install tree using Nix
-      run: nix-env -iA nixpkgs.tree
+      run: nix-env --file '<nixpkgs>' --install tree
 
     - name: Generate directory tree
       run: tree -a -I -n --filesfirst --prune '.git|LICENSE|README.md|tree.txt' > tree.txt
