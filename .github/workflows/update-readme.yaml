@@ -10,6 +10,10 @@ on:
       - flake.nix
       - flake.lock
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs:
   update-readme:
     name: Generate output and update README.md
