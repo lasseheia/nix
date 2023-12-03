@@ -58,6 +58,8 @@ The script performs the following actions:
 │       ├── default.nix
 │       └── hardware-configuration.nix
 ├── modules
+│   ├── boot
+│   │   └── default.nix
 │   ├── hyprland
 │   │   └── default.nix
 │   ├── lutris
