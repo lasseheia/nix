@@ -21,7 +21,7 @@ jobs:
         nix_path: nixpkgs=channel:nixos-unstable
     
     - name: Generate directory tree
-      run: nix-shell -p tree --run "tree -a -I '.git|LICENSE|README.md|tree.txt' > tree.txt"
+      run: nix-shell -p tree --run "tree -a -I -n --filesfirst --prune '.git|LICENSE|README.md|tree.txt' > tree.txt"
 
     - name: Update README
       run: |
