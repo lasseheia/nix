@@ -13,16 +13,21 @@ on:
       - README.md
 
 jobs:
-  check-flake:
-    name: Check Flake
+  flake-checker:
+    name: Flake Checker
     runs-on: ubuntu-latest
     steps:
-      
+
     - name: Check out repository
       uses: actions/checkout@v4
 
     - name: Check Nix flake inputs
       uses: DeterminateSystems/flake-checker-action@v5
+
+  check-flake-systems:
+    name: Check Flake Systems
+    runs-on: ubuntu-latest
+    steps:
 
     - name: Install Nix
       uses: cachix/install-nix-action@v24
@@ -31,7 +36,7 @@ jobs:
       run: |
         {
           echo '```bash'
-          nix flake check --all-systems
+          nix flake check --all-systems 2>&1
           echo '```'
         } >> $GITHUB_STEP_SUMMARY
 
