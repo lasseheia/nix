@@ -248,7 +248,7 @@
     initExtra = ''
       [[ -z "$TMUX" ]] && tmux
       bindkey '^ ' autosuggest-accept
-      bindkey '^M' autosuggest-execute
+      bindkey '^[^M' autosuggest-execute
     '';
     shellAliases = {
       ll = "ls -lah";
