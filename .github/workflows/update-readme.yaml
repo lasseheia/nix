@@ -59,7 +59,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install Nix
-      uses: cachix/install-nix-action@v12
+      uses: cachix/install-nix-action@v24
 
     - name: Generate flake output
       run: nix flake show > flake.txt
