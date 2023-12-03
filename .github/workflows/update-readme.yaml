@@ -1,4 +1,4 @@
-name: Update README with Directory Tree
+name: Update README with Directory Tree and flake show
 
 on:
   push:
@@ -6,7 +6,8 @@ on:
       - '**/*'
 
 jobs:
-  update-readme:
+  tree:
+    name: Generate tree of repository and add it to README.md
     runs-on: ubuntu-latest
 
     steps:
@@ -47,5 +48,46 @@ jobs:
         git config user.email 'github-actions[bot]@users.noreply.github.com'
         git add README.md
         git diff --staged --quiet || git commit -m "Automatically update directory tree"
+        git push
+
+  flake:
+    name: Generate flake outputs and add it to README.md
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Install Nix
+      uses: cachix/install-nix-action@v12
+
+    - name: Generate flake output
+      run: nix flake show > flake.txt
+
+    - name: Update README
+      run: |
+        {
+          # Extract content before the flake section
+          sed '/<!--START_SECTION:flake-->/q' README.md
+
+          # Add the tree section markers and flake content
+          echo '<!--START_SECTION:flake-->'
+          echo '```bash'
+          cat flake-outputs.txt
+          echo '```'
+          echo '<!--END_SECTION:flake-->'
+
+          # Extract content after the flake section
+          sed -n '/<!--END_SECTION:flake-->/,$p' README.md
+        } > new_README.md
+
+        mv new_README.md README.md
+
+    - name: Commit and push if changed
+      run: |
+        git config user.name 'github-actions[bot]'
+        git config user.email 'github-actions[bot]@users.noreply.github.com'
+        git add README.md
+        git diff --staged --quiet || git commit -m "Automatically update flake output"
         git push
 

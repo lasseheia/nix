@@ -19,7 +19,7 @@ curl https://raw.githubusercontent.com/lasseheia/nix/main/scripts/install.sh | s
 
 The script performs the following actions:
 
-1. Wipes the specified disk (Warning: This step will delete all data on the disk)
+1. Wipes the specified disk
 2. Creates new partitions
 3. Encrypts the root partition
 4. Sets up LVM on the root partition
@@ -69,4 +69,9 @@ The script performs the following actions:
 ```
 <!--END_SECTION:tree-->
 <!--END_SECTION:tree-->
+
+# Flake
+
+<!--START_SECTION:flake-->
+<!--END_SECTION:flake-->
 
