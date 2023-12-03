@@ -33,6 +33,8 @@
           inherit inputs outputs;
         };
         modules = [
+          nixos-hardware.nixosModules.common-pc
+          nixos-hardware.nixosModules.common-pc-ssd
           nixos-hardware.nixosModules.common-cpu-amd
           ./hosts/desktop
           ./modules/hyprland
