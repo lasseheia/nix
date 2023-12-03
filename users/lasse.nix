@@ -271,11 +271,11 @@
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
-    loginExtra = ''
+    initExtraFirst = ''
       [[ "$(tty)" = "/dev/tty1" ]] && exec Hyprland
     '';
     initExtra = ''
-      [[ -z \"$TMUX\" ]] && tmux
+      [[ -z "$TMUX" ]] && tmux
     '';
     shellAliases = {
       ll = "ls -lah";
