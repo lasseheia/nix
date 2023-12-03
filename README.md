@@ -38,13 +38,13 @@ The script performs the following actions:
 <!--START_SECTION:tree-->
 ```bash
 .
+├── flake.lock
+├── flake.nix
 ├── .github
 │   ├── dependabot.yaml
 │   └── workflows
 │       ├── update-flake-lock.yaml
 │       └── update-readme.yaml
-├── flake.lock
-├── flake.nix
 ├── hosts
 │   ├── desktop
 │   │   ├── configuration.nix
@@ -60,11 +60,10 @@ The script performs the following actions:
 │   └── steam.nix
 ├── scripts
 │   └── install.sh
-├── tree.txt
 └── users
     └── lasse.nix
 
-9 directories, 17 files
+8 directories, 16 files
 ```
 <!--END_SECTION:tree-->
 
