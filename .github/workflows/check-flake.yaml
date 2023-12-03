@@ -16,3 +16,11 @@ jobs:
     - name: Check Nix flake inputs
       uses: DeterminateSystems/flake-checker-action@v5
 
+    - name: Check Nix flake systems
+      run: |
+        {
+          echo '```bash'
+          nix flake check --all-systems
+          echo '```'
+        } >> $GITHUB_STEP_SUMMARY
+
