@@ -381,6 +381,7 @@
     bemenu
     brave
     tldr
+    tree
   ];
 
   home.sessionVariables = {
