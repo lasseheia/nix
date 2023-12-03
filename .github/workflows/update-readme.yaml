@@ -55,7 +55,7 @@ jobs:
       uses: cachix/install-nix-action@v24
 
     - name: Generate flake output
-      run: nix flake show > flake.txt
+      run: nix flake show | awk '/nixosConfigurations/{flag=1} flag'
 
     - name: Update README
       run: |
