@@ -20,7 +20,7 @@ jobs:
         git config user.email 'github-actions[bot]@users.noreply.github.com'
 
     - name: Install Nix
-      uses: cachix/install-nix-action@v12
+      uses: cachix/install-nix-action@v24
       with:
         nix_path: nixpkgs=channel:nixos-unstable
 
