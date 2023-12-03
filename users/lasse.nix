@@ -382,6 +382,7 @@
     brave
     tldr
     tree
+    jq
   ];
 
   home.sessionVariables = {
