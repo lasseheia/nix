@@ -23,7 +23,7 @@ jobs:
       run: nix-env --file '<nixpkgs>' --install tree
 
     - name: Generate directory tree
-      run: tree -a -I -n --filesfirst --prune '.git|LICENSE|README.md|tree.txt' > tree.txt
+      run: tree -a -n --filesfirst --prune -I '.git|LICENSE|README.md|tree.txt'
 
     - name: Update README
       run: |
