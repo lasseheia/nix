@@ -4,11 +4,13 @@ on:
   pull_request:
     paths-ignore:
       - .github/**
+      - !.github/workflows/check-flake.yaml
       - LICENCE
       - README.md
   push:
     paths-ignore:
       - .github/**
+      - !.github/workflows/check-flake.yaml
       - LICENCE
       - README.md
 
