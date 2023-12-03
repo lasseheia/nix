@@ -24,6 +24,9 @@ jobs:
     - name: Check Nix flake inputs
       uses: DeterminateSystems/flake-checker-action@v5
 
+    - name: Install Nix
+      uses: cachix/install-nix-action@v24
+
     - name: Check Nix flake systems
       run: |
         {
