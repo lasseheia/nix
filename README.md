@@ -55,9 +55,12 @@ The script performs the following actions:
 │       ├── default.nix
 │       └── hardware-configuration.nix
 ├── modules
-│   ├── hyprland.nix
-│   ├── lutris.nix
-│   └── steam.nix
+│   ├── hyprland
+│   │   └── default.nix
+│   ├── lutris
+│   │   └── default.nix
+│   └── steam
+│       └── default.nix
 ├── scripts
 │   └── install.sh
 └── users
