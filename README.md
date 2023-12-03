@@ -71,5 +71,11 @@ The script performs the following actions:
 # Flake
 
 <!--START_SECTION:flake-->
+```bash
+[1mgit+file:///home/runner/work/nix/nix?ref=refs/heads/main&rev=c89b3848193f62f3b6d111960c5279a6b38a5766&shallow=1[0m
+[32;1m└───[0m[1mnixosConfigurations[0m
+[32;1m    ├───[0m[1mdesktop[0m: [35;1mNixOS configuration[0m
+[32;1m    └───[0m[1mlaptop[0m: [35;1mNixOS configuration[0m
+```
 <!--END_SECTION:flake-->
 
