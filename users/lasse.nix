@@ -352,6 +352,7 @@
     tldr
     tree
     jq
+    discord
   ];
 
   home.sessionVariables = {
