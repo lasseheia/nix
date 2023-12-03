@@ -26,17 +26,10 @@ jobs:
     - name: Update README
       run: |
         {
-          # Extract content before the tree section
           sed '/<!--START_SECTION:tree-->/q' README.md
-
-          # Add the tree section markers and tree content
-          echo '<!--START_SECTION:tree-->'
           echo '```bash'
           cat tree.txt
           echo '```'
-          echo '<!--END_SECTION:tree-->'
-
-          # Extract content after the tree section
           sed -n '/<!--END_SECTION:tree-->/,$p' README.md
         } > new_README.md
 
@@ -67,17 +60,10 @@ jobs:
     - name: Update README
       run: |
         {
-          # Extract content before the flake section
           sed '/<!--START_SECTION:flake-->/q' README.md
-
-          # Add the tree section markers and flake content
-          echo '<!--START_SECTION:flake-->'
           echo '```bash'
-          cat flake-outputs.txt
+          cat flake.txt
           echo '```'
-          echo '<!--END_SECTION:flake-->'
-
-          # Extract content after the flake section
           sed -n '/<!--END_SECTION:flake-->/,$p' README.md
         } > new_README.md
 

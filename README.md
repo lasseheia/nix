@@ -36,7 +36,6 @@ The script performs the following actions:
 # Repository file structure
 
 <!--START_SECTION:tree-->
-<!--START_SECTION:tree-->
 ```bash
 .
 ├── .github
@@ -67,9 +66,6 @@ The script performs the following actions:
 
 9 directories, 17 files
 ```
-<!--END_SECTION:tree-->
-<!--END_SECTION:tree-->
-<!--END_SECTION:tree-->
 <!--END_SECTION:tree-->
 
 # Flake
