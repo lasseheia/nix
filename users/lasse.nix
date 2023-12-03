@@ -375,6 +375,7 @@
     swww
     kitty
     bemenu
+    neofetch
     brave
     tldr
     tree
