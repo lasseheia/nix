@@ -72,7 +72,7 @@ The script performs the following actions:
 
 <!--START_SECTION:flake-->
 ```bash
-[1mgit+file:///home/runner/work/nix/nix?ref=refs/heads/main&rev=92669b8eff35fb6db279746fec8529364676a669&shallow=1[0m
+[1mgit+file:///home/runner/work/nix/nix?ref=refs/heads/main&rev=92f678de407e1ad938838a4cf1d9acc8170dafae&shallow=1[0m
 [32;1m└───[0m[1mnixosConfigurations[0m
 [32;1m    ├───[0m[1mdesktop[0m: [35;1mNixOS configuration[0m
 [32;1m    └───[0m[1mlaptop[0m: [35;1mNixOS configuration[0m
