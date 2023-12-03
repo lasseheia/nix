@@ -2,8 +2,13 @@ name: Update README with Directory Tree and flake output
 
 on:
   push:
-    paths:
-      - '**/*'
+    branches:
+      - main
+    paths-ignore:
+      - LICENCE
+      - README.md
+      - flake.nix
+      - flake.lock
 
 jobs:
   update-readme:
