@@ -339,7 +339,7 @@
       set relativenumber 
       set numberwidth=1
       highlight LineNr ctermfg=White
-      
+      set mouse=
       set autoindent
       set tabstop=2
       set shiftwidth=2
