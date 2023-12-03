@@ -332,6 +332,7 @@
     vimAlias = true;
     extraConfig = ''
       colorscheme slate
+      set number
       set relativenumber 
       set numberwidth=1
       highlight LineNr ctermfg=White
