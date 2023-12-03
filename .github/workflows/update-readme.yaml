@@ -23,7 +23,7 @@ jobs:
       run: nix-env --file '<nixpkgs>' --install tree
 
     - name: Generate directory tree
-      run: tree -a --noreport --filesfirst --prune -I '.git|LICENSE|README.md|tree.txt' > tree.txt
+      run: tree -a --noreport --filesfirst --prune -I '.git|LICENSE|README.md|tree.txt' | tee tree.txt
 
     - name: Update README
       run: |
@@ -57,7 +57,7 @@ jobs:
       uses: cachix/install-nix-action@v24
 
     - name: Generate flake output
-      run: nix flake show | awk '/nixosConfigurations/{flag=1} flag' > flake.txt
+      run: nix flake show | awk '/nixosConfigurations/{flag=1} flag' | tee flake.txt
 
     - name: Update README
       run: |
