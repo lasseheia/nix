@@ -62,8 +62,6 @@ The script performs the following actions:
 │   └── install.sh
 └── users
     └── lasse.nix
-
-8 directories, 16 files
 ```
 <!--END_SECTION:tree-->
 
