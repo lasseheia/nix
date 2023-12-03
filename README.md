@@ -43,6 +43,7 @@ The script performs the following actions:
 ├── .github
 │   ├── dependabot.yaml
 │   └── workflows
+│       ├── check-flake.yaml
 │       ├── update-flake-lock.yaml
 │       └── update-readme.yaml
 ├── hosts
