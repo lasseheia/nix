@@ -31,6 +31,9 @@
         };
 	      modules = [
 	        ./hosts/desktop
+          ./modules/hyprland
+          ./modules/steam
+          ./modules/lutris
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
