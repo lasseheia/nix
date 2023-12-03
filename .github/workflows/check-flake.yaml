@@ -1,4 +1,4 @@
-name: CI Checks
+name: Check Flake
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   check-flake:
-    name: Check flake
+    name: Check Flake
     runs-on: ubuntu-latest
     steps:
       
