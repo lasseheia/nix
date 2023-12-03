@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,6 +20,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixos-hardware,
     home-manager,
     hyprland,
     ...
@@ -29,8 +32,9 @@
         specialArgs = {
           inherit inputs outputs;
         };
-	      modules = [
-	        ./hosts/desktop
+        modules = [
+          nixos-hardware.nixosModules.common-cpu-amd
+          ./hosts/desktop
           ./modules/hyprland
           ./modules/steam
           ./modules/lutris
@@ -45,8 +49,8 @@
         specialArgs = {
           inherit inputs outputs;
         };
-	      modules = [
-	        ./hosts/laptop
+        modules = [
+          ./hosts/laptop
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
