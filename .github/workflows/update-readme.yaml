@@ -34,7 +34,8 @@ jobs:
           echo '```'
           sed -n '/<!--END_SECTION:tree-->/,$p' README.md
         } > new_README.md
-
+        
+        cat new_README.md
         mv new_README.md README.md
 
     - name: Commit and push if changed
@@ -64,11 +65,12 @@ jobs:
         {
           sed '/<!--START_SECTION:flake-->/q' README.md
           echo '```bash'
-          cat flake.txt
+          nix flake show | awk '/nixosConfigurations/{flag=1} flag'
           echo '```'
           sed -n '/<!--END_SECTION:flake-->/,$p' README.md
         } > new_README.md
 
+        cat new_README.md
         mv new_README.md README.md
 
     - name: Commit and push if changed
