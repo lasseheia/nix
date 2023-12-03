@@ -2,7 +2,15 @@ name: Check Flake
 
 on:
   pull_request:
+    paths-ignore:
+      - .github/**
+      - LICENCE
+      - README.md
   push:
+    paths-ignore:
+      - .github/**
+      - LICENCE
+      - README.md
 
 jobs:
   check-flake:
