@@ -69,9 +69,9 @@ The script performs the following actions:
 
 <!--START_SECTION:flake-->
 ```bash
-[32;1m└───[0m[1mnixosConfigurations[0m
-[32;1m    ├───[0m[1mdesktop[0m: [35;1mNixOS configuration[0m
-[32;1m    └───[0m[1mlaptop[0m: [35;1mNixOS configuration[0m
+└───nixosConfigurations
+    ├───desktop: NixOS configuration
+    └───laptop: NixOS configuration
 ```
 <!--END_SECTION:flake-->
 
