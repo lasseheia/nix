@@ -280,12 +280,6 @@
     shellAliases = {
       ll = "ls -lah";
     };
-#    zsh-abbr = {
-#      enable = true;
-#      abbreviations = {
-#        k = "kubectl";
-#      };
-#    };
   };
 
   programs.kitty = {
