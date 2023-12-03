@@ -290,6 +290,8 @@
   programs.starship = {
     enable = true;
     settings.add_newline = false;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
   };
 
   programs.tmux = {
