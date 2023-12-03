@@ -1,4 +1,4 @@
-name: Update README with Directory Tree and flake show
+name: Update README with Directory Tree and flake output
 
 on:
   push:
@@ -6,13 +6,18 @@ on:
       - '**/*'
 
 jobs:
-  tree:
-    name: Generate tree of repository and add it to README.md
+  update-readme:
+    name: Generate output and update README.md
     runs-on: ubuntu-latest
 
     steps:
     - name: Check out repository
       uses: actions/checkout@v2
+
+    - name: Configure Git
+      run: |
+        git config user.name 'github-actions[bot]'
+        git config user.email 'github-actions[bot]@users.noreply.github.com'
 
     - name: Install Nix
       uses: cachix/install-nix-action@v12
@@ -25,7 +30,7 @@ jobs:
     - name: Generate directory tree
       run: tree -a --filesfirst --noreport --prune -I '.git|LICENSE|README.md|tree.txt' | tee tree.txt
 
-    - name: Update README
+    - name: Update README for tree
       run: |
         {
           sed '/<!--START_SECTION:tree-->/q' README.md
@@ -40,28 +45,14 @@ jobs:
 
     - name: Commit and push if changed
       run: |
-        git config user.name 'github-actions[bot]'
-        git config user.email 'github-actions[bot]@users.noreply.github.com'
         git add README.md
         git diff --staged --quiet || git commit -m "Automatically update directory tree"
-        git push
-
-  flake:
-    name: Generate flake outputs and add it to README.md
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Check out repository
-      uses: actions/checkout@v2
-
-    - name: Install Nix
-      uses: cachix/install-nix-action@v24
-
+        git pull && git push
+    
     - name: Generate flake output
-      run: |
-        nix flake show | awk '/nixosConfigurations/{flag=1} flag' | sed 's/\x1b\[[0-9;]*m//g' | tee flake.txt
+      run: nix flake show | awk '/nixosConfigurations/{flag=1} flag' | sed 's/\x1b\[[0-9;]*m//g' | tee flake.txt
 
-    - name: Update README
+    - name: Update README for flake
       run: |
         {
           sed '/<!--START_SECTION:flake-->/q' README.md
@@ -76,9 +67,7 @@ jobs:
 
     - name: Commit and push if changed
       run: |
-        git config user.name 'github-actions[bot]'
-        git config user.email 'github-actions[bot]@users.noreply.github.com'
         git add README.md
         git diff --staged --quiet || git commit -m "Automatically update flake output"
-        git push
+        git pull && git push
 
