@@ -300,10 +300,10 @@
       bind - split-window -v
       
       # Switch panes
-      bind -n M-a select-pane -L
-      bind -n M-d select-pane -R
-      bind -n M-w select-pane -U
-      bind -n M-s select-pane -D
+      bind -n M-h select-pane -L
+      bind -n M-l select-pane -R
+      bind -n M-j select-pane -U
+      bind -n M-k select-pane -D
 
       # Styling
       ## Statusbar
