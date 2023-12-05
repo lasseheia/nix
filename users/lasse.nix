@@ -255,6 +255,9 @@
     shellAliases = {
       ll = "ls -lah";
     };
+    oh-my-zsh = {
+      enable = true;
+    };
   };
 
   programs.autojump = {
