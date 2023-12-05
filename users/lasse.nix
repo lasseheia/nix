@@ -371,6 +371,9 @@
     jq
     yq-go
     discord
+    kubectl
+    azure-cli
+    kubelogin
   ];
 
   home.sessionVariables = {
