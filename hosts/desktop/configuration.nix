@@ -16,7 +16,7 @@
     };
   };
   
-  sound.enable = true;
+#  sound.enable = true;
   
   time.timeZone = "Europe/Oslo";
   i18n = {
