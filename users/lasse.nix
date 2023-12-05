@@ -249,6 +249,8 @@
       [[ -z "$TMUX" ]] && tmux
       bindkey '^ ' autosuggest-accept
       bindkey '^[^M' autosuggest-execute
+      bindkey "^k" history-beginning-search-backward
+      bindkey "^j" history-beginning-search-forward
     '';
     shellAliases = {
       ll = "ls -lah";
