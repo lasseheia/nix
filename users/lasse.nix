@@ -369,6 +369,7 @@
     tldr
     tree
     jq
+    yq-go
     discord
   ];
 
