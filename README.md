@@ -53,6 +53,8 @@ The script performs the following actions:
 │   └── modules
 │       ├── hyprland
 │       │   └── default.nix
+│       ├── terminal
+│       │   └── default.nix
 │       └── waybar
 │           └── default.nix
 ├── nixos
