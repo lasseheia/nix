@@ -7,16 +7,9 @@
   home.username = "lasse";
   home.homeDirectory = "/home/lasse";
 
-  services.dunst.enable = true;
-
-  services.pasystray.enable = true;
-  
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
-    initExtraFirst = ''
-      [[ "$(tty)" = "/dev/tty1" ]] && exec Hyprland
-    '';
     initExtra = ''
       [[ -z "$TMUX" ]] && tmux
       bindkey '^ ' autosuggest-accept

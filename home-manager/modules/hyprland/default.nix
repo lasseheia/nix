@@ -53,4 +53,10 @@
       ];
     };
   };
+
+  services.dunst.enable = true;
+  services.pasystray.enable = true;
+  programs.zsh.initExtraFirst = ''
+    [[ "$(tty)" = "/dev/tty1" ]] && exec Hyprland
+  '';
 }
