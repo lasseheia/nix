@@ -49,9 +49,9 @@ The script performs the following actions:
 │       ├── update-flake-lock.yaml
 │       └── update-readme.yaml
 ├── home-manager
+│   ├── base
+│   │   └── default.nix
 │   └── modules
-│       ├── base
-│       │   └── default.nix
 │       ├── browser
 │       │   └── default.nix
 │       ├── hyprland
