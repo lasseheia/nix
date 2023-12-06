@@ -27,6 +27,9 @@
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         modules = [
+          {
+            networking.hostName = "desktop";
+          }
           nixos-hardware.nixosModules.common-pc
           nixos-hardware.nixosModules.common-pc-ssd
           nixos-hardware.nixosModules.common-cpu-amd
@@ -51,6 +54,9 @@
       };
       laptop = nixpkgs.lib.nixosSystem {
         modules = [
+          {
+            networking.hostName = "laptop";
+          }
           ./nixos/hosts/laptop
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;

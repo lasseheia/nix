@@ -9,7 +9,6 @@
   services.lvm.enable = true;
 
   networking = {
-    hostName = "desktop";
     wireless.iwd.enable = true;
     firewall = {
       enable = true;

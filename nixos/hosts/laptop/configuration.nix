@@ -13,7 +13,6 @@
   system.stateVersion = "23.05";
   
   networking = {
-    hostName = "laptop";
     wireless.iwd.enable = true;
     firewall = {
       enable = true;
