@@ -57,7 +57,7 @@
           inherit inputs outputs;
         };
         modules = [
-          ./hosts/laptop
+          ./nixos/hosts/laptop
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
