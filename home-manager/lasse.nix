@@ -8,8 +8,6 @@
   home.homeDirectory = "/home/lasse";
 
   home.packages = with pkgs; [
-    swww
-    bemenu
     brave
     discord
   ];

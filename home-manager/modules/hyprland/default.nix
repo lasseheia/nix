@@ -1,5 +1,12 @@
+{ pkgs, ... }:
+
 {
-    wayland.windowManager.hyprland = {
+  home.packages = with pkgs; [
+    swww
+    bemenu
+  ];
+
+  wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       monitor = ",highres,auto,1";
