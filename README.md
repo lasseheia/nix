@@ -66,12 +66,10 @@ The script performs the following actions:
 │   │   │   ├── configuration.nix
 │   │   │   ├── default.nix
 │   │   │   └── hardware-configuration.nix
-│   │   ├── laptop
-│   │   │   ├── configuration.nix
-│   │   │   ├── default.nix
-│   │   │   └── hardware-configuration.nix
-│   │   └── wsl
-│   │       └── default.nix
+│   │   └── laptop
+│   │       ├── configuration.nix
+│   │       ├── default.nix
+│   │       └── hardware-configuration.nix
 │   └── modules
 │       ├── boot
 │       │   └── default.nix
