@@ -77,24 +77,24 @@
           }
         ];
       };
-    };
-    wsl = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        inherit inputs outputs;
+      wsl = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs outputs;
+        };
+        modules = [
+          ./nixos/hosts/wsl
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.lasse = {
+              imports = [
+                ./home-manager/base
+                ./home-manager/modules/terminal
+              ];
+            };
+          }
+        ];
       };
-      modules = [
-        ./nixos/hosts/wsl
-        home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.lasse = {
-            imports = [
-              ./home-manager/modules/base
-              ./home-manager/modules/terminal
-            ];
-          };
-        }
-      ];
     };
   };
 }
