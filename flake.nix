@@ -47,7 +47,6 @@
             home-manager.users.lasse = {
               imports = [
                 ./home-manager/base
-                ./home-manager/modules/terminal
                 ./home-manager/modules/hyprland
                 ./home-manager/modules/waybar
                 ./home-manager/modules/browser
@@ -68,7 +67,6 @@
             home-manager.users.lasse = {
               imports = [
                 ./home-manager/base
-                ./home-manager/modules/terminal
                 ./home-manager/modules/hyprland
                 ./home-manager/modules/waybar
                 ./home-manager/modules/browser
@@ -89,7 +87,6 @@
             home-manager.users.lasse = {
               imports = [
                 ./home-manager/base
-                ./home-manager/modules/terminal
               ];
             };
           }
