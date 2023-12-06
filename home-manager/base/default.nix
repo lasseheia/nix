@@ -6,6 +6,6 @@
   home.homeDirectory = "/home/lasse";
 
   imports = [
-    ./modules/terminal
+    ../modules/terminal
   ];
 }
