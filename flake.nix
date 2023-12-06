@@ -50,6 +50,7 @@
                 ./home-manager/modules/hyprland
                 ./home-manager/modules/waybar
                 ./home-manager/modules/terminal
+                ./home-manager/modules/browser
               ];
             };
           }
