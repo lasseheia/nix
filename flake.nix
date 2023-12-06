@@ -18,20 +18,14 @@
   };
 
   outputs = {
-    self,
     nixos-hardware,
     nixpkgs,
     home-manager,
     hyprland,
     ...
-  } @ inputs: let
-    inherit (self) outputs;
-  in {
+  }: {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs outputs;
-        };
         modules = [
           nixos-hardware.nixosModules.common-pc
           nixos-hardware.nixosModules.common-pc-ssd
@@ -56,9 +50,6 @@
         ];
       };
       laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs outputs;
-        };
         modules = [
           ./nixos/hosts/laptop
           home-manager.nixosModules.home-manager {
