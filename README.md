@@ -48,28 +48,29 @@ The script performs the following actions:
 │       ├── check-flake.yaml
 │       ├── update-flake-lock.yaml
 │       └── update-readme.yaml
-├── hosts
-│   ├── desktop
-│   │   ├── configuration.nix
-│   │   ├── default.nix
-│   │   └── hardware-configuration.nix
-│   └── laptop
-│       ├── configuration.nix
-│       ├── default.nix
-│       └── hardware-configuration.nix
-├── modules
-│   ├── boot
-│   │   └── default.nix
-│   ├── hyprland
-│   │   └── default.nix
-│   ├── lutris
-│   │   └── default.nix
-│   └── steam
-│       └── default.nix
-├── scripts
-│   └── install.sh
-└── users
-    └── lasse.nix
+├── home-manager
+│   └── lasse.nix
+├── nixos
+│   ├── hosts
+│   │   ├── desktop
+│   │   │   ├── configuration.nix
+│   │   │   ├── default.nix
+│   │   │   └── hardware-configuration.nix
+│   │   └── laptop
+│   │       ├── configuration.nix
+│   │       ├── default.nix
+│   │       └── hardware-configuration.nix
+│   └── modules
+│       ├── boot
+│       │   └── default.nix
+│       ├── hyprland
+│       │   └── default.nix
+│       ├── lutris
+│       │   └── default.nix
+│       └── steam
+│           └── default.nix
+└── scripts
+    └── install.sh
 ```
 <!--END_SECTION:tree-->
 
