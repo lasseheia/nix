@@ -49,7 +49,6 @@ The script performs the following actions:
 │       ├── update-flake-lock.yaml
 │       └── update-readme.yaml
 ├── home-manager
-│   ├── lasse.nix
 │   └── modules
 │       ├── base
 │       │   └── default.nix
