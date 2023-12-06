@@ -90,10 +90,10 @@ The script performs the following actions:
 
 <!--START_SECTION:flake-->
 ```bash
-├───nixosConfigurations
-│   ├───desktop: NixOS configuration
-│   └───laptop: NixOS configuration
-└───wsl: unknown
+└───nixosConfigurations
+    ├───desktop: NixOS configuration
+    ├───laptop: NixOS configuration
+    └───wsl: NixOS configuration
 ```
 <!--END_SECTION:flake-->
 
