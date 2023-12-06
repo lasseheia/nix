@@ -46,10 +46,10 @@
             home-manager.useUserPackages = true;
             home-manager.users.lasse = {
               imports = [
-                ./home-manager/modules/base
+                ./home-manager/base
+                ./home-manager/modules/terminal
                 ./home-manager/modules/hyprland
                 ./home-manager/modules/waybar
-                ./home-manager/modules/terminal
                 ./home-manager/modules/browser
               ];
             };
@@ -67,10 +67,10 @@
             home-manager.useUserPackages = true;
             home-manager.users.lasse = {
               imports = [
-                ./home-manager/modules/base
+                ./home-manager/base
+                ./home-manager/modules/terminal
                 ./home-manager/modules/hyprland
                 ./home-manager/modules/waybar
-                ./home-manager/modules/terminal
                 ./home-manager/modules/browser
               ];
             };
