@@ -51,6 +51,10 @@ The script performs the following actions:
 ├── home-manager
 │   ├── lasse.nix
 │   └── modules
+│       ├── base
+│       │   └── default.nix
+│       ├── browser
+│       │   └── default.nix
 │       ├── hyprland
 │       │   └── default.nix
 │       ├── terminal
