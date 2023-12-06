@@ -49,7 +49,10 @@ The script performs the following actions:
 │       ├── update-flake-lock.yaml
 │       └── update-readme.yaml
 ├── home-manager
-│   └── lasse.nix
+│   ├── lasse.nix
+│   └── modules
+│       └── hyprland
+│           └── default.nix
 ├── nixos
 │   ├── hosts
 │   │   ├── desktop
