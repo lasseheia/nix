@@ -46,6 +46,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.lasse = {
               imports = [
+                ./home-manager/modules/hyprland
                 ./home-manager/lasse.nix
               ];
             };
