@@ -47,6 +47,7 @@
             home-manager.users.lasse = {
               imports = [
                 ./home-manager/modules/hyprland
+                ./home-manager/modules/waybar
                 ./home-manager/lasse.nix
               ];
             };
