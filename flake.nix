@@ -36,15 +36,15 @@
           nixos-hardware.nixosModules.common-pc
           nixos-hardware.nixosModules.common-pc-ssd
           nixos-hardware.nixosModules.common-cpu-amd
-          ./modules/boot
-          ./hosts/desktop
-          ./modules/hyprland
-          ./modules/steam
-          ./modules/lutris
+          ./nixos/modules/boot
+          ./nixos/hosts/desktop
+          ./nixos/modules/hyprland
+          ./nixos/modules/steam
+          ./nixos/modules/lutris
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.lasse = import ./users/lasse.nix;
+            home-manager.users.lasse = import ./home-manager/lasse.nix;
           }
         ];
       };
@@ -57,7 +57,7 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.lasse = import ./users/lasse.nix;
+            home-manager.users.lasse = import ./home-manager/lasse.nix;
           }
         ];
       };
