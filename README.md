@@ -71,6 +71,8 @@ The script performs the following actions:
 │   │       ├── default.nix
 │   │       └── hardware-configuration.nix
 │   └── modules
+│       ├── amd
+│       │   └── default.nix
 │       ├── boot
 │       │   └── default.nix
 │       ├── hyprland
