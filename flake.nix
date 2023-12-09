@@ -29,6 +29,9 @@
         modules = [
           {
             networking.hostName = "desktop";
+            boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" ];
+            boot.initrd.kernelModules = [ "dm-snapshot" ];
+            boot.kernelModules = [ "kvm-amd" ];
           }
           nixos-hardware.nixosModules.common-pc
           nixos-hardware.nixosModules.common-pc-ssd
@@ -38,7 +41,6 @@
           ./nixos/modules/lvm
           ./nixos/base
           ./nixos/modules/boot
-          ./nixos/hosts/desktop
           ./nixos/modules/nvidia
           ./nixos/modules/hyprland
           ./nixos/modules/steam
