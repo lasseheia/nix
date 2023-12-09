@@ -5,6 +5,11 @@
   home.username = "lasse";
   home.homeDirectory = "/home/lasse";
 
+  home.packages = with pkgs; [
+    openssl
+    openconnect
+  ];
+
   imports = [
     ../modules/terminal
   ];
