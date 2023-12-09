@@ -83,6 +83,8 @@ The script performs the following actions:
 │       │   └── default.nix
 │       ├── nvidia
 │       │   └── default.nix
+│       ├── obs
+│       │   └── default.nix
 │       └── steam
 │           └── default.nix
 └── scripts
