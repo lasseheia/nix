@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     swww
     bemenu
+    lxqt.lxqt-policykit
   ];
 
   wayland.windowManager.hyprland = {
@@ -13,6 +14,7 @@
       exec-once = [
         "waybar"
         "swww init"
+        "lxqt-policykit-agent"
       ];
       exec = "swww img /home/lasse/_MG_2485-mod_APOD.jpg";
       "$mod" = "SUPER";
