@@ -33,6 +33,7 @@
           nixos-hardware.nixosModules.common-pc
           nixos-hardware.nixosModules.common-pc-ssd
           nixos-hardware.nixosModules.common-cpu-amd
+          ./nixos/base
           ./nixos/modules/boot
           ./nixos/hosts/desktop
           ./nixos/modules/hyprland
@@ -57,6 +58,7 @@
           {
             networking.hostName = "laptop";
           }
+          ./nixos/base
           ./nixos/hosts/laptop
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
