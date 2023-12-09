@@ -43,6 +43,7 @@
           ./nixos/modules/boot
           ./nixos/modules/nvidia
           ./nixos/modules/hyprland
+          ./nixos/modules/obs
           ./nixos/modules/steam
           ./nixos/modules/lutris
           home-manager.nixosModules.home-manager {
