@@ -65,8 +65,7 @@ The script performs the following actions:
 │   │   └── default.nix
 │   ├── hosts
 │   │   ├── desktop
-│   │   │   ├── default.nix
-│   │   │   └── hardware-configuration.nix
+│   │   │   └── default.nix
 │   │   └── laptop
 │   │       ├── configuration.nix
 │   │       ├── default.nix
