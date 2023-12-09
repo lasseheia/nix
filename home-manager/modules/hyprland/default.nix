@@ -17,6 +17,7 @@
       exec-once = [
         "waybar"
         "swww init"
+        "dunst"
         "lxqt-policykit-agent"
       ];
       exec = "swww img /home/lasse/_MG_2485-mod_APOD.jpg";
