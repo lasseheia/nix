@@ -61,6 +61,8 @@ The script performs the following actions:
 │       └── waybar
 │           └── default.nix
 ├── nixos
+│   ├── base
+│   │   └── default.nix
 │   ├── hosts
 │   │   ├── desktop
 │   │   │   ├── configuration.nix
