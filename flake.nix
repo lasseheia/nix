@@ -36,6 +36,7 @@
           ./nixos/base
           ./nixos/modules/boot
           ./nixos/hosts/desktop
+          ./nixos/modules/nvidia
           ./nixos/modules/hyprland
           ./nixos/modules/steam
           ./nixos/modules/lutris
