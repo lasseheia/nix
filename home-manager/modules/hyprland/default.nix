@@ -9,7 +9,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = ",highres,auto,1";
+      monitor = ",highres,auto,1,bitdepth,10"; # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/99#issuecomment-1731390092
       exec-once = [
         "waybar"
         "swww init"
