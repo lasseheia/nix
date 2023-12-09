@@ -7,6 +7,9 @@
     lxqt.lxqt-policykit
   ];
 
+  services.dunst.enable = true;
+  services.pasystray.enable = true;
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -63,8 +66,6 @@
     };
   };
 
-  services.dunst.enable = true;
-  services.pasystray.enable = true;
   programs.zsh.initExtraFirst = ''
     [[ "$(tty)" = "/dev/tty1" ]] && exec Hyprland
   '';
