@@ -1,10 +1,18 @@
-{ pkgs, ... }:
+{ pkgs, modulesPath, ... }:
 
 {
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
+
+  networking.useDHCP = lib.mkDefault true;
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  nixpkgs.config.allowUnfree = true;
+
   system.stateVersion = "23.05";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.auto-optimise-store = true;
-  nixpkgs.config.allowUnfree = true;
 
   services.lvm.enable = true;
 
