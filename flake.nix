@@ -33,6 +33,8 @@
           nixos-hardware.nixosModules.common-pc
           nixos-hardware.nixosModules.common-pc-ssd
           nixos-hardware.nixosModules.common-cpu-amd
+          ./nixos/modules/luks
+          ./nixos/modules/lvm
           ./nixos/base
           ./nixos/modules/boot
           ./nixos/hosts/desktop
