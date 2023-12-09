@@ -79,6 +79,8 @@ The script performs the following actions:
 │       │   └── default.nix
 │       ├── lutris
 │       │   └── default.nix
+│       ├── nvidia
+│       │   └── default.nix
 │       └── steam
 │           └── default.nix
 └── scripts
