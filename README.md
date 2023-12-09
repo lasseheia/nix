@@ -75,7 +75,11 @@ The script performs the following actions:
 │       │   └── default.nix
 │       ├── hyprland
 │       │   └── default.nix
+│       ├── luks
+│       │   └── default.nix
 │       ├── lutris
+│       │   └── default.nix
+│       ├── lvm
 │       │   └── default.nix
 │       ├── nvidia
 │       │   └── default.nix
