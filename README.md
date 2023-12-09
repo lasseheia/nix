@@ -50,43 +50,27 @@ The script performs the following actions:
 │       └── update-readme.yaml
 ├── home-manager
 │   ├── base
-│   │   └── default.nix
 │   └── modules
 │       ├── browser
-│       │   └── default.nix
 │       ├── hyprland
-│       │   └── default.nix
 │       ├── terminal
-│       │   └── default.nix
 │       └── waybar
-│           └── default.nix
 ├── nixos
 │   ├── base
-│   │   └── default.nix
 │   ├── hosts
 │   │   └── laptop
 │   │       ├── configuration.nix
-│   │       ├── default.nix
 │   │       └── hardware-configuration.nix
 │   └── modules
 │       ├── amd
-│       │   └── default.nix
 │       ├── boot
-│       │   └── default.nix
 │       ├── hyprland
-│       │   └── default.nix
 │       ├── luks
-│       │   └── default.nix
 │       ├── lutris
-│       │   └── default.nix
 │       ├── lvm
-│       │   └── default.nix
 │       ├── nvidia
-│       │   └── default.nix
 │       ├── obs
-│       │   └── default.nix
 │       └── steam
-│           └── default.nix
 └── scripts
     └── install.sh
 ```
