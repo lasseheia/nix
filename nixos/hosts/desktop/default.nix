@@ -1,6 +1,20 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./configuration.nix
   ];
+
+  xdg = {
+    portal = {
+      enable = true;
+      wlr.enable = true;
+    };
+  };
+
+  services = {
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+    };
+  };
 }
