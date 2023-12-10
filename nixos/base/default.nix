@@ -12,6 +12,8 @@
 
   system.stateVersion = "23.05";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  nix.optimise.automatic = true;
   nix.settings.auto-optimise-store = true;
 
   services.lvm.enable = true;
