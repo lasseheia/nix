@@ -62,7 +62,8 @@ The script performs the following actions:
 │   │       ├── configuration.nix
 │   │       └── hardware-configuration.nix
 │   └── modules
-│       ├── amd
+│       ├── amd-cpu
+│       ├── amd-gpu
 │       ├── boot
 │       ├── hyprland
 │       ├── luks
