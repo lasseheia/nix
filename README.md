@@ -57,10 +57,6 @@ The script performs the following actions:
 │       └── waybar
 ├── nixos
 │   ├── base
-│   ├── hosts
-│   │   └── laptop
-│   │       ├── configuration.nix
-│   │       └── hardware-configuration.nix
 │   └── modules
 │       ├── amd-cpu
 │       ├── amd-gpu
