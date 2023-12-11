@@ -64,9 +64,18 @@
         modules = [
           {
             networking.hostName = "laptop";
+            boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+            boot.initrd.kernelModules = [ "dm-snapshot" ];
+            boot.kernelModules = [ "kvm-intel" ];
+            powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+            hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+            hardware.opengl.enable = true;
           }
+          ./nixos/modules/luks
+          ./nixos/modules/lvm
           ./nixos/base
-          ./nixos/hosts/laptop
+          ./nixos/modules/boot
+          ./nixos/modules/hyprland
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
