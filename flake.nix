@@ -42,6 +42,7 @@
           ./nixos/base
           ./nixos/modules/boot
           ./nixos/modules/nvidia
+          ./nixos/modules/virtualization
           ./nixos/modules/hyprland
           ./nixos/modules/obs
           ./nixos/modules/steam
