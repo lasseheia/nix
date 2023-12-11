@@ -67,7 +67,8 @@ The script performs the following actions:
 │       ├── lvm
 │       ├── nvidia
 │       ├── obs
-│       └── steam
+│       ├── steam
+│       └── virtualization
 └── scripts
     └── install.sh
 ```
