@@ -67,10 +67,8 @@
             boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
             boot.initrd.kernelModules = [ "dm-snapshot" ];
             boot.kernelModules = [ "kvm-intel" ];
-            powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-            hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-            hardware.opengl.enable = true;
           }
+          nixos-hardware.nixosModules.dell-latitude-7490
           ./nixos/modules/luks
           ./nixos/modules/lvm
           ./nixos/base
