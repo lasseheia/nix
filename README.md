@@ -78,6 +78,9 @@ The script performs the following actions:
 
 <!--START_SECTION:flake-->
 ```bash
+└───nixosConfigurations
+    ├───desktop: NixOS configuration
+    └───laptop: NixOS configuration
 ```
 <!--END_SECTION:flake-->
 
