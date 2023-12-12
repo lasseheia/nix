@@ -10,6 +10,7 @@
   home.packages = with pkgs; [
     openssl
     openconnect
+    signal-desktop
   ];
 
   imports = [
