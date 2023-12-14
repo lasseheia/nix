@@ -76,6 +76,7 @@
           ./nixos/modules/lvm
           ./nixos/base
           ./nixos/modules/boot
+          ./nixos/modules/bluetooth
           ./nixos/modules/hyprland
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;

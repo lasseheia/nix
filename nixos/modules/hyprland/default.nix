@@ -26,4 +26,6 @@
   environment.systemPackages = [
     pkgs.xwaylandvideobridge
   ];
+
+  services.blueman.enable = true;
 }
