@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  home.sessionVariables = {
+    XDG_CURRENT_DESKTOP = "hyprland";
+  };
+
   home.packages = with pkgs; [
     swww
     bemenu

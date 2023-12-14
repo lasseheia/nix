@@ -4,7 +4,10 @@
   home.packages = with pkgs; [
     pamixer
     pavucontrol
+    flameshot
   ];
+
+  services.flameshot.enable = true;
 
   programs.waybar = {
     enable = true;
