@@ -11,28 +11,32 @@
 
   programs.waybar = {
     enable = true;
-    settings = { mainBar = {
+    settings = {
+      mainBar = {
         layer = "top";
         position = "top";
+
         modules-left = [
+          "battery"
+          "backlight"
+          "cpu"
+          "memory"
+          "disk#root"
+          "disk#home"
         ];
+
         modules-center = [
           "clock"
         ];
+
         modules-right = [
           "pulseaudio"
-          "memory"
-          "cpu"
-          "disk"
-          "backlight"
-          "battery"
           "bluetooth"
         ];
 
         clock = {
           interval = 60;
-          format = "{:%H:%M}";
-          max-length = 25;
+          format = "{:%Y-%m-%d %H:%M}";
         };
 
         pulseaudio = {
@@ -61,16 +65,22 @@
           format = "CPU {usage:2}%";
         };
 
-        disk = {
+        "disk#root" = {
           interval = 5;
-          format = "Disk {percentage_used:2}%";
+          format = "/ {percentage_used:2}%";
           path = "/";
         };
 
+        "disk#home" = {
+          interval = 5;
+          format = "/home {percentage_used:2}%";
+          path = "/home";
+        };
+
         backlight = {
-        	device = "intel_backlight";
-        	format = "{percent}% {icon}";
-        	format-icons = ["" ""];
+          device = "intel_backlight";
+          format = "{icon}  {percent}%";
+          format-icons = ["" ""];
         };
 
         battery = {
@@ -79,18 +89,19 @@
             warning = 30;
             critical = 15;
           };
-          format = "{capacity}% {icon}";
           format-icons = ["" "" "" "" ""];
+          format = "{icon}  {capacity}%";
+          format-charging = "{icon}  {capacity}% ";
         };
 
         bluetooth = {
-        	format = " {status}";
-        	format-connected = " {device_alias}";
-        	format-connected-battery = " {device_alias} {device_battery_percentage}%";
-        	tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
-        	tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
-        	tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-        	tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+          format = " {status}";
+          format-connected = " {device_alias}";
+          format-connected-battery = " {device_alias} {device_battery_percentage}%";
+          tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
+          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+          tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
           on-click = ''
             if bluetoothctl show | grep 'Powered: no' -q; then
               bluetoothctl power on
@@ -126,7 +137,11 @@
         color: #6c71c4;
       }
 
-      #disk {
+      #disk.root {
+        color: #b58900;
+      }
+
+      #disk.home {
         color: #b58900;
       }
 
