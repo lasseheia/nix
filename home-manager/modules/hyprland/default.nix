@@ -8,7 +8,6 @@
   ];
 
   services.dunst.enable = true;
-  services.pasystray.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;

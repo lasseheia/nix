@@ -85,7 +85,7 @@
               imports = [
                 ./home-manager/base
                 ./home-manager/modules/hyprland
-                ./home-manager/modules/waybar
+                ./home-manager/modules/waybar-laptop
                 ./home-manager/modules/browser
               ];
             };

@@ -11,6 +11,7 @@
     openssl
     openconnect
     signal-desktop
+    killall
   ];
 
   imports = [
