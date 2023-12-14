@@ -54,12 +54,14 @@ The script performs the following actions:
 │       ├── browser
 │       ├── hyprland
 │       ├── terminal
-│       └── waybar
+│       ├── waybar
+│       └── waybar-laptop
 ├── nixos
 │   ├── base
 │   └── modules
 │       ├── amd-cpu
 │       ├── amd-gpu
+│       ├── bluetooth
 │       ├── boot
 │       ├── hyprland
 │       ├── luks
