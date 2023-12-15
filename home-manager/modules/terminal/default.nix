@@ -89,6 +89,7 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+    vimdiffAlias = true;
     extraConfig = ''
       colorscheme slate
       set number
@@ -105,6 +106,14 @@
       set expandtab
       set encoding=utf-8
     '';
+    extraLuaConfig = ''
+      vim.g.mapleader = "<Space>"
+    '';
+    plugins = with pkgs.vimPlugins; [
+      ssr
+      nvim-tree-lua
+      nvim-treesitter
+    ];
   };
 
   programs.git = {
