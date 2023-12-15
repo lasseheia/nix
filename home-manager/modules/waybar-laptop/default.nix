@@ -67,13 +67,13 @@
 
         "disk#root" = {
           interval = 5;
-          format = "/ {percentage_used:2}%";
+          format = "Root {percentage_used}%";
           path = "/";
         };
 
         "disk#home" = {
           interval = 5;
-          format = "/home {percentage_used:2}%";
+          format = "Home {percentage_used}%";
           path = "/home";
         };
 
