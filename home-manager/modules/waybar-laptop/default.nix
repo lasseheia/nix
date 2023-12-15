@@ -35,7 +35,7 @@
         ];
 
         clock = {
-          interval = 60;
+          interval = 30;
           format = "{:%Y-%m-%d %H:%M}";
         };
 
