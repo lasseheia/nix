@@ -121,36 +121,40 @@
       }
 
       window#waybar {
-        background: #292b2e;
-        color: #fdf6e3;
+        background: #32353B;
+        color: #ECEFF4;
       }
 
       #pulseaudio {
-        color: #268bd2;
+        color: #4C7899;
+      }
+
+      #bluetooth {
+        color: #C991E1;
       }
 
       #memory {
-        color: #2aa198;
+        color: #56B6C2;
       }
 
       #cpu {
-        color: #6c71c4;
+        color: #C678DD;
       }
 
       #disk.root {
-        color: #b58900;
+        color: #E5C07B;
       }
 
       #disk.home {
-        color: #b58900;
+        color: #D19A66;
       }
 
       #battery {
-        color: #26bfc7
+        color: #98C379;
       }
 
       #backlight {
-        color: #d1cec7
+        color: #ABB2BF;
       }
     '';
   };
