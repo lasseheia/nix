@@ -124,19 +124,22 @@
       pull = {
         rebase = true;
       };
-      credential = { # https://github.com/NixOS/nixpkgs/issues/169115
-        "https://github.com" = {
-          helper = "!gh auth git-credential";
-        };
-        "https://gist.github.com" = {
-          helper = "!gh auth git-credential";
-        };
-      };
     };
   };
 
-  programs.gh = {
-    enable = true;
-    gitCredentialHelper.enable = false; # https://github.com/NixOS/nixpkgs/issues/169115
+  programs.gh.enable = true;
+
+  # Workaround for https://github.com/NixOS/nixpkgs/issues/169115
+  programs.gh.gitCredentialHelper.enable = false;
+  programs.git.extraConfig.credential = {
+    "https://github.com" = {
+      helper = "!gh auth git-credential";
+    };
+    "https://gist.github.com" = {
+      helper = "!gh auth git-credential";
+    };
   };
+
+  # Workaround for https://github.com/nix-community/home-manager/issues/4744
+  programs.gh.settings.version = 1;
 }
