@@ -139,7 +139,4 @@
       helper = "!gh auth git-credential";
     };
   };
-
-  # Workaround for https://github.com/nix-community/home-manager/issues/4744
-  programs.gh.settings.version = 1;
 }
