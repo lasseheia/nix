@@ -43,7 +43,6 @@ The script performs the following actions:
 ├── flake.lock
 ├── flake.nix
 ├── .github
-│   ├── dependabot.yaml
 │   └── workflows
 │       ├── check-flake.yaml
 │       ├── update-flake-lock.yaml
