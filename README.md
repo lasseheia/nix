@@ -46,7 +46,6 @@ The script performs the following actions:
 ├── .github
 │   └── workflows
 │       ├── check-flake.yaml
-│       ├── update-flake-lock.yaml
 │       └── update-readme.yaml
 ├── home-manager
 │   ├── base
