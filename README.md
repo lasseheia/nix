@@ -42,6 +42,7 @@ The script performs the following actions:
 .
 ├── flake.lock
 ├── flake.nix
+├── renovate.json
 ├── .github
 │   └── workflows
 │       ├── check-flake.yaml
