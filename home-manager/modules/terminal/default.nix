@@ -11,6 +11,7 @@
     kubectl
     azure-cli
     kubelogin
+    bitwarden-cli
   ];
 
   programs.zsh = {
