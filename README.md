@@ -54,6 +54,7 @@ The script performs the following actions:
 │       ├── hyprland
 │       ├── terminal
 │       ├── waybar
+│       ├── waybar-desktop
 │       └── waybar-laptop
 ├── nixos
 │   ├── base
