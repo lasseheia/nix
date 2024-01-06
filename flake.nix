@@ -55,7 +55,7 @@
               imports = [
                 ./home-manager/base
                 ./home-manager/modules/hyprland
-                ./home-manager/modules/waybar
+                ./home-manager/modules/waybar-desktop
                 ./home-manager/modules/browser
               ];
             };
