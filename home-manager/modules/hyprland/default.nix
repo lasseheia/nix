@@ -39,6 +39,11 @@
         "$mod, k, movefocus, u"
         "$mod, j, movefocus, d"
 
+        "$mod CTRL, h, resizeactive, 15% 0"
+        "$mod CTRL, l, resizeactive, -15% 0"
+        "$mod CTRL, k, resizeactive, 0 -15%"
+        "$mod CTRL, j, resizeactive, 0 15%"
+
         "$mod SHIFT, h, movewindow, l"
         "$mod SHIFT, l, movewindow, r"
         "$mod SHIFT, k, movewindow, u"
