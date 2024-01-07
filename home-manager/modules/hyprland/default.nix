@@ -22,6 +22,7 @@
         "waybar"
         "dunst"
         "lxqt-policykit-agent"
+        "copyq --start-server"
       ];
       "$mod" = "SUPER";
       input = {

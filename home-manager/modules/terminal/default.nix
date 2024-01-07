@@ -32,6 +32,8 @@
     };
   };
 
+  services.copyq.enable = true;
+
   programs.autojump = {
     enable = true;
     enableZshIntegration = true;
