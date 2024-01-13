@@ -15,6 +15,7 @@
     nodejs # Required for nvim-copilot
     yarn
     ripgrep # For nvim-telescope
+    sweethome3d.application
   ];
 
   programs.zsh = {
