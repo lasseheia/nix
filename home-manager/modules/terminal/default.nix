@@ -12,6 +12,9 @@
     azure-cli
     kubelogin
     bitwarden-cli
+    nodejs # Required for nvim-copilot
+    yarn
+    ripgrep # For nvim-telescope
   ];
 
   programs.zsh = {
@@ -108,15 +111,42 @@
       set smartcase
       set expandtab
       set encoding=utf-8
-    '';
-    extraLuaConfig = ''
-      vim.g.mapleader = "<Space>"
       set clipboard+=unnamedplus
     '';
     plugins = with pkgs.vimPlugins; [
-      ssr
-      nvim-tree-lua
-      nvim-treesitter
+      # nvim-tree
+      {
+        plugin = nvim-tree-lua;
+        config = ''
+          lua <<EOF
+            require'nvim-tree'.setup {}
+          EOF
+
+          autocmd VimEnter * NvimTreeOpen
+          nnoremap <C-n> :NvimTreeToggle<CR>
+          autocmd BufEnter * if winnr('$') == 1 && exists('b:term_type') && b:term_type == 'tree' | quit | endif
+        '';
+      }
+      # Telescope
+      plenary-nvim
+      {
+        plugin = telescope-nvim;
+        config = ''
+          lua << EOF
+            require('telescope').setup {
+              pickers = {
+                find_files = {
+                  find_command = { 'rg', '--files', '--hidden', '-g', '!.git/*' }
+                }
+              }
+            }
+          EOF
+
+          nnoremap <C-f> :Telescope find_files<CR>
+          nnoremap <C-g> :Telescope live_grep<CR>
+        '';
+      }
+      copilot-vim
     ];
   };
 
