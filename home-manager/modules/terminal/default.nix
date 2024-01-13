@@ -111,6 +111,7 @@
     '';
     extraLuaConfig = ''
       vim.g.mapleader = "<Space>"
+      set clipboard+=unnamedplus
     '';
     plugins = with pkgs.vimPlugins; [
       ssr

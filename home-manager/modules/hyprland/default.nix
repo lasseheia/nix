@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     swww
     lxqt.lxqt-policykit
+    wl-clipboard # for cliphist
   ];
 
   services.dunst.enable = true;
@@ -122,6 +123,8 @@
     '';
   };
 
+  services.cliphist.enable = true;
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -131,7 +134,7 @@
         "waybar"
         "dunst"
         "lxqt-policykit-agent"
-        "copyq --start-server"
+        "wl-paste --watch cliphist store"
       ];
       "$mod" = "SUPER";
       input = {
@@ -139,6 +142,7 @@
       };
       bind = [
         "$mod, R, exec, wofi --show run"
+        "$mod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
         "$mod, Return, exec, kitty"
         "$mod, Q, killactive"
         "$mod, M, exit"
