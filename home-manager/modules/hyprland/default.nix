@@ -7,11 +7,120 @@
 
   home.packages = with pkgs; [
     swww
-    bemenu
     lxqt.lxqt-policykit
   ];
 
   services.dunst.enable = true;
+
+  programs.wofi = {
+    enable = true;
+    settings = {
+      show = "drun";
+      width = 750;
+      height = 400;
+      always_parse_args = true;
+      show_all = false;
+      print_command = true;
+      insensitive = true;
+      prompt = "Hmm, what do you want to run?";
+    };
+    style = ''
+      /* Latte Sky */
+      @define-color accent #04a5e5;
+      @define-color txt #4c4f69;
+      @define-color bg #eff1f5;
+      @define-color bg2 #bcc0cc;
+      
+       * {
+          font-family: 'JetBrains Mono Nerd Font', monospace;
+          font-size: 14px;
+       }
+      
+       /* Window */
+       window {
+          margin: 0px;
+          padding: 10px;
+          border: 3px solid @accent;
+          border-radius: 7px;
+          background-color: @bg;
+          animation: slideIn 0.5s ease-in-out both;
+       }
+      
+       /* Slide In */
+       @keyframes slideIn {
+          0% {
+             opacity: 0;
+          }
+      
+          100% {
+             opacity: 1;
+          }
+       }
+      
+       /* Inner Box */
+       #inner-box {
+          margin: 5px;
+          padding: 10px;
+          border: none;
+          background-color: @bg;
+          animation: fadeIn 0.5s ease-in-out both;
+       }
+      
+       /* Fade In */
+       @keyframes fadeIn {
+          0% {
+             opacity: 0;
+          }
+      
+          100% {
+             opacity: 1;
+          }
+       }
+      
+       /* Outer Box */
+       #outer-box {
+          margin: 5px;
+          padding: 10px;
+          border: none;
+          background-color: @bg;
+       }
+      
+       /* Scroll */
+       #scroll {
+          margin: 0px;
+          padding: 10px;
+          border: none;
+       }
+      
+       /* Input */
+       #input {
+          margin: 5px;
+          padding: 10px;
+          border: none;
+          color: @accent;
+          background-color: @bg2;
+          animation: fadeIn 0.5s ease-in-out both;
+       }
+      
+       /* Text */
+       #text {
+          margin: 5px;
+          padding: 10px;
+          border: none;
+          color: @txt;
+          animation: fadeIn 0.5s ease-in-out both;
+       }
+      
+       /* Selected Entry */
+       #entry:selected {
+         background-color: @accent;
+       }
+      
+       #entry:selected #text {
+          color: @bg;
+       }
+    '';
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -29,10 +138,10 @@
         kb_layout = "no";
       };
       bind = [
+        "$mod, R, exec, wofi --show run"
         "$mod, Return, exec, kitty"
         "$mod, Q, killactive"
         "$mod, M, exit"
-        "$mod, R, exec, bemenu-run -p 'Run:'"
         "$mod, F, fullscreen"
 
         "$mod, h, movefocus, l"
