@@ -19,6 +19,8 @@
     flutter
   ];
 
+  services.ssh-agent.enable = true;
+
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -28,6 +30,12 @@
       bindkey '^[^M' autosuggest-execute
       bindkey "^k" history-beginning-search-backward
       bindkey "^j" history-beginning-search-forward
+      if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+        eval `ssh-agent`
+        ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+      fi
+      export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+      ssh-add -l > /dev/null || ssh-add
     '';
     shellAliases = {
       ll = "ls -lah";
@@ -160,6 +168,9 @@
       pull = {
         rebase = true;
       };
+      commit.gpgsign = true;
+      gpg.format = "ssh";
+      user.signingkey = "~/.ssh/id_ed25519.pub";
     };
   };
 
