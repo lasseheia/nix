@@ -128,7 +128,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = ",highres,auto,1,bitdepth,10"; # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/99#issuecomment-1731390092
+      monitor = ",preferred,auto,1";
       exec-once = [
         "swww init && swww img /home/lasse/Downloads/e6631e9c-1718-435e-a37f-899482313bfe.webp"
         "waybar"
