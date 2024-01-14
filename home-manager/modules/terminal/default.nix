@@ -16,6 +16,7 @@
     yarn
     ripgrep # For nvim-telescope
     sweethome3d.application
+    flutter
   ];
 
   programs.zsh = {
