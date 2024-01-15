@@ -132,7 +132,6 @@
             require'nvim-tree'.setup {}
           EOF
 
-          autocmd VimEnter * NvimTreeOpen
           nnoremap <C-n> :NvimTreeToggle<CR>
           autocmd BufEnter * if winnr('$') == 1 && exists('b:term_type') && b:term_type == 'tree' | quit | endif
         '';
