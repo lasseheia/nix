@@ -17,6 +17,7 @@
     ripgrep # For nvim-telescope
     sweethome3d.application
     flutter
+    terraform-ls # For nvim-lspconfig
   ];
 
   services.ssh-agent.enable = true;
@@ -124,6 +125,7 @@
       set clipboard+=unnamedplus
     '';
     plugins = with pkgs.vimPlugins; [
+      copilot-vim
       # nvim-tree
       {
         plugin = nvim-tree-lua;
@@ -155,7 +157,17 @@
           nnoremap <C-g> :Telescope live_grep<CR>
         '';
       }
-      copilot-vim
+      # LSP
+      {
+        plugin = nvim-lspconfig;
+        config = ''
+          lua <<EOF
+          require'lspconfig'.dartls.setup{}
+          require'lspconfig'.terraformls.setup{}
+          EOF
+        '';
+      }
+      nvim-cmp
     ];
   };
 
