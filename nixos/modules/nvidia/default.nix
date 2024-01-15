@@ -1,7 +1,7 @@
 { config, ... }:
 
 {
-  # Was added later from https://nixos.wiki/wiki/Nvidia
+  # https://nixos.wiki/wiki/Nvidia
   hardware.opengl = {
     enable = true;
     driSupport = true;
