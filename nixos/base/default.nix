@@ -42,7 +42,7 @@
     ];
   };
   fonts.packages = with pkgs; [
-    nerdfonts
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Hack" "SourceCodePro" ]; })
   ];
 
   security.polkit.enable = true;
