@@ -8,16 +8,12 @@
 
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    
-    hyprland.url = "github:hyprwm/Hyprland/v0.34.0";
-    hyprland.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
     nixos-hardware,
     nixpkgs,
     home-manager,
-    hyprland,
     ...
   }: {
     nixosConfigurations = {
