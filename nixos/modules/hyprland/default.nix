@@ -19,6 +19,7 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    enableNvidiaPatches = true;
   };
 
   # https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/#prerequisites
