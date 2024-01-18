@@ -19,6 +19,7 @@
         modules-left = [
           "cpu"
           "memory"
+          "custom/gpu-usage"
           "disk#root"
           "disk#home"
         ];
@@ -53,14 +54,21 @@
           on-click-right = "pavucontrol";
         };
 
+        cpu = {
+          interval = 5;
+          format = "CPU {usage:2}%";
+        };
+
         memory = {
           interval = 5;
           format = "Mem {}%";
         };
 
-        cpu = {
+        "custom/gpu-usage" = {
+          exec = "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits";
+          format = "GPU {}%";
+          return-type = "";
           interval = 5;
-          format = "CPU {usage:2}%";
         };
 
         "disk#root" = {
@@ -92,12 +100,16 @@
         color: #4C7899;
       }
 
+      #cpu {
+        color: #C678DD;
+      }
+
       #memory {
         color: #56B6C2;
       }
 
-      #cpu {
-        color: #C678DD;
+      #custom-gpu-usage {
+        color: #64C221;
       }
 
       #disk.root {
