@@ -22,6 +22,7 @@
           "custom/gpu-usage"
           "disk#root"
           "disk#home"
+          "network"
         ];
 
         modules-center = [
@@ -81,6 +82,18 @@
           interval = 5;
           format = "Home {percentage_used}%";
           path = "/home";
+        };
+
+        network = {
+          format = "{ifname}";
+          format-wifi = "{essid} ({signalStrength}%) ";
+          format-ethernet = "{ifname} ";
+          format-disconnected = "";
+          tooltip-format = "{ifname}";
+          tooltip-format-wifi = "{essid} ({signalStrength}%) ";
+          tooltip-format-ethernet = "{ifname} ";
+          tooltip-format-disconnected = "Disconnected";
+          max-length = 50;
         };
       };
     };
