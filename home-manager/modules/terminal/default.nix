@@ -18,6 +18,7 @@
     sweethome3d.application
     flutter
     terraform-ls # For nvim-lspconfig
+    age
   ];
 
   services.ssh-agent.enable = true;

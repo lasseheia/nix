@@ -8,12 +8,16 @@
 
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
     nixos-hardware,
     nixpkgs,
     home-manager,
+    sops-nix,
     ...
   }: {
     nixosConfigurations = {
@@ -40,6 +44,7 @@
           ./nixos/modules/obs
           ./nixos/modules/steam
           ./nixos/modules/lutris
+          sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
