@@ -53,6 +53,7 @@ The script performs the following actions:
 │       ├── browser
 │       ├── hyprland
 │       ├── terminal
+│       ├── virtualization
 │       ├── waybar
 │       ├── waybar-desktop
 │       └── waybar-laptop
