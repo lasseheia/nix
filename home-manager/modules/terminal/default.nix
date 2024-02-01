@@ -127,6 +127,7 @@
     '';
     plugins = with pkgs.vimPlugins; [
       copilot-vim
+      vim-fugitive
       # nvim-tree
       {
         plugin = nvim-tree-lua;
