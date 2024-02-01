@@ -38,7 +38,6 @@
           ./nixos/modules/lvm
           ./nixos/base
           ./nixos/modules/boot
-          ./nixos/modules/nvidia
           ./nixos/modules/virtualization
           ./nixos/modules/hyprland
           ./nixos/modules/obs
