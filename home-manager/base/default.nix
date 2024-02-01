@@ -12,6 +12,11 @@
     openconnect
     signal-desktop
     killall
+    terraform
+    ledger-live-desktop
+    yubikey-manager-qt
+    upscayl
+    mullvad
   ];
 
   imports = [
