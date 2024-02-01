@@ -53,6 +53,7 @@
                 ./home-manager/modules/hyprland
                 ./home-manager/modules/waybar-desktop
                 ./home-manager/modules/browser
+                ./home-manager/modules/virtualization
               ];
             };
           }
