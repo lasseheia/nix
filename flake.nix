@@ -14,12 +14,15 @@
   };
 
   outputs = {
+    self,
     nixos-hardware,
     nixpkgs,
     home-manager,
     sops-nix,
     ...
-  }: {
+  } @ inputs: let
+      inherit (self) outputs;
+  in {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -84,6 +87,28 @@
                 ./home-manager/modules/hyprland
                 ./home-manager/modules/waybar-laptop
                 ./home-manager/modules/browser
+              ];
+            };
+          }
+        ];
+      };
+      wsl = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          {
+            networking.hostName = "wsl";
+          }
+          ./nixos/base
+          ./nixos/modules/wsl
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.lasse = {
+              imports = [
+                ./home-manager/base
               ];
             };
           }
