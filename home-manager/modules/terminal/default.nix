@@ -19,6 +19,12 @@
     flutter
     terraform-ls # For nvim-lspconfig
     age
+    hugo
+    rustc
+    cargo
+    kubeseal
+    fluxcd
+    ipcalc
   ];
 
   services.ssh-agent.enable = true;
