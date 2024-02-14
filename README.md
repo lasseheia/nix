@@ -72,8 +72,15 @@ The script performs the following actions:
 │       ├── obs
 │       ├── steam
 │       └── virtualization
-└── scripts
-    └── install.sh
+├── scripts
+│   └── install.sh
+└── wallpapers
+    ├── wallhaven-3lyrvy_3840x1600.png
+    ├── wallhaven-7pm8yo.jpg
+    ├── wallhaven-d62r9g_3840x1600.png
+    ├── wallhaven-gpvr6q_3840x1600.png
+    ├── wallhaven-gpvrwe_3840x1600.png
+    └── wallhaven-jxr2pw_3840x1600.png
 ```
 <!--END_SECTION:tree-->
 
