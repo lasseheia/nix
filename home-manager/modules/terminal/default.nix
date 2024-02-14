@@ -18,6 +18,8 @@
     sweethome3d.application
     flutter
     terraform-ls # For nvim-lspconfig
+    typescript # For nvim-lspconfig
+    nodePackages.typescript-language-server # For nvim-lspconfig
     age
     hugo
     rustc
@@ -172,6 +174,7 @@
           lua <<EOF
           require'lspconfig'.dartls.setup{}
           require'lspconfig'.terraformls.setup{}
+          require'lspconfig'.tsserver.setup{}
           EOF
         '';
       }
