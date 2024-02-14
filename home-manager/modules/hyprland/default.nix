@@ -6,12 +6,23 @@
   };
 
   home.packages = with pkgs; [
-    swww
     lxqt.lxqt-policykit
     wl-clipboard # for cliphist
   ];
 
   services.dunst.enable = true;
+
+  programs.wpaperd = {
+    enable = true;
+    settings = {
+      default = {
+        path = "/home/lasse/git/github/lasseheia/nix/wallpapers";
+        duration = "30m";
+        apply-shadow = true;
+        sorting = "random";
+      };
+    };
+  };
 
   programs.wofi = {
     enable = true;
@@ -130,7 +141,6 @@
     settings = {
       monitor = ",preferred,auto,1";
       exec-once = [
-        "swww init && swww img /home/lasse/Downloads/e6631e9c-1718-435e-a37f-899482313bfe.webp"
         "waybar"
         "dunst"
         "lxqt-policykit-agent"
