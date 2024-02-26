@@ -28,6 +28,7 @@
     kubeseal
     fluxcd
     ipcalc
+    yaml-language-server # For nvim-lspconfig
   ];
 
   services.ssh-agent.enable = true;
@@ -181,6 +182,7 @@
           require'lspconfig'.dartls.setup{}
           require'lspconfig'.terraformls.setup{}
           require'lspconfig'.tsserver.setup{}
+          require'lspconfig'.yamlls.setup{}
           EOF
         '';
       }
