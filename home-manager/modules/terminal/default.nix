@@ -19,6 +19,7 @@
     flutter
     terraform-ls # For nvim-lspconfig
     typescript # For nvim-lspconfig
+    nodePackages.typescript
     nodePackages.typescript-language-server # For nvim-lspconfig
     age
     hugo
