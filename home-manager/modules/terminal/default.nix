@@ -29,6 +29,7 @@
     fluxcd
     ipcalc
     yaml-language-server # For nvim-lspconfig
+    act
   ];
 
   services.ssh-agent.enable = true;
