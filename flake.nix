@@ -40,7 +40,6 @@
           ./nixos/modules/boot
           ./nixos/modules/virtualization
           ./nixos/modules/hyprland
-          ./nixos/modules/obs
           ./nixos/modules/steam
           ./nixos/modules/lutris
           sops-nix.nixosModules.sops
