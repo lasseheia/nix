@@ -141,6 +141,7 @@
     settings = {
       monitor = ",preferred,auto,1";
       exec-once = [
+        "wpaperd"
         "waybar"
         "dunst"
         "lxqt-policykit-agent"
@@ -195,6 +196,9 @@
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
       ];
+      misc = {
+        disable_hyprland_logo	= true;
+      };
     };
   };
 

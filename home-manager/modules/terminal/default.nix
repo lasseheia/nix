@@ -70,6 +70,9 @@
   programs.kitty = {
     enable = true;
     theme = "GitHub Dark Dimmed";
+    settings = {
+      background_opacity = "0.8";
+    };
   };
 
   programs.starship = {
@@ -132,6 +135,8 @@
       set expandtab
       set encoding=utf-8
       set clipboard+=unnamedplus
+      highlight Normal ctermbg=none
+      highlight NonText ctermbg=none
     '';
     plugins = with pkgs.vimPlugins; [
       copilot-vim
