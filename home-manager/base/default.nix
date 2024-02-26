@@ -15,7 +15,6 @@
     terraform
     ledger-live-desktop
     yubikey-manager-qt
-    upscayl
     mullvad
   ];
 
