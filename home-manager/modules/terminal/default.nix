@@ -202,6 +202,13 @@
       commit.gpgsign = true;
       gpg.format = "ssh";
       user.signingkey = "~/.ssh/id_ed25519.pub";
+      rerere.enabled = true;
+      column.ui = "auto";
+      branch.sort = "-committerdate";
+      core.pager = "cat";
+      maintenance.auto = true;
+      core.untrackedcache = true;
+      core.fsmonitor = true;
     };
   };
 
