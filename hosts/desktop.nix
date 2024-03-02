@@ -15,7 +15,6 @@
     ../nixos/modules/lvm
     ../nixos/base
     ../nixos/modules/boot
-    ../nixos/modules/virtualization
     ../nixos/modules/hyprland
     ../nixos/modules/steam
     ../nixos/modules/lutris
@@ -28,9 +27,9 @@
           ../home-manager/modules/hyprland
           ../home-manager/modules/waybar-desktop
           ../home-manager/modules/browser
-          ../home-manager/modules/virtualization
         ];
       };
     }
+    ../modules/virtualization
   ];
 }

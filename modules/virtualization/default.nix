@@ -30,4 +30,8 @@
   systemd.tmpfiles.rules = [
     "f /dev/shm/looking-glass 0660 1000 kvm -"
   ];
+
+  home-manager.users.lasse = {
+    programs.looking-glass-client.enable = true;
+  };
 }
