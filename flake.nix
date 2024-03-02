@@ -20,12 +20,12 @@
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = attrs;
-        modules = [ ./hosts/desktop ];
+        modules = [ ./hosts/desktop.nix ];
       };
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = attrs;
-        modules = [ ./hosts/laptop ];
+        modules = [ ./hosts/laptop.nix ];
       };
     };
   };
