@@ -64,7 +64,9 @@ The script performs the following actions:
 ├── modules
 │   ├── hyprland
 │   │   ├── home-manager.nix
-│   │   └── nixos.nix
+│   │   ├── hyprland.conf
+│   │   ├── nixos.nix
+│   │   └── wofi.css
 │   └── virtualization
 ├── nixos
 │   ├── base
