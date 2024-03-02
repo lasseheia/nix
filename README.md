@@ -56,13 +56,14 @@ The script performs the following actions:
 │       │   ├── git.nix
 │       │   ├── neovim.nix
 │       │   └── tmux.nix
-│       ├── virtualization
 │       ├── waybar
 │       ├── waybar-desktop
 │       └── waybar-laptop
 ├── hosts
 │   ├── desktop.nix
 │   └── laptop.nix
+├── modules
+│   └── virtualization
 ├── nixos
 │   ├── base
 │   └── modules
@@ -76,8 +77,7 @@ The script performs the following actions:
 │       ├── lvm
 │       ├── nvidia
 │       ├── obs
-│       ├── steam
-│       └── virtualization
+│       └── steam
 ├── scripts
 │   └── install.sh
 └── wallpapers
