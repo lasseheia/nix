@@ -57,6 +57,9 @@ The script performs the following actions:
 │       ├── waybar
 │       ├── waybar-desktop
 │       └── waybar-laptop
+├── hosts
+│   ├── desktop
+│   └── laptop
 ├── nixos
 │   ├── base
 │   └── modules
