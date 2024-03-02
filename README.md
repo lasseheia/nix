@@ -58,8 +58,8 @@ The script performs the following actions:
 │       ├── waybar-desktop
 │       └── waybar-laptop
 ├── hosts
-│   ├── desktop
-│   └── laptop
+│   ├── desktop.nix
+│   └── laptop.nix
 ├── nixos
 │   ├── base
 │   └── modules
