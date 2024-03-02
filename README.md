@@ -51,7 +51,6 @@ The script performs the following actions:
 │   ├── base
 │   └── modules
 │       ├── browser
-│       ├── hyprland
 │       ├── terminal
 │       │   ├── git.nix
 │       │   ├── neovim.nix
@@ -63,6 +62,7 @@ The script performs the following actions:
 │   ├── desktop.nix
 │   └── laptop.nix
 ├── modules
+│   ├── hyprland
 │   └── virtualization
 ├── nixos
 │   ├── base
@@ -71,7 +71,6 @@ The script performs the following actions:
 │       ├── amd-gpu
 │       ├── bluetooth
 │       ├── boot
-│       ├── hyprland
 │       ├── luks
 │       ├── lutris
 │       ├── lvm
