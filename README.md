@@ -63,6 +63,8 @@ The script performs the following actions:
 │   └── laptop.nix
 ├── modules
 │   ├── hyprland
+│   │   ├── home-manager.nix
+│   │   └── nixos.nix
 │   └── virtualization
 ├── nixos
 │   ├── base
