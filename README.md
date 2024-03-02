@@ -53,6 +53,9 @@ The script performs the following actions:
 │       ├── browser
 │       ├── hyprland
 │       ├── terminal
+│       │   ├── git.nix
+│       │   ├── neovim.nix
+│       │   └── tmux.nix
 │       ├── virtualization
 │       ├── waybar
 │       ├── waybar-desktop
