@@ -15,7 +15,6 @@
     ../nixos/modules/lvm
     ../nixos/base
     ../nixos/modules/boot
-    ../nixos/modules/hyprland
     ../nixos/modules/steam
     ../nixos/modules/lutris
     inputs.home-manager.nixosModules.home-manager {
@@ -24,12 +23,12 @@
       home-manager.users.lasse = {
         imports = [
           ../home-manager/base
-          ../home-manager/modules/hyprland
           ../home-manager/modules/waybar-desktop
           ../home-manager/modules/browser
         ];
       };
     }
     ../modules/virtualization
+    ../modules/hyprland
   ];
 }

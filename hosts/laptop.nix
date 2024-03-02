@@ -13,18 +13,17 @@
     ../nixos/base
     ../nixos/modules/boot
     ../nixos/modules/bluetooth
-    ../nixos/modules/hyprland
     inputs.home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users.lasse = {
         imports = [
           ../home-manager/base
-          ../home-manager/modules/hyprland
           ../home-manager/modules/waybar-laptop
           ../home-manager/modules/browser
         ];
       };
     }
+    ../modules/hyprland
   ];
 }
