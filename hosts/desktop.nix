@@ -1,4 +1,9 @@
-{ nixos-hardware, home-manager, ... }:
+{
+  nixos-hardware,
+  home-manager,
+  ...
+}:
+
 {
   networking.hostName = "desktop";
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" ];
