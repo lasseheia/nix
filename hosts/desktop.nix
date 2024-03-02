@@ -1,8 +1,4 @@
-{
-  nixos-hardware,
-  home-manager,
-  ...
-}:
+{ inputs, ... }:
 
 {
   networking.hostName = "desktop";
@@ -11,9 +7,9 @@
   boot.kernelModules = [ "kvm-amd" ];
 
   imports = [
-    nixos-hardware.nixosModules.common-pc
-    nixos-hardware.nixosModules.common-pc-ssd
-    nixos-hardware.nixosModules.common-cpu-amd
+    inputs.nixos-hardware.nixosModules.common-pc
+    inputs.nixos-hardware.nixosModules.common-pc-ssd
+    inputs.nixos-hardware.nixosModules.common-cpu-amd
     ../nixos/modules/amd-cpu
     ../nixos/modules/luks
     ../nixos/modules/lvm
@@ -23,7 +19,7 @@
     ../nixos/modules/hyprland
     ../nixos/modules/steam
     ../nixos/modules/lutris
-    home-manager.nixosModules.home-manager {
+    inputs.home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users.lasse = {

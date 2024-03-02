@@ -10,23 +10,18 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {
-    nixos-hardware,
-    nixpkgs,
-    home-manager,
-    ...
-  }@attrs: {
+  outputs = inputs:
+    let
+      createSystem = hostname:
+        inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./hosts/${hostname}.nix ];
+          specialArgs = { inherit inputs; };
+        };
+    in {
     nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = attrs;
-        modules = [ ./hosts/desktop.nix ];
-      };
-      laptop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = attrs;
-        modules = [ ./hosts/laptop.nix ];
-      };
+      desktop = createSystem "desktop";
+      laptop  = createSystem "laptop";
     };
   };
 }

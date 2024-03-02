@@ -1,8 +1,4 @@
-{
-  nixos-hardware,
-  home-manager,
-  ...
-}:
+{ inputs, ... }:
 
 {
   networking.hostName = "laptop";
@@ -11,14 +7,14 @@
   boot.kernelModules = [ "kvm-intel" ];
 
   imports = [
-    nixos-hardware.nixosModules.dell-latitude-7490
+    inputs.nixos-hardware.nixosModules.dell-latitude-7490
     ../nixos/modules/luks
     ../nixos/modules/lvm
     ../nixos/base
     ../nixos/modules/boot
     ../nixos/modules/bluetooth
     ../nixos/modules/hyprland
-    home-manager.nixosModules.home-manager {
+    inputs.home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users.lasse = {
