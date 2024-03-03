@@ -38,7 +38,7 @@ jobs:
         run: nix-env --file '<nixpkgs>' --install tree
 
       - name: Generate directory tree
-        run: tree -a --filesfirst --noreport -I '.git|LICENSE|README.md|tree.txt|default.nix' | tee tree.txt
+        run: tree -a --filesfirst --noreport -I '.git|LICENSE|README.md|tree.txt|default.nix|wallpapers' | tee tree.txt
 
       - name: Update README for tree
         run: |
