@@ -1,6 +1,12 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
+  imports = [ inputs.nixvirt.nixosModules.default ];
+
   users.users.lasse.extraGroups = [
     "libvirtd"
     "docker"
@@ -8,6 +14,7 @@
 
   virtualisation.docker.enable = true;
 
+  virtualisation.libvirt.enable = true;
   virtualisation.libvirtd = {
     enable = true;
     qemu = {
@@ -18,6 +25,17 @@
   };
 
   programs.virt-manager.enable = true;
+
+  virtualisation.libvirt.connections = {
+    "qemu:///system" = {
+      domains = [
+        {
+          definition = ./domains/gaming.xml;
+        }
+      ];
+    };
+  };
+
   services.spice-vdagentd.enable = true;
 
   # IOMMU
@@ -31,7 +49,5 @@
     "f /dev/shm/looking-glass 0660 1000 kvm -"
   ];
 
-  home-manager.users.lasse = {
-    programs.looking-glass-client.enable = true;
-  };
+  home-manager.users.lasse = ./home-manager.nix;
 }
