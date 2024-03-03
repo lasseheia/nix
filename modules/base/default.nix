@@ -1,8 +1,15 @@
-{ pkgs, lib, modulesPath, ... }:
+{
+  pkgs,
+  lib,
+  modulesPath,
+  inputs,
+  ...
+}:
 
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+    inputs.home-manager.nixosModules.default
   ];
 
   boot.loader = {
@@ -74,6 +81,9 @@
   # https://nixos.wiki/wiki/Bluetooth
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
 
   home-manager.users.lasse = ./home-manager.nix;
 }

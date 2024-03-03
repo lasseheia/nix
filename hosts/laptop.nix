@@ -11,9 +11,5 @@
     ../modules/base
     ../modules/terminal
     ../modules/hyprland
-    inputs.home-manager.nixosModules.home-manager {
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
-    }
   ];
 }
