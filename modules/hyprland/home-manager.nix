@@ -1,8 +1,12 @@
 {
+  osConfig,
   pkgs,
   ...
 }:
 
+let
+  hostname = osConfig.networking.hostName;
+in
 {
   home.packages = with pkgs; [
     lxqt.lxqt-policykit
@@ -64,7 +68,7 @@
 
   programs.waybar = {
     enable = true;
-    settings = builtins.fromJSON (builtins.readFile ./waybar.json);
-    style = builtins.readFile ./waybar.css;
+    settings = builtins.fromJSON (builtins.readFile ./waybar/${hostname}.json);
+    style = builtins.readFile ./waybar/${hostname}.css;
   };
 }
