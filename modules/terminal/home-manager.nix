@@ -32,6 +32,7 @@
     ripgrep # For nvim-telescope
     terraform-ls # For nvim-lspconfig
     typescript # For nvim-lspconfig
+    nixd # For nvim-lspconfig
     nodePackages.typescript-language-server # For nvim-lspconfig
     yaml-language-server # For nvim-lspconfig
   ];
