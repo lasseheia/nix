@@ -129,8 +129,8 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-    extraConfig = builtins.readFile ./vimrc;
-    extraLuaConfig = builtins.readFile ./init.lua;
+    extraConfig = builtins.readFile ./neovim/vimrc;
+    extraLuaConfig = builtins.readFile ./neovim/init.lua;
     plugins = with pkgs.vimPlugins; [
       copilot-vim
       vim-fugitive
