@@ -51,10 +51,6 @@ The script performs the following actions:
 │   ├── base
 │   └── modules
 │       ├── browser
-│       ├── terminal
-│       │   ├── git.nix
-│       │   ├── neovim.nix
-│       │   └── tmux.nix
 │       ├── waybar
 │       ├── waybar-desktop
 │       └── waybar-laptop
@@ -68,6 +64,12 @@ The script performs the following actions:
 │   │   ├── waybar.css
 │   │   ├── waybar.json
 │   │   └── wofi.css
+│   ├── terminal
+│   │   ├── home-manager.nix
+│   │   ├── init.lua
+│   │   ├── tmux.conf
+│   │   ├── vimrc
+│   │   └── zshrc
 │   └── virtualization
 ├── nixos
 │   ├── base
