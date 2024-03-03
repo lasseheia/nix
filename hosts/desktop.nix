@@ -28,6 +28,7 @@
       };
     }
     ../modules/virtualization
+    ../modules/terminal
     ../modules/hyprland
   ];
 }

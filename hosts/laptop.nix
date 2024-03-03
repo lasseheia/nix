@@ -24,6 +24,7 @@
         ];
       };
     }
+    ../modules/terminal
     ../modules/hyprland
   ];
 }

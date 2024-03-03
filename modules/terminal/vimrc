@@ -1,0 +1,17 @@
+colorscheme slate
+set number
+set relativenumber
+set numberwidth=1
+highlight LineNr ctermfg=White
+set mouse=
+set autoindent
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set smarttab
+set smartcase
+set expandtab
+set encoding=utf-8
+set clipboard+=unnamedplus
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
