@@ -48,7 +48,6 @@ The script performs the following actions:
 │       ├── check-flake.yaml
 │       └── update-readme.yaml
 ├── home-manager
-│   ├── base
 │   └── modules
 │       ├── browser
 │       ├── waybar
@@ -58,6 +57,8 @@ The script performs the following actions:
 │   ├── desktop.nix
 │   └── laptop.nix
 ├── modules
+│   ├── base
+│   │   └── home-manager.nix
 │   ├── hyprland
 │   │   ├── home-manager.nix
 │   │   ├── hyprland.conf
@@ -72,7 +73,6 @@ The script performs the following actions:
 │   │   └── zshrc
 │   └── virtualization
 ├── nixos
-│   ├── base
 │   └── modules
 │       ├── amd-cpu
 │       ├── amd-gpu
