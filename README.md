@@ -47,11 +47,6 @@ The script performs the following actions:
 │   └── workflows
 │       ├── check-flake.yaml
 │       └── update-readme.yaml
-├── home-manager
-│   └── modules
-│       ├── waybar
-│       ├── waybar-desktop
-│       └── waybar-laptop
 ├── hosts
 │   ├── desktop.nix
 │   └── laptop.nix
@@ -61,9 +56,12 @@ The script performs the following actions:
 │   ├── hyprland
 │   │   ├── home-manager.nix
 │   │   ├── hyprland.conf
-│   │   ├── waybar.css
-│   │   ├── waybar.json
-│   │   └── wofi.css
+│   │   ├── wofi.css
+│   │   └── waybar
+│   │       ├── desktop.css
+│   │       ├── desktop.json
+│   │       ├── laptop.css
+│   │       └── laptop.json
 │   ├── terminal
 │   │   ├── home-manager.nix
 │   │   ├── init.lua
