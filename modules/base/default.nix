@@ -5,6 +5,42 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
+
+  # Limit the number of generations to keep
+  boot.loader.systemd-boot.configurationLimit = 10;
+
+  # Install the latest linux kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  boot.initrd.luks.devices = {
+    root = {
+      device = "/dev/nvme0n1p2";
+      preLVM = true;
+      allowDiscards = true;
+    };
+  };
+
+  fileSystems = {
+    "/boot" = {
+      device = "/dev/nvme0n1p1";
+      fsType = "vfat";
+    };
+    "/" = {
+      device = "/dev/vg/root";
+      fsType = "ext4";
+    };
+    "/home" = {
+      device = "/dev/vg/home";
+      fsType = "ext4";
+    };
+  };
+
+  swapDevices = [ ];
+
   networking.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
@@ -34,6 +70,10 @@
   };
 
   security.polkit.enable = true;
+
+  # https://nixos.wiki/wiki/Bluetooth
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   home-manager.users.lasse = ./home-manager.nix;
 }

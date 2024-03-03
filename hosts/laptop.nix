@@ -8,16 +8,12 @@
 
   imports = [
     inputs.nixos-hardware.nixosModules.dell-latitude-7490
-    ../nixos/modules/luks
-    ../nixos/modules/lvm
-    ../nixos/modules/boot
-    ../nixos/modules/bluetooth
+    ../modules/base
+    ../modules/terminal
+    ../modules/hyprland
     inputs.home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
     }
-    ../modules/base
-    ../modules/terminal
-    ../modules/hyprland
   ];
 }
