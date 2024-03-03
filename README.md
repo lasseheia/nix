@@ -68,17 +68,14 @@ The script performs the following actions:
 │   │   ├── zshrc
 │   │   └── neovim
 │   │       ├── init.lua
-│   │       └── vimrc
+│   │       ├── vimrc
+│   │       └── plugins
+│   │           ├── nvim-lspconfig.lua
+│   │           ├── nvim-tree-lua.lua
+│   │           └── telescope-nvim.lua
 │   └── virtualization
-├── scripts
-│   └── install.sh
-└── wallpapers
-    ├── wallhaven-3lyrvy_3840x1600.png
-    ├── wallhaven-7pm8yo.jpg
-    ├── wallhaven-d62r9g_3840x1600.png
-    ├── wallhaven-gpvr6q_3840x1600.png
-    ├── wallhaven-gpvrwe_3840x1600.png
-    └── wallhaven-jxr2pw_3840x1600.png
+└── scripts
+    └── install.sh
 ```
 <!--END_SECTION:tree-->
 
