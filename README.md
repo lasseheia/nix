@@ -69,13 +69,6 @@ The script performs the following actions:
 │   │   ├── vimrc
 │   │   └── zshrc
 │   └── virtualization
-├── nixos
-│   └── modules
-│       ├── amd-gpu
-│       ├── lutris
-│       ├── nvidia
-│       ├── obs
-│       └── steam
 ├── scripts
 │   └── install.sh
 └── wallpapers
