@@ -64,10 +64,11 @@ The script performs the following actions:
 │   │       └── laptop.json
 │   ├── terminal
 │   │   ├── home-manager.nix
-│   │   ├── init.lua
 │   │   ├── tmux.conf
-│   │   ├── vimrc
-│   │   └── zshrc
+│   │   ├── zshrc
+│   │   └── neovim
+│   │       ├── init.lua
+│   │       └── vimrc
 │   └── virtualization
 ├── scripts
 │   └── install.sh
