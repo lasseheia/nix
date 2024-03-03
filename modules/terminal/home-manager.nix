@@ -137,45 +137,21 @@
       # nvim-tree
       {
         plugin = nvim-tree-lua;
-        config = ''
-          lua <<EOF
-            require'nvim-tree'.setup {}
-          EOF
-
-          nnoremap <C-n> :NvimTreeToggle<CR>
-          autocmd BufEnter * if winnr('$') == 1 && exists('b:term_type') && b:term_type == 'tree' | quit | endif
-        '';
+        type = "lua";
+        config = builtins.readFile ./neovim/plugins/nvim-tree-lua.lua;
       }
       # Telescope
       plenary-nvim
       {
         plugin = telescope-nvim;
-        config = ''
-          lua << EOF
-            require('telescope').setup {
-              pickers = {
-                find_files = {
-                  find_command = { 'rg', '--files', '--hidden', '-g', '!.git/*' }
-                }
-              }
-            }
-          EOF
-
-          nnoremap <C-f> :Telescope find_files<CR>
-          nnoremap <C-g> :Telescope live_grep<CR>
-        '';
+        type = "lua";
+        config = builtins.readFile ./neovim/plugins/telescope-nvim.lua;
       }
       # LSP
       {
         plugin = nvim-lspconfig;
-        config = ''
-          lua <<EOF
-          require'lspconfig'.dartls.setup{}
-          require'lspconfig'.terraformls.setup{}
-          require'lspconfig'.tsserver.setup{}
-          require'lspconfig'.yamlls.setup{}
-          EOF
-        '';
+        type = "lua";
+        config = builtins.readFile ./neovim/plugins/nvim-lspconfig.lua;
       }
       nvim-cmp
     ];
