@@ -10,7 +10,6 @@
     inputs.nixos-hardware.nixosModules.dell-latitude-7490
     ../nixos/modules/luks
     ../nixos/modules/lvm
-    ../nixos/base
     ../nixos/modules/boot
     ../nixos/modules/bluetooth
     inputs.home-manager.nixosModules.home-manager {
@@ -18,12 +17,12 @@
       home-manager.useUserPackages = true;
       home-manager.users.lasse = {
         imports = [
-          ../home-manager/base
           ../home-manager/modules/waybar-laptop
           ../home-manager/modules/browser
         ];
       };
     }
+    ../modules/base
     ../modules/terminal
     ../modules/hyprland
   ];

@@ -13,7 +13,6 @@
     ../nixos/modules/amd-cpu
     ../nixos/modules/luks
     ../nixos/modules/lvm
-    ../nixos/base
     ../nixos/modules/boot
     ../nixos/modules/steam
     ../nixos/modules/lutris
@@ -22,11 +21,11 @@
       home-manager.useUserPackages = true;
       home-manager.users.lasse = {
         imports = [
-          ../home-manager/base
           ../home-manager/modules/browser
         ];
       };
     }
+    ../modules/base
     ../modules/virtualization
     ../modules/terminal
     ../modules/hyprland
