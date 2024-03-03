@@ -65,7 +65,6 @@ The script performs the following actions:
 │   ├── hyprland
 │   │   ├── home-manager.nix
 │   │   ├── hyprland.conf
-│   │   ├── nixos.nix
 │   │   ├── waybar.css
 │   │   ├── waybar.json
 │   │   └── wofi.css
