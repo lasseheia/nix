@@ -71,13 +71,8 @@ The script performs the following actions:
 │   └── virtualization
 ├── nixos
 │   └── modules
-│       ├── amd-cpu
 │       ├── amd-gpu
-│       ├── bluetooth
-│       ├── boot
-│       ├── luks
 │       ├── lutris
-│       ├── lvm
 │       ├── nvidia
 │       ├── obs
 │       └── steam
