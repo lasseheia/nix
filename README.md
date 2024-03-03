@@ -49,7 +49,6 @@ The script performs the following actions:
 │       └── update-readme.yaml
 ├── home-manager
 │   └── modules
-│       ├── browser
 │       ├── waybar
 │       ├── waybar-desktop
 │       └── waybar-laptop
