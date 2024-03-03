@@ -11,6 +11,8 @@
   home.packages = with pkgs; [
     lxqt.lxqt-policykit
     wl-clipboard # for cliphist
+    pamixer
+    pavucontrol
   ];
 
   services.dunst.enable = true;
@@ -57,4 +59,10 @@
   programs.zsh.initExtraFirst = ''
     [[ "$(tty)" = "/dev/tty1" ]] && exec Hyprland
   '';
+
+  programs.waybar = {
+    enable = true;
+    settings = builtins.fromJSON (builtins.readFile ./waybar.json);
+    style = builtins.readFile ./waybar.css;
+  };
 }

@@ -23,7 +23,6 @@
       home-manager.users.lasse = {
         imports = [
           ../home-manager/base
-          ../home-manager/modules/waybar-desktop
           ../home-manager/modules/browser
         ];
       };
