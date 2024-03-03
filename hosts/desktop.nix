@@ -19,11 +19,6 @@
     inputs.home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.users.lasse = {
-        imports = [
-          ../home-manager/modules/browser
-        ];
-      };
     }
     ../modules/base
     ../modules/virtualization

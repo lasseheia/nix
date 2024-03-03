@@ -4,16 +4,18 @@
 }:
 
 {
-  home.sessionVariables = {
-    XDG_CURRENT_DESKTOP = "hyprland";
-  };
-
   home.packages = with pkgs; [
     lxqt.lxqt-policykit
     wl-clipboard # for cliphist
     pamixer
     pavucontrol
+    brave
   ];
+
+  home.sessionVariables = {
+    XDG_CURRENT_DESKTOP = "hyprland";
+    BROWSER = "brave";
+  };
 
   services.dunst.enable = true;
 
