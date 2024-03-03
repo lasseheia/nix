@@ -74,6 +74,9 @@ The script performs the following actions:
 │   │           ├── nvim-tree-lua.lua
 │   │           └── telescope-nvim.lua
 │   └── virtualization
+│       ├── home-manager.nix
+│       └── domains
+│           └── gaming.xml
 └── scripts
     └── install.sh
 ```
