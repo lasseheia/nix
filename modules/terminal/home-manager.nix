@@ -155,6 +155,11 @@
         config = builtins.readFile ./neovim/plugins/nvim-lspconfig.lua;
       }
       nvim-cmp
+      {
+        plugin = auto-session;
+        type = "lua";
+        config = builtins.readFile ./neovim/plugins/auto-session.lua;
+      }
     ];
   };
 }
