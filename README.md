@@ -70,6 +70,7 @@ The script performs the following actions:
 │   │       ├── init.lua
 │   │       ├── vimrc
 │   │       └── plugins
+│   │           ├── auto-session.lua
 │   │           ├── nvim-lspconfig.lua
 │   │           ├── nvim-tree-lua.lua
 │   │           └── telescope-nvim.lua
