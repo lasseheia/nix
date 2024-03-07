@@ -78,6 +78,8 @@ The script performs the following actions:
 │       ├── home-manager.nix
 │       └── domains
 │           └── gaming.xml
+├── pkgs
+│   └── bicep-ls.nix
 └── scripts
     └── install.sh
 ```
