@@ -1,5 +1,11 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
+let
+  bicep-ls = pkgs.callPackage  ../../pkgs/bicep-ls.nix { inherit pkgs; };
+in
 {
   home.packages = with pkgs; [
     kitty
@@ -35,6 +41,8 @@
     nixd # For nvim-lspconfig
     nodePackages.typescript-language-server # For nvim-lspconfig
     yaml-language-server # For nvim-lspconfig
+    dotnet-sdk_8 # For bicep-ls
+    bicep-ls
   ];
 
   services.ssh-agent.enable = true;
@@ -131,7 +139,9 @@
     vimAlias = true;
     vimdiffAlias = true;
     extraConfig = builtins.readFile ./neovim/vimrc;
-    extraLuaConfig = builtins.readFile ./neovim/init.lua;
+    extraLuaConfig = ''
+      local bicep_lsp_bin = "${bicep-ls}/Bicep.LangServer.dll"
+    '' + builtins.readFile ./neovim/init.lua;
     plugins = with pkgs.vimPlugins; [
       copilot-vim
       vim-fugitive

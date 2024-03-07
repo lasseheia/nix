@@ -28,3 +28,14 @@ vim.opt.encoding = "utf-8"
 
 -- Clipboard
 vim.opt.clipboard:append("unnamedplus")
+
+-- Auto command to set filetype for Bicep files
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+  pattern = "*.bicep",
+  command = "set filetype=bicep"
+})
+
+-- Configuration for the Bicep language server
+require('lspconfig').bicep.setup{
+  cmd = { "dotnet", bicep_lsp_bin },
+}
