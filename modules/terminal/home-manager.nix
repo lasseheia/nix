@@ -4,7 +4,7 @@
 }:
 
 let
-  bicep-ls = pkgs.callPackage  ../../pkgs/bicep-ls.nix { inherit pkgs; };
+  bicep-ls = pkgs.callPackage ../../pkgs/bicep-ls.nix { inherit pkgs; };
 in
 {
   home.packages = with pkgs; [
@@ -137,7 +137,23 @@ in
     extraLuaConfig = ''
       local bicep_lsp_bin = "${bicep-ls}/Bicep.LangServer.dll"
     '' + builtins.readFile ./neovim/init.lua;
-    plugins = with pkgs.vimPlugins; [
+    plugins = with pkgs.vimPlugins;
+      let
+        cmp = [
+          {
+            plugin = nvim-cmp;
+            type = "lua";
+            config = builtins.readFile ./neovim/plugins/nvim-cmp.lua;
+          }
+          cmp-nvim-lsp
+          cmp-buffer
+          cmp-path
+          cmp-cmdline
+          nvim-cmp
+          cmp-vsnip
+          vim-vsnip
+        ];
+      in [
       {
         plugin = copilot-vim;
       }
@@ -157,15 +173,10 @@ in
         config = builtins.readFile ./neovim/plugins/nvim-lspconfig.lua;
       }
       #{
-      #  plugin = nvim-cmp;
-      #  type = "lua";
-      #  config = builtins.readFile ./neovim/plugins/nvim-cmp.lua;
-      #}
-      #{
       #  plugin = auto-session;
       #  type = "lua";
       #  config = builtins.readFile ./neovim/plugins/auto-session.lua;
       #}
-    ];
+    ] ++ cmp;
   };
 }
