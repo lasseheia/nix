@@ -36,6 +36,9 @@ in
     terraform
     nodejs # Required for nvim-copilot
     ripgrep # For nvim-telescope
+    fd # For nvim-telescope
+    tree-sitter # For nvim-treesitter
+    gcc # For nvim-lspconfig
     terraform-ls # For nvim-lspconfig
     typescript # For nvim-lspconfig
     nixd # For nvim-lspconfig
@@ -153,6 +156,14 @@ in
           cmp-vsnip
           vim-vsnip
         ];
+        telescope = [
+        {
+          plugin = telescope-nvim;
+          type = "lua";
+          config = builtins.readFile ./neovim/plugins/telescope-nvim.lua;
+        }
+        nvim-treesitter
+        ];
       in [
       {
         plugin = copilot-vim;
@@ -161,11 +172,6 @@ in
         plugin = nvim-tree-lua;
         type = "lua";
         config = builtins.readFile ./neovim/plugins/nvim-tree-lua.lua;
-      }
-      {
-        plugin = telescope-nvim;
-        type = "lua";
-        config = builtins.readFile ./neovim/plugins/telescope-nvim.lua;
       }
       {
         plugin = nvim-lspconfig;
@@ -177,6 +183,6 @@ in
       #  type = "lua";
       #  config = builtins.readFile ./neovim/plugins/auto-session.lua;
       #}
-    ] ++ cmp;
+    ] ++ telescope ++ cmp;
   };
 }
