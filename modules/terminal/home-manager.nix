@@ -61,12 +61,7 @@ in
 
   services.copyq.enable = true;
 
-  programs.autojump = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-  programs.thefuck = {
+  programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
   };
