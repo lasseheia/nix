@@ -71,6 +71,7 @@ The script performs the following actions:
 │   │       ├── vimrc
 │   │       └── plugins
 │   │           ├── auto-session.lua
+│   │           ├── nvim-cmp.lua
 │   │           ├── nvim-lspconfig.lua
 │   │           ├── nvim-tree-lua.lua
 │   │           └── telescope-nvim.lua
