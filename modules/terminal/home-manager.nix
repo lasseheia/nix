@@ -138,33 +138,34 @@ in
       local bicep_lsp_bin = "${bicep-ls}/Bicep.LangServer.dll"
     '' + builtins.readFile ./neovim/init.lua;
     plugins = with pkgs.vimPlugins; [
-      copilot-vim
-      vim-fugitive
-      # nvim-tree
+      {
+        plugin = copilot-vim;
+      }
       {
         plugin = nvim-tree-lua;
         type = "lua";
         config = builtins.readFile ./neovim/plugins/nvim-tree-lua.lua;
       }
-      # Telescope
-      plenary-nvim
       {
         plugin = telescope-nvim;
         type = "lua";
         config = builtins.readFile ./neovim/plugins/telescope-nvim.lua;
       }
-      # LSP
       {
         plugin = nvim-lspconfig;
         type = "lua";
         config = builtins.readFile ./neovim/plugins/nvim-lspconfig.lua;
       }
-      nvim-cmp
-      {
-        plugin = auto-session;
-        type = "lua";
-        config = builtins.readFile ./neovim/plugins/auto-session.lua;
-      }
+      #{
+      #  plugin = nvim-cmp;
+      #  type = "lua";
+      #  config = builtins.readFile ./neovim/plugins/nvim-cmp.lua;
+      #}
+      #{
+      #  plugin = auto-session;
+      #  type = "lua";
+      #  config = builtins.readFile ./neovim/plugins/auto-session.lua;
+      #}
     ];
   };
 }
