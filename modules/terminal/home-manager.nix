@@ -54,6 +54,9 @@ in
     enable = true;
     enableAutosuggestions = true;
     initExtra = builtins.readFile ./zshrc;
+    oh-my-zsh = {
+      enable = true;
+    };
   };
 
   services.copyq.enable = true;
