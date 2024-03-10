@@ -54,12 +54,19 @@ in
     enable = true;
     enableAutosuggestions = true;
     initExtra = builtins.readFile ./zshrc;
-    shellAliases = {
-      ll = "ls -lah";
-    };
   };
 
   services.copyq.enable = true;
+
+  programs.eza = {
+    enable = true;
+    enableAliases = true;
+    icons = true;
+    git = true;
+    extraOptions = [
+      "--group-directories-first"
+    ];
+  };
 
   programs.zoxide = {
     enable = true;
