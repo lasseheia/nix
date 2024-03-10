@@ -1,3 +1,6 @@
+-- Hide the status line completely
+vim.opt.laststatus = 0
+
 -- Line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
