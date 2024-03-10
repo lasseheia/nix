@@ -57,9 +57,6 @@ in
     shellAliases = {
       ll = "ls -lah";
     };
-    oh-my-zsh = {
-      enable = true;
-    };
   };
 
   services.copyq.enable = true;
