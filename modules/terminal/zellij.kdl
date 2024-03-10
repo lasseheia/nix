@@ -1,4 +1,7 @@
+theme "catppuccin-frappe"
+
 keybinds  {
+
     shared_except "locked" {
       // NORMAL
       unbind "Ctrl n"
