@@ -1,0 +1,48 @@
+keybinds  {
+    shared_except "locked" {
+      // NORMAL
+      unbind "Ctrl n"
+      bind "Alt n" { SwitchToMode "Normal"; }
+
+      // LOCK
+      unbind "Ctrl g"
+      bind "Alt g" { SwitchToMode "locked"; }
+
+      // PANE
+      unbind "Ctrl p"
+      bind "Alt p" { SwitchToMode "pane"; }
+
+      // TAB
+      unbind "Ctrl t"
+      bind "Alt t" { SwitchToMode "tab"; }
+
+      // RESIZE
+      unbind "Ctrl n"
+      bind "Alt r" { SwitchToMode "resize"; }
+
+      // MOVE
+      unbind "Ctrl h"
+      bind "Alt m" { SwitchToMode "move"; }
+
+      // SEARCH
+      unbind "Ctrl s"
+      bind "Alt f" { SwitchToMode "search"; }
+
+      // SESSION
+      unbind "Ctrl o"
+      bind "Alt s" { SwitchToMode "session"; }
+
+      // QUIT
+      unbind "Ctrl q"
+      bind "Alt q" { Quit; }
+
+      // NEW PANES
+      unbind "Ctrl |"
+      bind "Alt |" { NewPane; }
+    }
+
+    locked {
+        unbind "Ctrl g"
+        bind "Alt g" { SwitchToMode "Normal"; }
+    }
+}

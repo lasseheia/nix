@@ -89,16 +89,10 @@ in
     };
   };
 
-  programs.tmux = {
-    enable = true;
-    shell = "${pkgs.zsh}/bin/zsh";
-    newSession = true;
-    clock24 = true;
-    baseIndex = 1;
-    prefix = "C-a";
-    keyMode = "vi";
-    escapeTime = 10;
-    extraConfig = builtins.readFile ./tmux.conf;
+  programs.zellij.enable = true;
+
+  xdg.configFile."zellij/config.kdl" = {
+    source = ./zellij.kdl;
   };
 
   programs.starship = {
