@@ -41,6 +41,8 @@ The script performs the following actions:
 │   └── workflows
 │       ├── check-flake.yaml
 │       └── update-readme.yaml
+├── docs
+│   └── manual-fixes.md
 ├── hosts
 │   ├── desktop.nix
 │   └── laptop.nix
