@@ -56,7 +56,7 @@ jobs:
       - name: Commit and push if changed
         run: |
           git add README.md
-          git diff --staged --quiet || git commit -m "Automatically update directory tree"
+          git diff --staged --quiet || git commit -m ":memo: (readme): Automatically update directory tree"
           git pull && git push
 
       - name: Generate flake output
@@ -78,6 +78,6 @@ jobs:
       - name: Commit and push if changed
         run: |
           git add README.md
-          git diff --staged --quiet || git commit -m "Automatically update flake output"
+          git diff --staged --quiet || git commit -m ":memo: (readme): Automatically update flake output"
           git pull && git push
 
