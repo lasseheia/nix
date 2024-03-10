@@ -22,7 +22,10 @@
       createSystem = hostname:
         inputs.nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./hosts/${hostname}.nix ];
+          modules = [
+            { networking.hostName = "${hostname}"; }
+            ./hosts/${hostname}.nix
+          ];
           specialArgs = { inherit inputs; };
         };
     in {
