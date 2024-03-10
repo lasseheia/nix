@@ -77,6 +77,8 @@ in
     ];
   };
 
+  programs.bat.enable = true;
+
   programs.kitty = {
     enable = true;
     theme = "GitHub Dark Dimmed";
@@ -118,7 +120,7 @@ in
       rerere.enabled = true;
       column.ui = "auto";
       branch.sort = "-committerdate";
-      core.pager = "cat";
+      core.pager = "bat";
       maintenance.auto = true;
       core.untrackedcache = true;
       core.fsmonitor = true;
