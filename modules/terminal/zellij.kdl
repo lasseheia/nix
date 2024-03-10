@@ -1,5 +1,7 @@
 theme "catppuccin-frappe"
 
+pane_frames false
+
 keybinds  {
 
     shared_except "locked" {
