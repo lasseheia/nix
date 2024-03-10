@@ -58,6 +58,8 @@ in
 
   services.copyq.enable = true;
 
+  programs.atuin.enable = true;
+
   programs.eza = {
     enable = true;
     enableAliases = true;
