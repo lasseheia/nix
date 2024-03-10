@@ -64,7 +64,7 @@ The script performs the following actions:
 │   │       └── laptop.json
 │   ├── terminal
 │   │   ├── home-manager.nix
-│   │   ├── tmux.conf
+│   │   ├── zellij.kdl
 │   │   ├── zshrc
 │   │   └── neovim
 │   │       ├── init.lua
