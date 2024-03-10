@@ -17,6 +17,7 @@ This repository contains scripts and configurations for installing NixOS with an
 │       ├── check-flake.yaml
 │       └── update-readme.yaml
 ├── docs
+│   ├── installation.md
 │   └── manual-fixes.md
 ├── hosts
 │   ├── desktop.nix
