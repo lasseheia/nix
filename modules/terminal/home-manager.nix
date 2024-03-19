@@ -166,12 +166,12 @@ in
           vim-vsnip
         ];
         telescope = [
-        {
-          plugin = telescope-nvim;
-          type = "lua";
-          config = builtins.readFile ./neovim/plugins/telescope-nvim.lua;
-        }
-        nvim-treesitter
+          {
+            plugin = telescope-nvim;
+            type = "lua";
+            config = builtins.readFile ./neovim/plugins/telescope-nvim.lua;
+          }
+          nvim-treesitter
         ];
       in [
       {
