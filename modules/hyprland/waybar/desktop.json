@@ -2,7 +2,7 @@
   "mainBar": {
     "layer": "top",
     "position": "top",
-    "modules-left": ["cpu", "memory", "custom/gpu-usage", "disk#root", "disk#home", "network"],
+    "modules-left": ["cpu", "memory", "disk#root", "disk#home", "network"],
     "modules-center": ["clock"],
     "modules-right": ["tray", "pulseaudio"],
     "clock": {
@@ -28,12 +28,6 @@
     "memory": {
       "interval": 5,
       "format": "Mem {}%"
-    },
-    "custom/gpu-usage": {
-      "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
-      "format": "GPU {}%",
-      "return-type": "",
-      "interval": 5
     },
     "disk#root": {
       "interval": 5,

@@ -21,10 +21,6 @@ window#waybar {
   color: #56B6C2;
 }
 
-#custom-gpu-usage {
-  color: #64C221;
-}
-
 #disk.root {
   color: #E5C07B;
 }
