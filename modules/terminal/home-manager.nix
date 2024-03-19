@@ -35,7 +35,7 @@ in
     killall
     terraform
     nodejs # Required for nvim-copilot
-    ripgrep # For nvim-telescope
+    ripgrep # For nvim-telescope and nvim-spectre
     fd # For nvim-telescope
     tree-sitter # For nvim-treesitter
     gcc # For nvim-lspconfig
@@ -186,6 +186,11 @@ in
         plugin = nvim-lspconfig;
         type = "lua";
         config = builtins.readFile ./neovim/plugins/nvim-lspconfig.lua;
+      }
+      {
+        plugin = nvim-spectre;
+        type = "lua";
+        config = builtins.readFile ./neovim/plugins/nvim-spectre.lua;
       }
       #{
       #  plugin = auto-session;
