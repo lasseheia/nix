@@ -45,6 +45,7 @@ This repository contains scripts and configurations for installing NixOS with an
 │   │           ├── auto-session.lua
 │   │           ├── nvim-cmp.lua
 │   │           ├── nvim-lspconfig.lua
+│   │           ├── nvim-spectre.lua
 │   │           ├── nvim-tree-lua.lua
 │   │           └── telescope-nvim.lua
 │   └── virtualization
