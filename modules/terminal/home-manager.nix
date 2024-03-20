@@ -176,6 +176,9 @@ in
         ];
       in [
       {
+        plugin = diffview-nvim;
+      }
+      {
         plugin = copilot-vim;
       }
       {
