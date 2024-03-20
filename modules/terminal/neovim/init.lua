@@ -1,3 +1,6 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 -- Hide the status line completely
 vim.opt.laststatus = 0
 

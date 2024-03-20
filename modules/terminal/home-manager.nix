@@ -23,6 +23,7 @@ in
     flutter
     nodePackages.typescript
     age
+    sops
     hugo
     rustc
     cargo
@@ -47,6 +48,7 @@ in
     dotnet-sdk_8 # For bicep-ls
     bicep-ls
     k9s
+    grimblast
   ];
 
   services.ssh-agent.enable = true;

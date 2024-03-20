@@ -21,8 +21,6 @@ in
     BROWSER = "brave";
   };
 
-  services.dunst.enable = true;
-
   programs.wpaperd = {
     enable = true;
     settings = {

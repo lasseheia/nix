@@ -10,6 +10,7 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     inputs.home-manager.nixosModules.default
+    inputs.sops-nix.nixosModules.default
   ];
 
   boot.loader = {
