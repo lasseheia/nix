@@ -46,6 +46,7 @@ in
     yaml-language-server # For nvim-lspconfig
     dotnet-sdk_8 # For bicep-ls
     bicep-ls
+    k9s
   ];
 
   services.ssh-agent.enable = true;
