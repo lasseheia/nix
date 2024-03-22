@@ -39,7 +39,7 @@
       laptop  = createSystem "laptop";
     };
     darwinConfigurations = {
-      macbook = inputs.nix-darwin.lib.darwinSystem {
+      lasseheiamacbook = inputs.nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [ ./hosts/macbook.nix ];
         specialArgs = { inherit inputs; };
