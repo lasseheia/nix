@@ -9,10 +9,6 @@
     inputs.home-manager.darwinModules.default
   ];
 
-  # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [
-    neovim
-  ];
 
   system.stateVersion = 4;
   nix.package = pkgs.nix;
@@ -21,4 +17,8 @@
 
   programs.zsh.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    neovim
+    yabai
+  ];
 }
