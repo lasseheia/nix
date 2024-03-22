@@ -6,6 +6,11 @@
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
 
+    nix-darwin = {
+      url = "github:lnl7/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,6 +37,13 @@
     nixosConfigurations = {
       desktop = createSystem "desktop";
       laptop  = createSystem "laptop";
+    };
+    darwinConfigurations = {
+      macbook = inputs.nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [ ./hosts/macbook.nix ];
+        specialArgs = { inherit inputs; };
+      };
     };
   };
 }
