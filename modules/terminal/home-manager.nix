@@ -45,6 +45,7 @@ in
     yaml-language-server # For nvim-lspconfig
     dotnet-sdk_8 # For bicep-ls
     bicep-ls
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Hack" "SourceCodePro" ]; })
   ];
 
   services.ssh-agent.enable = true;
