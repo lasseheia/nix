@@ -48,8 +48,6 @@ in
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Hack" "SourceCodePro" ]; })
   ];
 
-  services.ssh-agent.enable = true;
-
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
