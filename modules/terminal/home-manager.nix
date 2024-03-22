@@ -19,7 +19,6 @@ in
     kubelogin
     bitwarden-cli
     yarn
-    sweethome3d.application
     flutter
     nodePackages.typescript
     age
