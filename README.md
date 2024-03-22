@@ -21,7 +21,8 @@ This repository contains scripts and configurations for installing NixOS with an
 │   └── manual-fixes.md
 ├── hosts
 │   ├── desktop.nix
-│   └── laptop.nix
+│   ├── laptop.nix
+│   └── macbook.nix
 ├── modules
 │   ├── base
 │   │   └── home-manager.nix
