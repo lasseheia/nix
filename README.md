@@ -49,10 +49,12 @@ This repository contains scripts and configurations for installing NixOS with an
 │   │           ├── nvim-spectre.lua
 │   │           ├── nvim-tree-lua.lua
 │   │           └── telescope-nvim.lua
-│   └── virtualization
-│       ├── home-manager.nix
-│       └── domains
-│           └── gaming.xml
+│   ├── virtualization
+│   │   ├── home-manager.nix
+│   │   └── domains
+│   │       └── gaming.xml
+│   └── yabai
+│       └── yabairc
 ├── pkgs
 │   └── bicep-ls.nix
 └── scripts
