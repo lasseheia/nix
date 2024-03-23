@@ -21,4 +21,18 @@
     neovim
     yabai
   ];
+
+  users.users.lasse = {
+    name = "lasse";
+    home = "/Users/lasse";
+  };
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.lasse = { pkgs, ... }: {
+    home.stateVersion = "23.11";
+    imports = [
+      ../modules/terminal/home-manager.nix
+    ];
+  };
 }
