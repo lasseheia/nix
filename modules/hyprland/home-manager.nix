@@ -51,7 +51,7 @@ in
     style = builtins.readFile ./wofi.css;
   };
 
-  services.cliphist.enable = true;
+  services.copyq.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
