@@ -17,39 +17,42 @@ keybinds  {
 
       // LOCK
       unbind "Ctrl g"
-      bind "Alt g" { SwitchToMode "locked"; }
+      bind "Alt g" { SwitchToMode "Locked"; }
 
       // PANE
       unbind "Ctrl p"
-      bind "Alt p" { SwitchToMode "pane"; }
+      bind "Alt p" { SwitchToMode "Pane"; }
 
       // TAB
       unbind "Ctrl t"
-      bind "Alt t" { SwitchToMode "tab"; }
+      bind "Alt t" { SwitchToMode "Tab"; }
 
       // RESIZE
       unbind "Ctrl n"
-      bind "Alt r" { SwitchToMode "resize"; }
+      bind "Alt r" { SwitchToMode "Resize"; }
 
       // MOVE
       unbind "Ctrl h"
-      bind "Alt m" { SwitchToMode "move"; }
-
-      // SEARCH
-      unbind "Ctrl s"
-      bind "Alt f" { SwitchToMode "search"; }
+      bind "Alt m" { SwitchToMode "Move"; }
 
       // SESSION
       unbind "Ctrl o"
-      bind "Alt s" { SwitchToMode "session"; }
+      bind "Alt s" { SwitchToMode "Session"; }
 
       // QUIT
       unbind "Ctrl q"
       bind "Alt q" { Quit; }
 
+      // SEARCH
+      unbind "Ctrl s"
+      bind "Alt f" { SwitchToMode "Search"; }
+
       // NEW PANES
       unbind "Ctrl |"
       bind "Alt |" { NewPane; }
+
+      // TMUX
+      unbind "Ctrl b"
     }
 
     locked {
