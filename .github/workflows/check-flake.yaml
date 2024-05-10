@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Check Nix flake inputs
-        uses: DeterminateSystems/flake-checker-action@v5
+        uses: DeterminateSystems/flake-checker-action@v7
 
   check-flake-systems:
     name: Check Flake Systems
