@@ -46,6 +46,11 @@ in
     dotnet-sdk_8 # For bicep-ls
     bicep-ls
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Hack" "SourceCodePro" ]; })
+    k9s
+    python3
+    postgresql
+    docker-compose
+    go
   ];
 
   programs.zsh = {
