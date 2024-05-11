@@ -169,6 +169,14 @@ in
           }
           nvim-treesitter
         ];
+        searchbox = [
+          {
+            plugin = searchbox-nvim;
+            type = "lua";
+            config = builtins.readFile ./neovim/plugins/searchbox-nvim.lua;
+          }
+          nui-nvim
+        ];
       in [
       {
         plugin = diffview-nvim;
@@ -196,6 +204,6 @@ in
       #  type = "lua";
       #  config = builtins.readFile ./neovim/plugins/auto-session.lua;
       #}
-    ] ++ telescope ++ cmp;
+    ] ++ telescope ++ cmp ++ searchbox;
   };
 }
