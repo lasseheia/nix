@@ -14,7 +14,6 @@ in
     pamixer
     pavucontrol
     brave
-    sweethome3d.application
   ];
 
   home.sessionVariables = {
