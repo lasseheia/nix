@@ -48,6 +48,7 @@ This repository contains scripts and configurations for installing NixOS with an
 │   │           ├── nvim-lspconfig.lua
 │   │           ├── nvim-spectre.lua
 │   │           ├── nvim-tree-lua.lua
+│   │           ├── searchbox-nvim.lua
 │   │           └── telescope-nvim.lua
 │   ├── virtualization
 │   │   ├── home-manager.nix
