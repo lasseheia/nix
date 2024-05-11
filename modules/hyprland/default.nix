@@ -22,7 +22,6 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    enableNvidiaPatches = true;
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
