@@ -17,7 +17,6 @@ in
     kubectl
     azure-cli
     kubelogin
-    bitwarden-cli
     yarn
     flutter
     nodePackages.typescript
