@@ -53,7 +53,7 @@ in
 
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     initExtra = builtins.readFile ./zshrc;
     oh-my-zsh = {
       enable = true;
@@ -64,7 +64,7 @@ in
 
   programs.eza = {
     enable = true;
-    enableAliases = true;
+    enableZshIntegration = true;
     icons = true;
     git = true;
     extraOptions = [
