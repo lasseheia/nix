@@ -25,7 +25,7 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.lasse = { pkgs, ... }: {
+  home-manager.users.lasse = {
     home.stateVersion = "23.11";
     imports = [
       ../modules/terminal/home-manager.nix
