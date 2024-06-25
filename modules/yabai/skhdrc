@@ -1,0 +1,14 @@
+# option - 0x3A
+# shift  - 0x38
+
+# focus window
+0x3A - h : yabai -m window --focus west
+0x3A - j : yabai -m window --focus south
+0x3A - k : yabai -m window --focus north
+0x3A - l : yabai -m window --focus east
+
+# swap managed window
+0x3A + 0x38 - h : yabai -m window --swap west
+0x3A + 0x38 - j : yabai -m window --swap south
+0x3A + 0x38 - k : yabai -m window --swap north
+0x3A + 0x38 - l : yabai -m window --swap east
