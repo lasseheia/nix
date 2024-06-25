@@ -32,13 +32,11 @@ in
     openssl
     openconnect
     killall
-    terraform
     nodejs # Required for nvim-copilot
     ripgrep # For nvim-telescope and nvim-spectre
     fd # For nvim-telescope
     tree-sitter # For nvim-treesitter
     gcc # For nvim-lspconfig
-    terraform-ls # For nvim-lspconfig
     typescript # For nvim-lspconfig
     nixd # For nvim-lspconfig
     nodePackages.typescript-language-server # For nvim-lspconfig
