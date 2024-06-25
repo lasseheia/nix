@@ -103,7 +103,7 @@ in
     enableZshIntegration = true;
   };
 
-  services.ssh-agent.enable = true;
+  services.ssh-agent.enable = if pkgs.stdenv.isDarwin then false else true;
 
   programs.git = {
     enable = true;
