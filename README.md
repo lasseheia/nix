@@ -55,6 +55,7 @@ This repository contains scripts and configurations for installing NixOS with an
 │   │   └── domains
 │   │       └── gaming.xml
 │   └── yabai
+│       ├── skhdrc
 │       └── yabairc
 ├── pkgs
 │   └── bicep-ls.nix
