@@ -127,7 +127,12 @@ in
     };
   };
 
-  programs.gh.enable = true;
+  programs.gh = {
+    enable = true;
+    settings = {
+      version = 1;
+    };
+  };
 
   # Workaround for https://github.com/NixOS/nixpkgs/issues/169115
   programs.gh.gitCredentialHelper.enable = false;
