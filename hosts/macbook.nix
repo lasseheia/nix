@@ -1,9 +1,15 @@
 {
+  config,
   pkgs,
   inputs,
   ...
 }:
-
+let
+  unstablePkgs = import inputs.nixpkgs-unstable {
+    inherit (config.nixpkgs) system;
+    config.allowUnfree = true;
+  };
+in
 {
   imports = [
     inputs.home-manager.darwinModules.default
@@ -31,4 +37,9 @@
       ../modules/terminal/home-manager.nix
     ];
   };
+
+  environment.systemPackages = [
+    unstablePkgs.terraform-ls # For nvim-lspconfig
+    unstablePkgs.terraform
+  ];
 }
