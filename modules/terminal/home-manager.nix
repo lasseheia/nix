@@ -17,7 +17,6 @@ in
     kubectl
     azure-cli
     kubelogin
-    bitwarden-cli
     yarn
     flutter
     nodePackages.typescript
@@ -32,13 +31,11 @@ in
     openssl
     openconnect
     killall
-    terraform
     nodejs # Required for nvim-copilot
     ripgrep # For nvim-telescope and nvim-spectre
     fd # For nvim-telescope
     tree-sitter # For nvim-treesitter
     gcc # For nvim-lspconfig
-    terraform-ls # For nvim-lspconfig
     typescript # For nvim-lspconfig
     nixd # For nvim-lspconfig
     nodePackages.typescript-language-server # For nvim-lspconfig
@@ -55,7 +52,7 @@ in
 
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     initExtra = builtins.readFile ./zshrc;
     oh-my-zsh = {
       enable = true;
@@ -66,7 +63,7 @@ in
 
   programs.eza = {
     enable = true;
-    enableAliases = true;
+    enableZshIntegration = true;
     icons = true;
     git = true;
     extraOptions = [
@@ -106,7 +103,7 @@ in
     enableZshIntegration = true;
   };
 
-  services.ssh-agent.enable = true;
+  services.ssh-agent.enable = if pkgs.stdenv.isDarwin then false else true;
 
   programs.git = {
     enable = true;
@@ -129,7 +126,12 @@ in
     };
   };
 
-  programs.gh.enable = true;
+  programs.gh = {
+    enable = true;
+    settings = {
+      version = 1;
+    };
+  };
 
   # Workaround for https://github.com/NixOS/nixpkgs/issues/169115
   programs.gh.gitCredentialHelper.enable = false;

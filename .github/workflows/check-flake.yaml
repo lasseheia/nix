@@ -25,6 +25,8 @@ jobs:
 
       - name: Check Nix flake inputs
         uses: DeterminateSystems/flake-checker-action@v7
+        with:
+          nixpkgs-keys: nixpkgs-stable,nixpkgs-unstable
 
   check-flake-systems:
     name: Check Flake Systems
