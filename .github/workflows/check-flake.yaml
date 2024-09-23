@@ -22,13 +22,28 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest]
     steps:
+
       - name: Check out repository
         uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v14
+
+      - name: Install jq via Nix
+        run: nix profile install nixpkgs#jq
+
+      - name: Extract nixpkgs keys from flake.lock
+        id: extract-keys
+        shell: bash
+        run: |
+          nixpkgs_keys=$(jq --raw-output '.nodes.root.inputs | keys | join(",")' flake.lock)
+          echo "Extracted nixpkgs keys: $nixpkgs_keys"
+          echo "nixpkgs_keys=$nixpkgs_keys" >> $GITHUB_OUTPUT
 
       - name: Check Nix flake inputs
         uses: DeterminateSystems/flake-checker-action@v9
         with:
-          nixpkgs-keys: nixpkgs-master,nixpkgs-stable,nixpkgs-unstable
+          nixpkgs-keys: ${{ steps.extract-keys.outputs.nixpkgs_keys }}
 
   check-flake-systems:
     name: Check Flake Systems
@@ -37,6 +52,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest]
     steps:
+
       - name: Check out repository
         uses: actions/checkout@v4
 
