@@ -15,7 +15,7 @@ in
     jq
     yq-go
     kubectl
-    azure-cli
+    (azure-cli.withExtensions [ azure-cli.extensions.k8s-extension ])
     kubelogin
     yarn
     flutter
