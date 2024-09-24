@@ -55,7 +55,7 @@ cryptsetup open $root_partition nixos-enc
 # LVM setup
 pvcreate /dev/mapper/nixos-enc
 vgcreate vg /dev/mapper/nixos-enc
-lvcreate -L 50G vg -n root
+lvcreate -L 100G vg -n root
 lvcreate -l +100%FREE vg -n home
 
 # Format and mount partitions
