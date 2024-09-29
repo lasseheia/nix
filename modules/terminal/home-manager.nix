@@ -18,12 +18,7 @@ in
     (azure-cli.withExtensions [ azure-cli.extensions.k8s-extension ])
     kubelogin
     yarn
-    flutter
-    nodePackages.typescript
     age
-    hugo
-    rustc
-    cargo
     kubeseal
     fluxcd
     ipcalc
@@ -44,10 +39,6 @@ in
     bicep-ls
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Hack" "SourceCodePro" ]; })
     k9s
-    python3
-    postgresql
-    docker-compose
-    go
   ];
 
   programs.zsh = {
