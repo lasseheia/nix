@@ -21,3 +21,8 @@ if [ ! -S ~/.ssh/ssh_auth_sock ]; then
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add
+
+# Source zsh config when creating a new nix shell
+if [ "$IN_NIX_SHELL" = "impure" ]; then
+  source ~/.zshrc
+fi

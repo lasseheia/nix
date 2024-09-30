@@ -210,5 +210,10 @@ in
       ] ++ telescope ++ cmp ++ searchbox;
     };
 
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
   };
 }
