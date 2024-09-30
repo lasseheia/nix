@@ -9,10 +9,7 @@
 
   users.users.lasse.extraGroups = [
     "libvirtd"
-    "docker"
   ];
-
-  virtualisation.docker.enable = true;
 
   virtualisation.libvirt.enable = true;
   virtualisation.libvirtd = {
