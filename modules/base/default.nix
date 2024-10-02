@@ -3,22 +3,16 @@
   lib,
   modulesPath,
   inputs,
-  config,
   ...
 }:
 
 let
-  unstablePkgs = import inputs.nixpkgs-unstable {
-    inherit (config.nixpkgs) system;
+  pkgs-unstable = import inputs.nixpkgs-unstable {
+    system = "x86_64-linux";
     config.allowUnfree = true;
   };
 in
 {
-  environment.systemPackages = [
-    unstablePkgs.terraform-ls # For nvim-lspconfig
-    unstablePkgs.terraform
-  ];
-
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     inputs.home-manager.nixosModules.default
@@ -96,6 +90,7 @@ in
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
+  home-manager.extraSpecialArgs = { inherit pkgs-unstable; };
 
   home-manager.users.lasse = ./home-manager.nix;
 }

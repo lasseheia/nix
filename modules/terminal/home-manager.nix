@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   ...
 }:
 
@@ -7,38 +8,40 @@ let
   bicep-ls = pkgs.callPackage ../../pkgs/bicep-ls.nix { inherit pkgs; };
 in
 {
-  home.packages = with pkgs; [
-    kitty
-    neofetch
-    tldr
-    tree
-    jq
-    yq-go
-    kubectl
-    (azure-cli.withExtensions [ azure-cli.extensions.k8s-extension ])
-    kubelogin
-    yarn
-    age
-    kubeseal
-    fluxcd
-    ipcalc
-    act
-    openssl
-    openconnect
-    killall
-    nodejs # Required for nvim-copilot
-    ripgrep # For nvim-telescope and nvim-spectre
-    fd # For nvim-telescope
-    tree-sitter # For nvim-treesitter
-    gcc # For nvim-lspconfig
-    typescript # For nvim-lspconfig
-    nixd # For nvim-lspconfig
-    nodePackages.typescript-language-server # For nvim-lspconfig
-    yaml-language-server # For nvim-lspconfig
-    dotnet-sdk_8 # For bicep-ls
+  home.packages = [
+    pkgs.kitty
+    pkgs.neofetch
+    pkgs.tldr
+    pkgs.tree
+    pkgs.jq
+    pkgs.yq-go
+    pkgs.kubectl
+    (pkgs.azure-cli.withExtensions [ pkgs.azure-cli.extensions.k8s-extension ])
+    pkgs.kubelogin
+    pkgs.yarn
+    pkgs.age
+    pkgs.kubeseal
+    pkgs.fluxcd
+    pkgs.ipcalc
+    pkgs.act
+    pkgs.openssl
+    pkgs.openconnect
+    pkgs.killall
+    pkgs.nodejs # Required for nvim-copilot
+    pkgs.ripgrep # For nvim-telescope and nvim-spectre
+    pkgs.fd # For nvim-telescope
+    pkgs.tree-sitter # For nvim-treesitter
+    pkgs.gcc # For nvim-lspconfig
+    pkgs.typescript # For nvim-lspconfig
+    pkgs.nixd # For nvim-lspconfig
+    pkgs.nodePackages.typescript-language-server # For nvim-lspconfig
+    pkgs.yaml-language-server # For nvim-lspconfig
+    pkgs.dotnet-sdk_8 # For bicep-ls
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Hack" "SourceCodePro" ]; })
+    pkgs.k9s
     bicep-ls
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Hack" "SourceCodePro" ]; })
-    k9s
+    pkgs-unstable.terraform
+    pkgs-unstable.terraform-ls # For nvim-lspconfig
   ];
 
   services.ssh-agent.enable = if pkgs.stdenv.isDarwin then false else true;
