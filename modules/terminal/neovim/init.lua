@@ -34,3 +34,12 @@ vim.opt.encoding = "utf-8"
 
 -- Clipboard
 vim.opt.clipboard:append("unnamedplus")
+
+-- Disable textwidth and colorcolumn for Git commit messages
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "gitcommit",
+  callback = function()
+    vim.opt_local.textwidth = 0
+    vim.opt_local.colorcolumn = ""
+  end
+})
