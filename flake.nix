@@ -23,28 +23,35 @@
     };
   };
 
-  outputs = inputs:
+  outputs =
+    inputs:
     let
-      createSystem = hostname:
+      createSystem =
+        hostname:
         inputs.nixpkgs-stable.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             { networking.hostName = "${hostname}"; }
             ./hosts/${hostname}.nix
           ];
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+          };
         };
-    in {
-    nixosConfigurations = {
-      desktop = createSystem "desktop";
-      laptop  = createSystem "laptop";
-    };
-    darwinConfigurations = {
-      lasseheiamacbook = inputs.nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [ ./hosts/macbook.nix ];
-        specialArgs = { inherit inputs; };
+    in
+    {
+      nixosConfigurations = {
+        desktop = createSystem "desktop";
+        laptop = createSystem "laptop";
+      };
+      darwinConfigurations = {
+        lasseheiamacbook = inputs.nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          modules = [ ./hosts/macbook.nix ];
+          specialArgs = {
+            inherit inputs;
+          };
+        };
       };
     };
-  };
 }

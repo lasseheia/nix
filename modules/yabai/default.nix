@@ -1,12 +1,7 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    skhd
-  ];
+  environment.systemPackages = with pkgs; [ skhd ];
 
   services.yabai = {
     enable = true;

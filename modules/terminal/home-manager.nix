@@ -1,8 +1,4 @@
-{
-  pkgs,
-  pkgs-unstable,
-  ...
-}:
+{ pkgs, pkgs-unstable, ... }:
 
 let
   bicep-ls = pkgs.callPackage ../../pkgs/bicep-ls.nix { inherit pkgs; };
@@ -37,7 +33,14 @@ in
     pkgs.nodePackages.typescript-language-server # For nvim-lspconfig
     pkgs.yaml-language-server # For nvim-lspconfig
     pkgs.dotnet-sdk_8 # For bicep-ls
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Hack" "SourceCodePro" ]; })
+    (pkgs.nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "DroidSansMono"
+        "Hack"
+        "SourceCodePro"
+      ];
+    })
     pkgs.k9s
     bicep-ls
     pkgs-unstable.terraform
@@ -68,16 +71,12 @@ in
       enableZshIntegration = true;
       icons = true;
       git = true;
-      extraOptions = [
-        "--group-directories-first"
-      ];
+      extraOptions = [ "--group-directories-first" ];
     };
 
     zoxide = {
       enable = true;
-      options = [
-        "--cmd cd"
-      ];
+      options = [ "--cmd cd" ];
     };
 
     fzf.enable = true;
@@ -148,10 +147,13 @@ in
       vimAlias = true;
       vimdiffAlias = true;
       extraConfig = builtins.readFile ./neovim/vimrc;
-      extraLuaConfig = ''
-        local bicep_lsp_bin = "${bicep-ls}/Bicep.LangServer.dll"
-      '' + builtins.readFile ./neovim/init.lua;
-      plugins = with pkgs.vimPlugins;
+      extraLuaConfig =
+        ''
+          local bicep_lsp_bin = "${bicep-ls}/Bicep.LangServer.dll"
+        ''
+        + builtins.readFile ./neovim/init.lua;
+      plugins =
+        with pkgs.vimPlugins;
         let
           cmp = [
             {
@@ -183,34 +185,34 @@ in
             }
             nui-nvim
           ];
-        in [
-        {
-          plugin = diffview-nvim;
-        }
-        {
-          plugin = copilot-vim;
-        }
-        {
-          plugin = nvim-tree-lua;
-          type = "lua";
-          config = builtins.readFile ./neovim/plugins/nvim-tree-lua.lua;
-        }
-        {
-          plugin = nvim-lspconfig;
-          type = "lua";
-          config = builtins.readFile ./neovim/plugins/nvim-lspconfig.lua;
-        }
-        {
-          plugin = nvim-spectre;
-          type = "lua";
-          config = builtins.readFile ./neovim/plugins/nvim-spectre.lua;
-        }
-        #{
-        #  plugin = auto-session;
-        #  type = "lua";
-        #  config = builtins.readFile ./neovim/plugins/auto-session.lua;
-        #}
-      ] ++ telescope ++ cmp ++ searchbox;
+        in
+        [
+          { plugin = diffview-nvim; }
+          { plugin = copilot-vim; }
+          {
+            plugin = nvim-tree-lua;
+            type = "lua";
+            config = builtins.readFile ./neovim/plugins/nvim-tree-lua.lua;
+          }
+          {
+            plugin = nvim-lspconfig;
+            type = "lua";
+            config = builtins.readFile ./neovim/plugins/nvim-lspconfig.lua;
+          }
+          {
+            plugin = nvim-spectre;
+            type = "lua";
+            config = builtins.readFile ./neovim/plugins/nvim-spectre.lua;
+          }
+          #{
+          #  plugin = auto-session;
+          #  type = "lua";
+          #  config = builtins.readFile ./neovim/plugins/auto-session.lua;
+          #}
+        ]
+        ++ telescope
+        ++ cmp
+        ++ searchbox;
     };
 
     direnv = {

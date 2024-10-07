@@ -1,8 +1,4 @@
-{
-  osConfig,
-  pkgs,
-  ...
-}:
+{ osConfig, pkgs, ... }:
 
 let
   hostname = osConfig.networking.hostName;
@@ -57,9 +53,9 @@ in
     enable = true;
     settings = {
       misc = {
-        disable_hyprland_logo	= true;
+        disable_hyprland_logo = true;
       };
-   };
+    };
     extraConfig = builtins.readFile ./hyprland.conf;
   };
 

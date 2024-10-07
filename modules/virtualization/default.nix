@@ -1,15 +1,9 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
+{ pkgs, inputs, ... }:
 
 {
   imports = [ inputs.nixvirt.nixosModules.default ];
 
-  users.users.lasse.extraGroups = [
-    "libvirtd"
-  ];
+  users.users.lasse.extraGroups = [ "libvirtd" ];
 
   virtualisation.libvirt.enable = true;
   virtualisation.libvirtd = {
@@ -25,11 +19,7 @@
 
   virtualisation.libvirt.connections = {
     "qemu:///system" = {
-      domains = [
-        {
-          definition = ./domains/gaming.xml;
-        }
-      ];
+      domains = [ { definition = ./domains/gaming.xml; } ];
     };
   };
 
@@ -37,14 +27,20 @@
 
   # IOMMU
   boot.kernelParams = [ "amd_iommu=on" ];
-  boot.blacklistedKernelModules = [ "nvidia" "nouveau" ];
-  boot.kernelModules = [ "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
+  boot.blacklistedKernelModules = [
+    "nvidia"
+    "nouveau"
+  ];
+  boot.kernelModules = [
+    "vfio_virqfd"
+    "vfio_pci"
+    "vfio_iommu_type1"
+    "vfio"
+  ];
   boot.extraModprobeConfig = "options vfio-pci ids=10de:1e84,10de:10f8,10de:1ad8,10de:1ad9";
 
   # Looking Glass
-  systemd.tmpfiles.rules = [
-    "f /dev/shm/looking-glass 0660 1000 kvm -"
-  ];
+  systemd.tmpfiles.rules = [ "f /dev/shm/looking-glass 0660 1000 kvm -" ];
 
   home-manager.users.lasse = ./home-manager.nix;
 }

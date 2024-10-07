@@ -33,9 +33,7 @@ in
   home-manager.useUserPackages = true;
   home-manager.users.lasse = {
     home.stateVersion = "23.11";
-    imports = [
-      ../modules/terminal/home-manager.nix
-    ];
+    imports = [ ../modules/terminal/home-manager.nix ];
   };
 
   environment.systemPackages = [

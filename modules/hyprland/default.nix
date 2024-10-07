@@ -1,13 +1,10 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, inputs, ... }:
 
 {
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   services = {
@@ -27,9 +24,7 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/#prerequisites
-  environment.systemPackages = [
-    pkgs.xwaylandvideobridge
-  ];
+  environment.systemPackages = [ pkgs.xwaylandvideobridge ];
 
   services.blueman.enable = true;
 
