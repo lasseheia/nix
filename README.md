@@ -44,6 +44,7 @@ This repository contains scripts and configurations for installing NixOS with an
 │   │       ├── vimrc
 │   │       └── plugins
 │   │           ├── auto-session.lua
+│   │           ├── copilot-vim.lua
 │   │           ├── nvim-cmp.lua
 │   │           ├── nvim-lspconfig.lua
 │   │           ├── nvim-spectre.lua
