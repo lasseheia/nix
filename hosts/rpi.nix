@@ -38,6 +38,8 @@
       extraGroups = [ "wheel" ];
     };
   };
+  
+  console.keyMap = "no";
 
   hardware.enableRedistributableFirmware = true;
   system.stateVersion = "24.05";
