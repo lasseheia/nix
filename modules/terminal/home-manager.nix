@@ -188,7 +188,11 @@ in
         in
         [
           { plugin = diffview-nvim; }
-          { plugin = copilot-vim; }
+          {
+            plugin = copilot-vim;
+            type = "lua";
+            config = builtins.readFile ./neovim/plugins/copilot-vim.lua;
+          }
           {
             plugin = nvim-tree-lua;
             type = "lua";
