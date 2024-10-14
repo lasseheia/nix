@@ -5,7 +5,7 @@
   ...
 }:
 let
-  unstablePkgs = import inputs.nixpkgs-unstable {
+  pkgs-unstable = import inputs.nixpkgs-unstable {
     inherit (config.nixpkgs) system;
     config.allowUnfree = true;
   };
@@ -17,7 +17,7 @@ in
   ];
 
   system.stateVersion = 4;
-  nix.package = pkgs.nix;
+  nix.package = pkgs-unstable.nix;
   nixpkgs.config.allowUnfree = true;
   services.nix-daemon.enable = true;
   nix.settings.experimental-features = "nix-command flakes";
@@ -31,13 +31,10 @@ in
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
+  home-manager.extraSpecialArgs = { inherit pkgs-unstable; };
   home-manager.users.lasse = {
     home.stateVersion = "23.11";
     imports = [ ../modules/terminal/home-manager.nix ];
   };
 
-  environment.systemPackages = [
-    unstablePkgs.terraform-ls # For nvim-lspconfig
-    unstablePkgs.terraform
-  ];
 }
