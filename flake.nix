@@ -41,12 +41,12 @@
         };
     in
     {
-      nixosConfigurations = {
+      nixos = {
         desktop = createSystem "desktop" "x86_64-linux";
         laptop = createSystem "laptop" "x86_64-linux";
         rpi = createSystem "rpi" "aarch64-linux";
       };
-      darwinConfigurations = {
+      darwin = {
         lasseheiamacbook = inputs.nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           modules = [ ./hosts/macbook.nix ];
