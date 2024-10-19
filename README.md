@@ -70,10 +70,6 @@ This repository contains scripts and configurations for installing NixOS with an
 
 <!--START_SECTION:flake-->
 ```bash
-└───nixosConfigurations
-    ├───desktop: NixOS configuration
-    ├───laptop: NixOS configuration
-    └───rpi: NixOS configuration
 ```
 <!--END_SECTION:flake-->
 
