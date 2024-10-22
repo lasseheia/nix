@@ -26,7 +26,7 @@
   outputs =
     inputs:
     let
-      createSystem =
+      createNixosSystem =
         hostname:
         system:
         inputs.nixpkgs-stable.lib.nixosSystem {
@@ -42,9 +42,9 @@
     in
     {
       nixosConfigurations = {
-        desktop = createSystem "desktop" "x86_64-linux";
-        laptop = createSystem "laptop" "x86_64-linux";
-        rpi = createSystem "rpi" "aarch64-linux";
+        desktop = createNixosSystem "desktop" "x86_64-linux";
+        laptop = createNixosSystem "laptop" "x86_64-linux";
+        rpi = createNixosSystem "rpi" "aarch64-linux";
       };
       darwinConfigurations = {
         lasseheiamacbook = inputs.nix-darwin.lib.darwinSystem {
