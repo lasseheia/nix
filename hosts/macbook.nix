@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   inputs,
   ...
 }:
@@ -36,5 +35,4 @@ in
     home.stateVersion = "23.11";
     imports = [ ../modules/terminal/home-manager.nix ];
   };
-
 }
