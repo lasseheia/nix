@@ -27,6 +27,9 @@ This repository contains scripts and configurations for installing NixOS with an
 ├── modules
 │   ├── base
 │   │   └── home-manager.nix
+│   ├── home-assistant
+│   ├── homebridge
+│   │   └── config.json
 │   ├── hyprland
 │   │   ├── home-manager.nix
 │   │   ├── hyprland.conf
