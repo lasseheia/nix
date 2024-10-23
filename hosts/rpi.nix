@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 
@@ -12,6 +13,13 @@
       generic-extlinux-compatible.enable = true;
     };
   };
+
+  hardware.enableRedistributableFirmware = true;
+  system.stateVersion = "24.05";
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   fileSystems = {
     "/" = {
@@ -26,25 +34,28 @@
     wireless = {
       iwd.enable = true;
     };
-  };
-
-  environment.systemPackages = with pkgs; [ vim ];
-
-  services.openssh.enable = true;
-
-  users = {
-    users.lasse = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" ];
+    firewall = {
+      enable = true;
     };
   };
-  
+
+  services.openssh.enable = true;
   console.keyMap = "no";
 
-  hardware.enableRedistributableFirmware = true;
-  system.stateVersion = "24.05";
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
+  users.users.lasse = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+  };
+
+  imports = [
+    inputs.home-manager.nixosModules.default
+    ../modules/homebridge
+    ../modules/home-assistant
   ];
+  
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.lasse = {
+    home.stateVersion = "24.05";
+  };
 }
