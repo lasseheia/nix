@@ -21,6 +21,12 @@ in
   services.nix-daemon.enable = true;
   nix.settings.experimental-features = "nix-command flakes";
 
+  networking = {
+    hostName = "lasseheiamacbook";
+    computerName = "Lasse Heia's MacBook";
+    dns = ["1.1.1.1"];
+  };
+
   programs.zsh.enable = true;
 
   users.users.lasse = {

@@ -33,18 +33,14 @@
           { networking.hostName = "${hostname}"; }
           ./hosts/${hostname}.nix
         ];
-        specialArgs = {
-          inherit inputs;
-        };
+        specialArgs = { inherit inputs; };
       };
     darwinConfiguration =
       hostname:
       inputs.nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        modules = [ ./hosts/macbook.nix ];
-        specialArgs = {
-          inherit inputs;
-        };
+        modules = [ ./hosts/${hostname}.nix ];
+        specialArgs = { inherit inputs; };
       };
   in {
     nixosConfigurations = {
@@ -53,7 +49,7 @@
       rpi = nixosConfiguration "rpi" "aarch64-linux";
     };
     darwinConfigurations = {
-      lasseheiamacbook = darwinConfiguration "lasseheiamacbook";
+      macbook = darwinConfiguration "macbook";
     };
   };
 }
