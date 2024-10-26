@@ -24,7 +24,7 @@
   };
 
   outputs = inputs: let
-    createNixosSystem =
+    nixosConfiguration =
       hostname:
       system:
       inputs.nixpkgs-stable.lib.nixosSystem {
@@ -37,7 +37,7 @@
           inherit inputs;
         };
       };
-    createDarwinSystem =
+    darwinConfiguration =
       hostname:
       inputs.nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
@@ -48,12 +48,12 @@
       };
   in {
     nixosConfigurations = {
-      desktop = createNixosSystem "desktop" "x86_64-linux";
-      laptop = createNixosSystem "laptop" "x86_64-linux";
-      rpi = createNixosSystem "rpi" "aarch64-linux";
+      desktop = nixosConfiguration "desktop" "x86_64-linux";
+      laptop = nixosConfiguration "laptop" "x86_64-linux";
+      rpi = nixosConfiguration "rpi" "aarch64-linux";
     };
     darwinConfigurations = {
-      lasseheiamacbook = createDarwinSystem "lasseheiamacbook";
+      lasseheiamacbook = darwinConfiguration "lasseheiamacbook";
     };
   };
 }
