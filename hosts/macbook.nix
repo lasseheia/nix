@@ -33,6 +33,9 @@ in
   home-manager.extraSpecialArgs = { inherit pkgs-unstable; };
   home-manager.users.lasse = {
     home.stateVersion = "23.11";
-    imports = [ ../modules/terminal/home-manager.nix ];
+    imports = [
+      ../modules/terminal/home-manager.nix
+      ../modules/neovim/home-manager.nix
+    ];
   };
 }

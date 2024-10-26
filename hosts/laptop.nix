@@ -15,6 +15,7 @@
     inputs.nixos-hardware.nixosModules.dell-latitude-7490
     ../modules/base
     ../modules/terminal
+    ../modules/neovim
     ../modules/hyprland
   ];
 }
