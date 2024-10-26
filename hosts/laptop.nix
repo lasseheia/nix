@@ -13,7 +13,7 @@
 
   imports = [
     inputs.nixos-hardware.nixosModules.dell-latitude-7490
-    ../modules/base
+    ../modules/nixos
     ../modules/terminal
     ../modules/neovim
     ../modules/git
