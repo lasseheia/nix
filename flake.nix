@@ -23,37 +23,37 @@
     };
   };
 
-  outputs =
-    inputs:
-    let
-      createNixosSystem =
-        hostname:
-        system:
-        inputs.nixpkgs-stable.lib.nixosSystem {
-          system = system;
-          modules = [
-            { networking.hostName = "${hostname}"; }
-            ./hosts/${hostname}.nix
-          ];
-          specialArgs = {
-            inherit inputs;
-          };
-        };
-    in
-    {
-      nixosConfigurations = {
-        desktop = createNixosSystem "desktop" "x86_64-linux";
-        laptop = createNixosSystem "laptop" "x86_64-linux";
-        rpi = createNixosSystem "rpi" "aarch64-linux";
-      };
-      darwinConfigurations = {
-        lasseheiamacbook = inputs.nix-darwin.lib.darwinSystem {
-          system = "aarch64-darwin";
-          modules = [ ./hosts/macbook.nix ];
-          specialArgs = {
-            inherit inputs;
-          };
+  outputs = inputs: let
+    createNixosSystem =
+      hostname:
+      system:
+      inputs.nixpkgs-stable.lib.nixosSystem {
+        system = system;
+        modules = [
+          { networking.hostName = "${hostname}"; }
+          ./hosts/${hostname}.nix
+        ];
+        specialArgs = {
+          inherit inputs;
         };
       };
+    createDarwinSystem =
+      hostname:
+      inputs.nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [ ./hosts/macbook.nix ];
+        specialArgs = {
+          inherit inputs;
+        };
+      };
+  in {
+    nixosConfigurations = {
+      desktop = createNixosSystem "desktop" "x86_64-linux";
+      laptop = createNixosSystem "laptop" "x86_64-linux";
+      rpi = createNixosSystem "rpi" "aarch64-linux";
     };
+    darwinConfigurations = {
+      lasseheiamacbook = createDarwinSystem "lasseheiamacbook";
+    };
+  };
 }
