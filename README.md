@@ -25,8 +25,6 @@ This repository contains scripts and configurations for installing NixOS with an
 │   ├── macbook.nix
 │   └── rpi.nix
 ├── modules
-│   ├── base
-│   │   └── home-manager.nix
 │   ├── git
 │   │   └── home-manager.nix
 │   ├── grafana
@@ -56,6 +54,8 @@ This repository contains scripts and configurations for installing NixOS with an
 │   │       ├── nvim-tree-lua.lua
 │   │       ├── searchbox-nvim.lua
 │   │       └── telescope-nvim.lua
+│   ├── nixos
+│   │   └── home-manager.nix
 │   ├── prometheus
 │   ├── terminal
 │   │   ├── home-manager.nix
