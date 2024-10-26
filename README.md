@@ -27,6 +27,8 @@ This repository contains scripts and configurations for installing NixOS with an
 ├── modules
 │   ├── base
 │   │   └── home-manager.nix
+│   ├── git
+│   │   └── home-manager.nix
 │   ├── grafana
 │   ├── home-assistant
 │   ├── homebridge
