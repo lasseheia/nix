@@ -29,19 +29,19 @@ in
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-    extraConfig = builtins.readFile ./neovim/vimrc;
+    extraConfig = builtins.readFile ./vimrc;
     extraLuaConfig =
       ''
         local bicep_lsp_bin = "${bicep-ls}/Bicep.LangServer.dll"
       ''
-      + builtins.readFile ./neovim/init.lua;
+      + builtins.readFile ./init.lua;
     plugins =
       let
         cmp = [
           {
             plugin = pkgs.vimPlugins.nvim-cmp;
             type = "lua";
-            config = builtins.readFile ./neovim/plugins/nvim-cmp.lua;
+            config = builtins.readFile ./plugins/nvim-cmp.lua;
           }
           pkgs.vimPlugins.cmp-nvim-lsp
           pkgs.vimPlugins.cmp-buffer
@@ -55,7 +55,7 @@ in
           {
             plugin = pkgs.vimPlugins.telescope-nvim;
             type = "lua";
-            config = builtins.readFile ./neovim/plugins/telescope-nvim.lua;
+            config = builtins.readFile ./plugins/telescope-nvim.lua;
           }
           pkgs.vimPlugins.nvim-treesitter
         ];
@@ -63,7 +63,7 @@ in
           {
             plugin = pkgs.vimPlugins.searchbox-nvim;
             type = "lua";
-            config = builtins.readFile ./neovim/plugins/searchbox-nvim.lua;
+            config = builtins.readFile ./plugins/searchbox-nvim.lua;
           }
           pkgs.vimPlugins.nui-nvim
         ];
@@ -75,22 +75,22 @@ in
         {
           plugin = pkgs.vimPlugins.copilot-vim;
           type = "lua";
-          config = builtins.readFile ./neovim/plugins/copilot-vim.lua;
+          config = builtins.readFile ./plugins/copilot-vim.lua;
         }
         {
           plugin = pkgs.vimPlugins.nvim-tree-lua;
           type = "lua";
-          config = builtins.readFile ./neovim/plugins/nvim-tree-lua.lua;
+          config = builtins.readFile ./plugins/nvim-tree-lua.lua;
         }
         {
           plugin = pkgs.vimPlugins.nvim-lspconfig;
           type = "lua";
-          config = builtins.readFile ./neovim/plugins/nvim-lspconfig.lua;
+          config = builtins.readFile ./plugins/nvim-lspconfig.lua;
         }
         {
           plugin = pkgs.vimPlugins.nvim-spectre;
           type = "lua";
-          config = builtins.readFile ./neovim/plugins/nvim-spectre.lua;
+          config = builtins.readFile ./plugins/nvim-spectre.lua;
         }
         #{
         #  plugin = auto-session;
