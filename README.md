@@ -41,11 +41,8 @@ This repository contains scripts and configurations for installing NixOS with an
 │   │       ├── laptop.css
 │   │       └── laptop.json
 │   ├── mainsail
-│   ├── prometheus
-│   ├── terminal
+│   ├── neovim
 │   │   ├── home-manager.nix
-│   │   ├── zellij.kdl
-│   │   ├── zshrc
 │   │   └── neovim
 │   │       ├── init.lua
 │   │       ├── vimrc
@@ -58,6 +55,11 @@ This repository contains scripts and configurations for installing NixOS with an
 │   │           ├── nvim-tree-lua.lua
 │   │           ├── searchbox-nvim.lua
 │   │           └── telescope-nvim.lua
+│   ├── prometheus
+│   ├── terminal
+│   │   ├── home-manager.nix
+│   │   ├── zellij.kdl
+│   │   └── zshrc
 │   ├── virtualization
 │   │   ├── home-manager.nix
 │   │   └── domains
