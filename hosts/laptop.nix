@@ -16,6 +16,7 @@
     ../modules/base
     ../modules/terminal
     ../modules/neovim
+    ../modules/git
     ../modules/hyprland
   ];
 }

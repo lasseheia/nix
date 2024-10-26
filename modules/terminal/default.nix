@@ -10,8 +10,6 @@
 
   programs.zsh.enable = true;
 
-  programs.git.enable = true;
-
   users = {
     defaultUserShell = pkgs.zsh;
     users.lasse = {

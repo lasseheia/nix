@@ -36,6 +36,7 @@ in
     imports = [
       ../modules/terminal/home-manager.nix
       ../modules/neovim/home-manager.nix
+      ../modules/git/home-manager.nix
     ];
   };
 }

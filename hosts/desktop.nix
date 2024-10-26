@@ -25,6 +25,7 @@
     ../modules/virtualization
     ../modules/terminal
     ../modules/neovim
+    ../modules/git
     ../modules/hyprland
   ];
 }
