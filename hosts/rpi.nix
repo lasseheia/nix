@@ -51,6 +51,7 @@
     inputs.home-manager.nixosModules.default
     ../modules/homebridge
     ../modules/home-assistant
+    ../modules/mainsail
     ../modules/prometheus
     ../modules/grafana
   ];
