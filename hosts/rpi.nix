@@ -52,6 +52,7 @@
     ../modules/homebridge
     ../modules/home-assistant
     ../modules/prometheus
+    ../modules/grafana
   ];
   
   home-manager.useGlobalPkgs = true;
