@@ -27,6 +27,7 @@ This repository contains scripts and configurations for installing NixOS with an
 ├── modules
 │   ├── base
 │   │   └── home-manager.nix
+│   ├── grafana
 │   ├── home-assistant
 │   ├── homebridge
 │   │   └── config.json
@@ -39,6 +40,8 @@ This repository contains scripts and configurations for installing NixOS with an
 │   │       ├── desktop.json
 │   │       ├── laptop.css
 │   │       └── laptop.json
+│   ├── mainsail
+│   ├── prometheus
 │   ├── terminal
 │   │   ├── home-manager.nix
 │   │   ├── zellij.kdl
