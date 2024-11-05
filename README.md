@@ -14,7 +14,7 @@ This repository contains scripts and configurations for installing NixOS with an
 ├── renovate.json
 ├── .github
 │   └── workflows
-│       ├── check-flake.yaml
+│       ├── checks.yaml
 │       └── update-readme.yaml
 ├── docs
 │   ├── installation.md
