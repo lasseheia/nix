@@ -5,7 +5,7 @@
 }:
 
 let
-  bicep-ls = pkgs.callPackage ../../pkgs/bicep-ls.nix { inherit pkgs; };
+  bicep-ls = pkgs.callPackage ../../pkgs/bicep-ls { inherit pkgs; };
 in
 {
   home.packages = [
