@@ -1,4 +1,4 @@
-name: Check Flake
+name: Checks
 
 on:
   pull_request:
@@ -69,3 +69,20 @@ jobs:
             nix flake check --all-systems 2>&1
             echo '```'
           } >> $GITHUB_STEP_SUMMARY
+
+  nix-lint:
+    name: Nix Lint
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v14
+
+      - name: Setup Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@v8
+
+      - name: Install nix-linter
+        run: nix run github:nix-community/nixpkgs-lint -- .

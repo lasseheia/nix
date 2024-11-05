@@ -1,6 +1,6 @@
 # Nix Configurations
 
-[![CI Checks](https://github.com/lasseheia/nix/actions/workflows/check-flake.yaml/badge.svg?branch=main&event=push)](https://github.com/lasseheia/nix/actions/workflows/check-flake.yaml)
+[![CI Checks](https://github.com/lasseheia/nix/actions/workflows/checks.yaml/badge.svg?branch=main&event=push)](https://github.com/lasseheia/nix/actions/workflows/checks.yaml)
 
 This repository contains scripts and configurations for installing NixOS with an encrypted root partition and LVM setup.
 
