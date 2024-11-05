@@ -36,7 +36,7 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v14
+        uses: DeterminateSystems/nix-installer-action@v15
 
       - name: Setup Nix cache
         uses: DeterminateSystems/magic-nix-cache-action@v8
