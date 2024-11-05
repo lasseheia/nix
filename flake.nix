@@ -31,7 +31,7 @@
         system = system;
         modules = [
           { networking.hostName = "${hostname}"; }
-          ./hosts/${hostname}.nix
+          ./hosts/${hostname}
         ];
         specialArgs = { inherit inputs; };
       };
@@ -39,7 +39,7 @@
       hostname:
       inputs.nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        modules = [ ./hosts/${hostname}.nix ];
+        modules = [ ./hosts/${hostname} ];
         specialArgs = { inherit inputs; };
       };
   in {

@@ -49,11 +49,11 @@
 
   imports = [
     inputs.home-manager.nixosModules.default
-    ../modules/homebridge
-    ../modules/home-assistant
-    ../modules/mainsail
-    ../modules/prometheus
-    ../modules/grafana
+    ../../modules/homebridge
+    ../../modules/home-assistant
+    ../../modules/mainsail
+    ../../modules/prometheus
+    ../../modules/grafana
   ];
   
   home-manager.useGlobalPkgs = true;

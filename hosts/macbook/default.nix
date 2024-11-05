@@ -12,7 +12,7 @@ in
 {
   imports = [
     inputs.home-manager.darwinModules.default
-    ../modules/yabai
+    ../../modules/yabai
   ];
 
   system.stateVersion = 4;
@@ -40,9 +40,9 @@ in
   home-manager.users.lasse = {
     home.stateVersion = "23.11";
     imports = [
-      ../modules/terminal/home-manager.nix
-      ../modules/neovim/home-manager.nix
-      ../modules/git/home-manager.nix
+      ../../modules/terminal/home-manager.nix
+      ../../modules/neovim/home-manager.nix
+      ../../modules/git/home-manager.nix
     ];
   };
 }

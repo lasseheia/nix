@@ -28,12 +28,12 @@ in
     inputs.nixos-hardware.nixosModules.common-pc
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.nixos-hardware.nixosModules.common-cpu-amd
-    ../modules/nixos
-    ../modules/virtualization
-    ../modules/terminal
-    ../modules/neovim
-    ../modules/git
-    ../modules/hyprland
+    ../../modules/nixos
+    ../../modules/virtualization
+    ../../modules/terminal
+    ../../modules/neovim
+    ../../modules/git
+    ../../modules/hyprland
   ];
 
   environment.systemPackages = [
