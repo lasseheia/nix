@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   modulesPath,
   inputs,
   ...
@@ -54,9 +53,7 @@ in
 
   swapDevices = [ ];
 
-  networking.useDHCP = lib.mkDefault true;
-
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  nixpkgs.hostPlatform = "x86_64-linux";
   nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "23.05";
@@ -72,6 +69,7 @@ in
 
   networking = {
     wireless.iwd.enable = true;
+    useDHCP = true;
     firewall = {
       enable = true;
     };
