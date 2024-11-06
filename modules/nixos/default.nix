@@ -68,11 +68,10 @@ in
   services.lvm.enable = true;
 
   networking = {
+    useNetworkd = true;
     wireless.iwd.enable = true;
-    useDHCP = true;
-    firewall = {
-      enable = true;
-    };
+    interfaces.wlan0.useDHCP = true;
+    firewall.enable = true;
   };
 
   time.timeZone = "Europe/Oslo";
