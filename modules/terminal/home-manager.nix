@@ -30,6 +30,7 @@
     })
     pkgs.k9s
     pkgs-unstable.terraform
+    pkgs.yamllint
   ];
 
   xdg.configFile."zellij/config.kdl" = {
