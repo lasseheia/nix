@@ -42,5 +42,7 @@ in
     pkgs-unstable.azuredatastudio
     pkgs-unstable.rustdesk-flutter
     pkgs-unstable.rpi-imager
+    pkgs-unstable.firefox
+    pkgs.signal-desktop
   ];
 }
