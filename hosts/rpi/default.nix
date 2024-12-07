@@ -54,6 +54,7 @@
     ../../modules/mainsail
     ../../modules/prometheus
     ../../modules/grafana
+    ../../modules/jellyfin
   ];
   
   home-manager.useGlobalPkgs = true;
