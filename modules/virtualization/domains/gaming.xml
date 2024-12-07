@@ -163,6 +163,12 @@
       <target type="virtio" name="com.redhat.spice.0"/>
       <address type="virtio-serial" controller="0" bus="0" port="1"/>
     </channel>
+    <input type='evdev'>
+      <source dev='/dev/input/by-id/usb-Logitech_Gaming_Mouse_G502_057234623138-event-mouse'/>
+    </input>
+    <input type='evdev'>
+      <source dev='/dev/input/by-id/usb-04d9_USB-HID_Keyboard-event-kbd' grab='all' repeat='on' grabToggle='ctrl-ctrl'/>
+    </input>
     <input type="mouse" bus="virtio">
       <address type="pci" domain="0x0000" bus="0x0a" slot="0x00" function="0x0"/>
     </input>
