@@ -1,6 +1,6 @@
 require'lspconfig'.dartls.setup{}
 require'lspconfig'.terraformls.setup{}
-require'lspconfig'.tsserver.setup{}
+require'lspconfig'.ts_ls.setup{}
 require'lspconfig'.yamlls.setup{}
 require'lspconfig'.nixd.setup{}
 require'lspconfig'.bicep.setup{

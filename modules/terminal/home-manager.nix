@@ -53,7 +53,7 @@
     eza = {
       enable = true;
       enableZshIntegration = true;
-      icons = true;
+      icons = "auto";
       git = true;
       extraOptions = [ "--group-directories-first" ];
     };
@@ -69,7 +69,7 @@
 
     kitty = {
       enable = true;
-      theme = "GitHub Dark Dimmed";
+      themeFile = "GitHub_Dark_Dimmed";
       settings = {
         background_opacity = "0.8";
       };
