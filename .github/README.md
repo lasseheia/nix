@@ -17,5 +17,3 @@ This repository contains my NixOS and Home Manager configurations, organized to 
 - **`pkgs/`**: Custom or overridden Nix packages.
 
 - **`scripts/`**: Scripts to assist with setup and maintenance tasks.
-
-- **`wallpapers/`**: Wallpapers for the desktop environment.
