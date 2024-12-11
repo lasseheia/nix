@@ -38,7 +38,6 @@ in
 
   environment.systemPackages = [
     pkgs.prusa-slicer
-    pkgs.openscad
     pkgs-unstable.azuredatastudio
     pkgs-unstable.rustdesk-flutter
     pkgs-unstable.rpi-imager
