@@ -15,11 +15,7 @@ bindkey '^[^M' autosuggest-execute
 bindkey "^k" history-beginning-search-backward
 bindkey "^j" history-beginning-search-forward
 
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-  eval `ssh-agent`
-  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+# Add ssh key to agent if not already added
 ssh-add -l > /dev/null || ssh-add
 
 # Source zsh config when creating a new nix shell

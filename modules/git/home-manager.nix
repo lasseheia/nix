@@ -1,11 +1,4 @@
 {
-  pkgs,
-  ...
-}:
-
-{
-  services.ssh-agent.enable = if pkgs.stdenv.isDarwin then false else true;
-
   programs = {
     git = {
       enable = true;
