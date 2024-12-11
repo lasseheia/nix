@@ -2,7 +2,6 @@
 
 {
   home.packages = [
-    pkgs.kitty
     pkgs.neofetch
     pkgs.tldr
     pkgs.tree
@@ -72,6 +71,7 @@
       themeFile = "GitHub_Dark_Dimmed";
       settings = {
         background_opacity = "0.8";
+        macos_option_as_alt = "no";
       };
     };
 
