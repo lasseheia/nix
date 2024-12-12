@@ -4,12 +4,8 @@
   ...
 }:
 
-let
-  bicep-ls = pkgs.callPackage ../../pkgs/bicep-ls { inherit pkgs; };
-in
 {
   home.packages = [
-    bicep-ls
     pkgs.nodejs # Required for nvim-copilot
     pkgs.ripgrep # For nvim-telescope and nvim-spectre
     pkgs.fd # For nvim-telescope
@@ -19,7 +15,6 @@ in
     pkgs.nixd # For nvim-lspconfig
     pkgs.nodePackages.typescript-language-server # For nvim-lspconfig
     pkgs.yaml-language-server # For nvim-lspconfig
-    pkgs.dotnet-sdk_8 # For bicep-ls
     pkgs-unstable.terraform-ls # For nvim-lspconfig
   ];
 
@@ -30,11 +25,7 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     extraConfig = builtins.readFile ./vimrc;
-    extraLuaConfig =
-      ''
-        local bicep_lsp_bin = "${bicep-ls}/Bicep.LangServer.dll"
-      ''
-      + builtins.readFile ./init.lua;
+    extraLuaConfig = builtins.readFile ./init.lua;
     plugins =
       let
         cmp = [
