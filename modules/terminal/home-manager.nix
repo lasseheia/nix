@@ -84,9 +84,18 @@
 
     starship = {
       enable = true;
-      settings.add_newline = false;
       enableBashIntegration = true;
       enableZshIntegration = true;
+      settings = {
+        add_newline = false;
+        azure = {
+          disabled = false;
+        };
+        kubernetes = {
+          disabled = false;
+          symbol = "⎈ ";
+        };
+      };
     };
 
     direnv = {
