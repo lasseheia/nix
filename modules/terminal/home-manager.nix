@@ -88,5 +88,10 @@
       enableZshIntegration = true;
       nix-direnv.enable = true;
     };
+
+    yazi = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 }
