@@ -71,6 +71,12 @@
         selection = {
           save_to_clipboard = true;
         };
+        font = {
+          normal = {
+            family = "FiraCode Nerd Font";
+            style = "Regular";
+          };
+        };
       };
     };
 
