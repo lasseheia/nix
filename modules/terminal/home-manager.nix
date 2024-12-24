@@ -2,8 +2,6 @@
 
 {
   home.packages = [
-    pkgs.neofetch
-    pkgs.tldr
     pkgs.tree
     pkgs.jq
     pkgs.yq-go
@@ -12,12 +10,8 @@
     pkgs.kubelogin
     pkgs.yarn
     pkgs.age
-    pkgs.kubeseal
     pkgs.fluxcd
     pkgs.ipcalc
-    pkgs.act
-    pkgs.openssl
-    pkgs.openconnect
     pkgs.killall
     (pkgs.nerdfonts.override {
       fonts = [
