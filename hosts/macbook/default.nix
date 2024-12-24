@@ -24,7 +24,6 @@ in
   networking = {
     hostName = "lasseheiamacbook";
     computerName = "Lasse Heia's MacBook";
-    dns = ["1.1.1.1"];
   };
 
   programs.zsh.enable = true;
