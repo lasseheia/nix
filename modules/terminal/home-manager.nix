@@ -60,12 +60,17 @@
 
     bat.enable = true;
 
-    kitty = {
+    alacritty = {
       enable = true;
-      themeFile = "GitHub_Dark_Dimmed";
       settings = {
-        background_opacity = "0.8";
-        macos_option_as_alt = "no";
+        window = {
+          opacity = 0.8;
+          option_as_alt = "OnlyLeft";
+          decorations = "None";
+        };
+        selection = {
+          save_to_clipboard = true;
+        };
       };
     };
 
