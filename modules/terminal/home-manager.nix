@@ -6,7 +6,10 @@
     pkgs.jq
     pkgs.yq-go
     pkgs.kubectl
-    (pkgs.azure-cli.withExtensions [ pkgs.azure-cli.extensions.k8s-extension ])
+    (pkgs.azure-cli.withExtensions [
+      pkgs.azure-cli.extensions.k8s-extension
+      pkgs.azure-cli.extensions.ssh
+    ])
     pkgs.kubelogin
     pkgs.yarn
     pkgs.age
