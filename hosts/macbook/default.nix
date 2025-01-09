@@ -32,6 +32,10 @@ in
     home = "/Users/lasse";
   };
 
+  environment.systemPackages = [
+    pkgs-unstable.podman
+  ];
+
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.extraSpecialArgs = { inherit pkgs-unstable; };
