@@ -2,18 +2,9 @@
 
 {
   home.packages = [
-    pkgs.tree
     pkgs.jq
     pkgs.yq-go
-    pkgs.kubectl
-    (pkgs.azure-cli.withExtensions [
-      pkgs.azure-cli.extensions.k8s-extension
-      pkgs.azure-cli.extensions.ssh
-    ])
-    pkgs.kubelogin
     pkgs.yarn
-    pkgs.age
-    pkgs.fluxcd
     pkgs.ipcalc
     pkgs.killall
     (pkgs.nerdfonts.override {
@@ -24,9 +15,6 @@
         "SourceCodePro"
       ];
     })
-    pkgs.k9s
-    pkgs-unstable.terraform
-    pkgs.yamllint
   ];
 
   xdg.configFile."zellij/config.kdl" = {
