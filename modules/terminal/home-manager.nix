@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = [
@@ -15,6 +15,7 @@
         "SourceCodePro"
       ];
     })
+    pkgs.devenv
   ];
 
   xdg.configFile."zellij/config.kdl" = {
