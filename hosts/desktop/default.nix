@@ -43,4 +43,9 @@ in
     pkgs-unstable.firefox
     pkgs.signal-desktop
   ];
+
+  hardware.opentabletdriver = {
+    enable = true;
+    package = pkgs-unstable.opentabletdriver;
+  };
 }
