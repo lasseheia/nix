@@ -184,17 +184,12 @@
       <listen type="address"/>
       <image compression="off"/>
     </graphics>
-    <sound model="ich9">
-      <address type="pci" domain="0x0000" bus="0x00" slot="0x1b" function="0x0"/>
+    <sound model='ich9'>
+      <codec type='micro'/>
+      <audio id='1'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x1b' function='0x0'/>
     </sound>
-    <sound model="ich9">
-      <address type="pci" domain="0x0000" bus="0x10" slot="0x02" function="0x0"/>
-    </sound>
-    <sound model="ich9">
-      <audio id="1"/>
-      <address type="pci" domain="0x0000" bus="0x10" slot="0x03" function="0x0"/>
-    </sound>
-    <audio id="1" type="spice"/>
+    <audio id='1' type='pulseaudio' serverName='/run/user/1000/pulse/native'/>
     <video>
       <model type="vga" vram="16384" heads="1" primary="yes"/>
       <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x0"/>
