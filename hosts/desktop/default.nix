@@ -42,6 +42,7 @@ in
     pkgs-unstable.rpi-imager
     pkgs-unstable.firefox
     pkgs.signal-desktop
+    pkgs-unstable.krita
   ];
 
   hardware.opentabletdriver = {
