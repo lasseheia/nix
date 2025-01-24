@@ -5,5 +5,8 @@
     pkgs.age
   ];
 
-  git-hooks.hooks.nixpkgs-fmt.enable = true;
+  git-hooks.hooks = {
+    nixpkgs-fmt.enable = true;
+    deadnix.enable = true;
+  };
 }
