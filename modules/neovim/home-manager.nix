@@ -1,7 +1,6 @@
-{
-  pkgs,
-  pkgs-unstable,
-  ...
+{ pkgs
+, pkgs-unstable
+, ...
 }:
 
 {
@@ -60,7 +59,7 @@
         ];
       in
       [
-        { 
+        {
           plugin = pkgs.vimPlugins.diffview-nvim;
         }
         {
@@ -83,11 +82,6 @@
           type = "lua";
           config = builtins.readFile ./plugins/nvim-spectre.lua;
         }
-        #{
-        #  plugin = auto-session;
-        #  type = "lua";
-        #  config = builtins.readFile ./neovim/plugins/auto-session.lua;
-        #}
       ]
       ++ telescope
       ++ cmp
