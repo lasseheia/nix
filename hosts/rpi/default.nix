@@ -1,7 +1,6 @@
-{
-  pkgs,
-  inputs,
-  ...
+{ pkgs
+, inputs
+, ...
 }:
 
 {
@@ -57,7 +56,7 @@
     ../../modules/pi-hole
     ../../modules/jellyfin
   ];
-  
+
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.lasse = {
