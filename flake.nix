@@ -8,7 +8,7 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     nix-darwin = {
-      url = "github:lnl7/nix-darwin/master";
+      url = "github:lnl7/nix-darwin/nix-darwin-24.11";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
@@ -28,33 +28,35 @@
     };
   };
 
-  outputs = inputs: let
-    nixosConfiguration =
-      hostname:
-      system:
-      inputs.nixpkgs-stable.lib.nixosSystem {
-        system = system;
-        modules = [
-          { networking.hostName = "${hostname}"; }
-          ./hosts/${hostname}
-        ];
-        specialArgs = { inherit inputs; };
+  outputs = inputs:
+    let
+      nixosConfiguration =
+        hostname:
+        system:
+        inputs.nixpkgs-stable.lib.nixosSystem {
+          system = system;
+          modules = [
+            { networking.hostName = "${hostname}"; }
+            ./hosts/${hostname}
+          ];
+          specialArgs = { inherit inputs; };
+        };
+      darwinConfiguration =
+        hostname:
+        inputs.nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          modules = [ ./hosts/${hostname} ];
+          specialArgs = { inherit inputs; };
+        };
+    in
+    {
+      nixosConfigurations = {
+        desktop = nixosConfiguration "desktop" "x86_64-linux";
+        laptop = nixosConfiguration "laptop" "x86_64-linux";
+        rpi = nixosConfiguration "rpi" "aarch64-linux";
       };
-    darwinConfiguration =
-      hostname:
-      inputs.nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [ ./hosts/${hostname} ];
-        specialArgs = { inherit inputs; };
+      darwinConfigurations = {
+        macbook = darwinConfiguration "macbook";
       };
-  in {
-    nixosConfigurations = {
-      desktop = nixosConfiguration "desktop" "x86_64-linux";
-      laptop = nixosConfiguration "laptop" "x86_64-linux";
-      rpi = nixosConfiguration "rpi" "aarch64-linux";
     };
-    darwinConfigurations = {
-      macbook = darwinConfiguration "macbook";
-    };
-  };
 }
