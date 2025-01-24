@@ -82,6 +82,9 @@
           type = "lua";
           config = builtins.readFile ./plugins/nvim-spectre.lua;
         }
+        {
+          plugin = pkgs.vimPlugins.vim-visual-multi;
+        }
       ]
       ++ telescope
       ++ cmp
