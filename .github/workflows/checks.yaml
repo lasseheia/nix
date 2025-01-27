@@ -30,7 +30,7 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@v16
 
       - name: Setup Nix cache
-        uses: DeterminateSystems/magic-nix-cache-action@v8
+        uses: DeterminateSystems/magic-nix-cache-action@v9
 
       - name: Install jq via Nix
         run: nix profile install nixpkgs#jq
@@ -82,7 +82,7 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@v16
 
       - name: Setup Nix cache
-        uses: DeterminateSystems/magic-nix-cache-action@v8
+        uses: DeterminateSystems/magic-nix-cache-action@v9
 
       - name: Install nix-linter
         run: nix run github:nix-community/nixpkgs-lint -- .
