@@ -14,7 +14,6 @@ in
   ];
 
   home.sessionVariables = {
-    XDG_CURRENT_DESKTOP = "hyprland";
     BROWSER = "brave";
   };
 
