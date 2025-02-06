@@ -19,6 +19,7 @@
         maintenance.auto = true;
         core.untrackedcache = true;
         core.fsmonitor = true;
+        push.autoSetupRemote = true;
       };
     };
 
