@@ -12,7 +12,7 @@
   virtualisation.oci-containers = {
     backend = "podman";
     containers.mainsail = {
-      image = "ghcr.io/mainsail-crew/mainsail:sha-6a193da";
+      image = "ghcr.io/mainsail-crew/mainsail:latest";
       autoStart = true;
       extraOptions = [
         "--network=host"
