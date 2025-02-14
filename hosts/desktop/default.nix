@@ -44,6 +44,7 @@ in
     pkgs-unstable.firefox
     pkgs.signal-desktop
     pkgs-unstable.krita
+    pkgs-unstable.opentabletdriver
   ];
 
   hardware.opentabletdriver = {
