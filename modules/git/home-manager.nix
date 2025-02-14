@@ -5,9 +5,8 @@
       userName = "Lasse Heia";
       userEmail = "23742718+lasseheia@users.noreply.github.com";
       extraConfig = {
-        pull = {
-          rebase = true;
-        };
+        pull.rebase = true;
+        rebase.autoStash = true;
         commit.gpgsign = true;
         commit.verbose = true;
         gpg.format = "ssh";

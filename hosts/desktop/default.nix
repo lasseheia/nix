@@ -33,6 +33,7 @@ in
     ../../modules/neovim
     ../../modules/git
     ../../modules/hyprland
+    ../../modules/podman
   ];
 
   environment.systemPackages = [
@@ -43,6 +44,7 @@ in
     pkgs-unstable.firefox
     pkgs.signal-desktop
     pkgs-unstable.krita
+    pkgs-unstable.opentabletdriver
   ];
 
   hardware.opentabletdriver = {

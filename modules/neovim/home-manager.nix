@@ -85,6 +85,11 @@
         {
           plugin = pkgs.vimPlugins.vim-visual-multi;
         }
+        {
+          plugin = pkgs.vimPlugins.gitsigns-nvim;
+          type = "lua";
+          config = builtins.readFile ./plugins/gitsigns-nvim.lua;
+        }
       ]
       ++ telescope
       ++ cmp
