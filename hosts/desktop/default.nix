@@ -33,6 +33,7 @@ in
     ../../modules/neovim
     ../../modules/git
     ../../modules/hyprland
+    ../../modules/podman
   ];
 
   environment.systemPackages = [
