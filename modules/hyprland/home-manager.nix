@@ -1,4 +1,4 @@
-{ osConfig, pkgs, ... }:
+{ osConfig, pkgs, pkgs-unstable, ... }:
 
 let
   hostname = osConfig.networking.hostName;
@@ -66,5 +66,10 @@ in
     enable = true;
     settings = builtins.fromJSON (builtins.readFile ./waybar/${hostname}.json);
     style = builtins.readFile ./waybar/${hostname}.css;
+  };
+
+  services.flameshot = {
+    enable = true;
+    package = pkgs-unstable.flameshot.override { enableWlrSupport = true; };
   };
 }
