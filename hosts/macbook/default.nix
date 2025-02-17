@@ -34,6 +34,7 @@ in
 
   environment.systemPackages = [
     pkgs-unstable.podman
+    pkgs-unstable.flameshot
   ];
 
   home-manager.useGlobalPkgs = true;
