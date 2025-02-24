@@ -15,9 +15,10 @@ in
   ];
 
   system.stateVersion = 4;
+  nix.enable = false; # Required to use nix-darwin
   nix.package = pkgs-unstable.nix;
   nixpkgs.config.allowUnfree = true;
-  services.nix-daemon.enable = true;
+  nix.useDaemon = true;
   nix.settings.experimental-features = "nix-command flakes";
 
   networking = {
