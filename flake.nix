@@ -26,6 +26,8 @@
       url = "github:astro/microvm.nix";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+
+    flox.url = "github:flox/flox/v1.3.15";
   };
 
   outputs = inputs:
