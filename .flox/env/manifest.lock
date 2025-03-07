@@ -1,0 +1,266 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "version": 1,
+    "install": {
+      "age": {
+        "pkg-path": "age"
+      },
+      "pre-commit": {
+        "pkg-path": "pre-commit"
+      }
+    },
+    "hook": {},
+    "profile": {},
+    "options": {
+      "systems": [
+        "aarch64-darwin",
+        "aarch64-linux",
+        "x86_64-darwin",
+        "x86_64-linux"
+      ],
+      "allow": {
+        "licenses": []
+      },
+      "semver": {}
+    }
+  },
+  "packages": [
+    {
+      "attr_path": "age",
+      "broken": false,
+      "derivation": "/nix/store/lqa7zzdm5dp657fvr641f80bk0gqklix-age-1.2.1.drv",
+      "description": "Modern encryption tool with small explicit keys",
+      "install_id": "age",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "name": "age-1.2.1",
+      "pname": "age",
+      "rev": "ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "rev_count": 762036,
+      "rev_date": "2025-03-03T13:57:36Z",
+      "scrape_date": "2025-03-04T00:30:58Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.2.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/0hc1y9mdj3qq99ixnp4pk02x542rc87f-age-1.2.1"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "age",
+      "broken": false,
+      "derivation": "/nix/store/hwyrdfplprq0nqsimf4zqqiky0ng4dnb-age-1.2.1.drv",
+      "description": "Modern encryption tool with small explicit keys",
+      "install_id": "age",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "name": "age-1.2.1",
+      "pname": "age",
+      "rev": "ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "rev_count": 762036,
+      "rev_date": "2025-03-03T13:57:36Z",
+      "scrape_date": "2025-03-04T00:30:58Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.2.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/5cy00492dszak77f0vnk8cg5y762yq8s-age-1.2.1"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "age",
+      "broken": false,
+      "derivation": "/nix/store/6nfhwbbdxcr7f2h9mxh08vk5fvfm5vzl-age-1.2.1.drv",
+      "description": "Modern encryption tool with small explicit keys",
+      "install_id": "age",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "name": "age-1.2.1",
+      "pname": "age",
+      "rev": "ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "rev_count": 762036,
+      "rev_date": "2025-03-03T13:57:36Z",
+      "scrape_date": "2025-03-04T00:30:58Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.2.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/bi7r30yd3127y5x019k9b5i4lya6dzah-age-1.2.1"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "age",
+      "broken": false,
+      "derivation": "/nix/store/nnr5cp8dyhm4q0yps3gkh8kjydk9gzrf-age-1.2.1.drv",
+      "description": "Modern encryption tool with small explicit keys",
+      "install_id": "age",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "name": "age-1.2.1",
+      "pname": "age",
+      "rev": "ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "rev_count": 762036,
+      "rev_date": "2025-03-03T13:57:36Z",
+      "scrape_date": "2025-03-04T00:30:58Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.2.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/3ya9raapmjyvbhcb0nvisj04d308bx1z-age-1.2.1"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "pre-commit",
+      "broken": false,
+      "derivation": "/nix/store/63crx25ilhg4fllwzzhs3lxqjnbhf8zb-pre-commit-4.0.1.drv",
+      "description": "Framework for managing and maintaining multi-language pre-commit hooks",
+      "install_id": "pre-commit",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "name": "pre-commit-4.0.1",
+      "pname": "pre-commit",
+      "rev": "ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "rev_count": 762036,
+      "rev_date": "2025-03-03T13:57:36Z",
+      "scrape_date": "2025-03-04T00:30:58Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "4.0.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/s2w0cyimcc4qcl65sjh5r6cxafc1h467-pre-commit-4.0.1-dist",
+        "out": "/nix/store/1d72c6irxrvvc81mpds9yl26vglki91k-pre-commit-4.0.1"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "pre-commit",
+      "broken": false,
+      "derivation": "/nix/store/7pq2ygdaqal32k8f9n3576bymfva0gdx-pre-commit-4.0.1.drv",
+      "description": "Framework for managing and maintaining multi-language pre-commit hooks",
+      "install_id": "pre-commit",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "name": "pre-commit-4.0.1",
+      "pname": "pre-commit",
+      "rev": "ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "rev_count": 762036,
+      "rev_date": "2025-03-03T13:57:36Z",
+      "scrape_date": "2025-03-04T00:30:58Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "4.0.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/llxn7kzwnkm33wnw34yl379zxv50nhcl-pre-commit-4.0.1-dist",
+        "out": "/nix/store/jjy89zx3q6pjjc5g6vznagn347arysm2-pre-commit-4.0.1"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "pre-commit",
+      "broken": false,
+      "derivation": "/nix/store/r1459lf0rbww5ayifyvjs7pl2al94wmx-pre-commit-4.0.1.drv",
+      "description": "Framework for managing and maintaining multi-language pre-commit hooks",
+      "install_id": "pre-commit",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "name": "pre-commit-4.0.1",
+      "pname": "pre-commit",
+      "rev": "ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "rev_count": 762036,
+      "rev_date": "2025-03-03T13:57:36Z",
+      "scrape_date": "2025-03-04T00:30:58Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "4.0.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/zwsxv57s7hv30mvk669djjyyynzfbqvp-pre-commit-4.0.1-dist",
+        "out": "/nix/store/9f8bsa4n2srnrdxy437lbaar2cyjpjc8-pre-commit-4.0.1"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "pre-commit",
+      "broken": false,
+      "derivation": "/nix/store/8snnrq78hnxckkj667ykdkwn6ida0bqn-pre-commit-4.0.1.drv",
+      "description": "Framework for managing and maintaining multi-language pre-commit hooks",
+      "install_id": "pre-commit",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "name": "pre-commit-4.0.1",
+      "pname": "pre-commit",
+      "rev": "ba487dbc9d04e0634c64e3b1f0d25839a0a68246",
+      "rev_count": 762036,
+      "rev_date": "2025-03-03T13:57:36Z",
+      "scrape_date": "2025-03-04T00:30:58Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "4.0.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/7pw1rj59id4h05ac2bz58vinixk43l7x-pre-commit-4.0.1-dist",
+        "out": "/nix/store/v6v2jdx5jq98vcgsb3yvwl1g2dg6qz54-pre-commit-4.0.1"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
+}
