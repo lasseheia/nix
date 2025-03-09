@@ -53,6 +53,7 @@
     in
     {
       nixosConfigurations = {
+        installer = nixosConfiguration "installer" "x86_64-linux";
         desktop = nixosConfiguration "desktop" "x86_64-linux";
         laptop = nixosConfiguration "laptop" "x86_64-linux";
         rpi = nixosConfiguration "rpi" "aarch64-linux";
