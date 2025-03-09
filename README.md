@@ -15,5 +15,3 @@ This repository contains my NixOS and Home Manager configurations, organized to 
 - **`modules/`**: Modular configurations for various applications and services.
 
 - **`pkgs/`**: Custom or overridden Nix packages.
-
-- **`scripts/`**: Scripts to assist with setup and maintenance tasks.
