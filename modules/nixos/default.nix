@@ -27,31 +27,6 @@ in
   # Install the latest linux kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.initrd.luks.devices = {
-    root = {
-      device = "/dev/nvme0n1p2";
-      preLVM = true;
-      allowDiscards = true;
-    };
-  };
-
-  fileSystems = {
-    "/boot" = {
-      device = "/dev/nvme0n1p1";
-      fsType = "vfat";
-    };
-    "/" = {
-      device = "/dev/vg/root";
-      fsType = "ext4";
-    };
-    "/home" = {
-      device = "/dev/vg/home";
-      fsType = "ext4";
-    };
-  };
-
-  swapDevices = [ ];
-
   nixpkgs.hostPlatform = "x86_64-linux";
   nixpkgs.config.allowUnfree = true;
 
