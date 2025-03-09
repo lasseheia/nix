@@ -32,7 +32,10 @@ in
     ../../modules/terminal
     ../../modules/neovim
     ../../modules/git
+    ../../modules/flox
     ../../modules/hyprland
+    #    ../../modules/microvm
+    #    ../../modules/mssql
     ../../modules/podman
   ];
 
@@ -45,18 +48,7 @@ in
     pkgs.signal-desktop
     pkgs-unstable.krita
     pkgs-unstable.opentabletdriver
-    inputs.flox.packages.${pkgs.system}.default
   ];
-
-  # Flox
-  nix.settings = {
-    substituters = [
-      "https://cache.flox.dev"
-    ];
-    trusted-public-keys = [
-      "flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs="
-    ];
-  };
 
   hardware.opentabletdriver = {
     enable = true;

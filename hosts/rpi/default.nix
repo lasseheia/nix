@@ -48,13 +48,9 @@
 
   imports = [
     inputs.home-manager.nixosModules.default
-    ../../modules/homebridge
     ../../modules/home-assistant
     ../../modules/mainsail
-    ../../modules/prometheus
-    ../../modules/grafana
-    ../../modules/pi-hole
-    ../../modules/jellyfin
+    ../../modules/komga
   ];
 
   home-manager.useGlobalPkgs = true;
