@@ -1,5 +1,11 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
 
+let
+  pkgs-unstable = import inputs.nixpkgs-unstable {
+    inherit (config.nixpkgs) system;
+    config.allowUnfree = true;
+  };
+in
 {
   boot.initrd.availableKernelModules = [
     "xhci_pci"
@@ -19,5 +25,9 @@
     ../../modules/git
     ../../modules/flox
     ../../modules/hyprland
+  ];
+
+  environment.systemPackages = [
+    pkgs-unstable.rustdesk-flutter
   ];
 }
