@@ -16,7 +16,7 @@
       autoStart = true;
       extraOptions = [
         "--network=host"
-        "--device=/dev/ttyACM0"
+#        "--device=/dev/ttyACM0"
       ];
       ports = [ "8123:8123" ];
       environment = {

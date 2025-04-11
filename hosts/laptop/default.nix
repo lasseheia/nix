@@ -44,15 +44,28 @@ in
 
   imports = [
     inputs.nixos-hardware.nixosModules.dell-latitude-7490
+    ../../modules/lvm
     ../../modules/nixos
     ../../modules/terminal
+    ../../modules/flox
     ../../modules/neovim
     ../../modules/git
     ../../modules/flox
     ../../modules/hyprland
   ];
 
+<<<<<<< Updated upstream
   environment.systemPackages = [
     pkgs-unstable.rustdesk-flutter
   ];
+=======
+  #networking.wireless = {
+  #  enable = true;
+  #  networks = {
+  #    "StretfordEnd5" = {
+  #      psk = "united\$@\$17";
+  #    };
+  #  };
+  #};
+>>>>>>> Stashed changes
 }

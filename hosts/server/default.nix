@@ -1,18 +1,15 @@
 { inputs, ... }:
 
+let
+  ssh_keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH8V+W2mKUj8QpWJe5N8Z6zrekUISHwdXy6vp4nkte4l" ];
+in
 {
   imports = [
-    ../../modules/nixos
     inputs.disko.nixosModules.disko
+    ../../modules/home-assistant
   ];
 
-  users.users.lasse.isNormalUser = true;
-
-  users.users.lasse.group = "lasse";
-  users.groups.lasse = {};
-
-  networking.hostId = "b648d918";
-
+  networking.hostId = "b648d918"; # Randomly generated host ID, this is required for ZFS
   disko.devices = {
     disk = {
       nvme0n1 = {
@@ -71,11 +68,48 @@
               type = "swap";
             };
             options = {
-              volblocksize = "4096";
+              volblocksize = "4096";  # Basic block size setting for swap
             };
           };
         };
       };
+    };
+  };
+
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
+
+  system.stateVersion = "24.11";
+  console.keyMap = "no";
+
+  networking = {
+    enable = false;
+    iwd.enable = true;
+    hostName = "server";
+    firewall = {
+      enable = true;
+    };
+  };
+
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = false;
+    settings.KbdInteractiveAuthentication = false;
+  };
+
+  users.users = {
+    root = {
+      isNormalUser = false;
+      openssh.authorizedKeys.keys = ssh_keys;
+    };
+    lasse = {
+      isNormalUser = true;
+      home = "/home/lasse";
+      openssh.authorizedKeys.keys = ssh_keys;
+      password = "secret";
+      extraGroups  = [ "wheel" ];
     };
   };
 }
