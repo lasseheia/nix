@@ -38,6 +38,7 @@ in
     pkgs-unstable.podman
     pkgs-unstable.flameshot
     pkgs-unstable.brave
+    pkgs-unstable.docker
   ];
 
   home-manager.useGlobalPkgs = true;
