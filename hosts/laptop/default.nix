@@ -46,6 +46,7 @@ in
     inputs.nixos-hardware.nixosModules.dell-latitude-7490
     ../../modules/nixos
     ../../modules/terminal
+    ../../modules/flox
     ../../modules/neovim
     ../../modules/git
     ../../modules/flox
