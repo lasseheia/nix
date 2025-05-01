@@ -1,5 +1,4 @@
-{ pkgs
-, modulesPath
+{ modulesPath
 , inputs
 , ...
 }:
@@ -24,9 +23,6 @@ in
   # Limit the number of generations to keep
   boot.loader.systemd-boot.configurationLimit = 10;
 
-  # Install the latest linux kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   nixpkgs.hostPlatform = "x86_64-linux";
   nixpkgs.config.allowUnfree = true;
 
@@ -38,8 +34,6 @@ in
 
   nix.optimise.automatic = true;
   nix.settings.auto-optimise-store = true;
-
-  services.lvm.enable = true;
 
   networking = {
     useNetworkd = true;
