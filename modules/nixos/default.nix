@@ -1,18 +1,8 @@
-{ modulesPath
-, inputs
-, ...
-}:
+{ modulesPath , ... }:
 
-let
-  pkgs-unstable = import inputs.nixpkgs-unstable {
-    system = "x86_64-linux";
-    config.allowUnfree = true;
-  };
-in
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    inputs.home-manager.nixosModules.default
   ];
 
   boot.loader = {
@@ -55,12 +45,4 @@ in
   # https://nixos.wiki/wiki/Bluetooth
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-  home-manager.extraSpecialArgs = {
-    inherit pkgs-unstable;
-  };
-
-  home-manager.users.lasse = ./home-manager.nix;
 }

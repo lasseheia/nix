@@ -29,6 +29,7 @@ in
     inputs.nixos-hardware.nixosModules.common-cpu-amd
     inputs.disko.nixosModules.disko
     ../../modules/nixos
+    ../../modules/home-manager
     ../../modules/virtualization
     ../../modules/terminal
     ../../modules/neovim

@@ -45,6 +45,7 @@ in
   imports = [
     inputs.nixos-hardware.nixosModules.dell-latitude-7490
     ../../modules/nixos
+    ../../modules/home-manager
     ../../modules/terminal
     ../../modules/flox
     ../../modules/neovim
