@@ -1,7 +1,8 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, inputs, pkgs-unstable, ... }:
 
 {
   imports = [
+    inputs.sops-nix.nixosModules.sops
     ../../modules/nixos
     ../../modules/home-manager
     ../../modules/virtualization
