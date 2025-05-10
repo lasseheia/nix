@@ -44,7 +44,8 @@
           system = system;
           modules = [
             { networking.hostName = "${hostname}"; }
-            ./hosts/${hostname}
+            ./hosts/${hostname}/default.nix
+            ./hosts/${hostname}/hardware-configuration.nix
           ];
           specialArgs = {
             inherit inputs;
