@@ -1,11 +1,5 @@
-{ inputs, ... }:
+{ inputs, pkgs-unstable, ... }:
 
-let
-  pkgs-unstable = import inputs.nixpkgs-unstable {
-    system = "x86_64-linux";
-    config.allowUnfree = true;
-  };
-in
 {
   imports = [inputs.home-manager.nixosModules.default];
 

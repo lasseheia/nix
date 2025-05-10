@@ -1,13 +1,5 @@
-{ config
-, inputs
-, ...
-}:
-let
-  pkgs-unstable = import inputs.nixpkgs-unstable {
-    inherit (config.nixpkgs) system;
-    config.allowUnfree = true;
-  };
-in
+{ inputs, pkgs-unstable, ... }:
+
 {
   imports = [
     inputs.home-manager.darwinModules.default

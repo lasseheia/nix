@@ -46,14 +46,26 @@
             { networking.hostName = "${hostname}"; }
             ./hosts/${hostname}
           ];
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+            pkgs-unstable = import inputs.nixpkgs-unstable {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          };
         };
       darwinConfiguration =
         hostname:
+        system:
         inputs.nix-darwin.lib.darwinSystem {
-          system = "aarch64-darwin";
           modules = [ ./hosts/${hostname} ];
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+            pkgs-unstable = import inputs.nixpkgs-unstable {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          };
         };
     in
     {
@@ -65,7 +77,7 @@
         server = nixosConfiguration "server" "x86_64-linux";
       };
       darwinConfigurations = {
-        macbook = darwinConfiguration "macbook";
+        macbook = darwinConfiguration "macbook" "aarch64-darwin";
       };
     };
 }

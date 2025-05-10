@@ -1,11 +1,5 @@
-{ config, inputs, ... }:
+{ inputs, pkgs-unstable, ... }:
 
-let
-  pkgs-unstable = import inputs.nixpkgs-unstable {
-    inherit (config.nixpkgs) system;
-    config.allowUnfree = true;
-  };
-in
 {
   boot.initrd.availableKernelModules = [
     "xhci_pci"

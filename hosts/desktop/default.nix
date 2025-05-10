@@ -1,16 +1,5 @@
-{ pkgs
-, inputs
-, config
-, lib
-, ...
-}:
+{ pkgs, inputs, pkgs-unstable, config, lib, ... }:
 
-let
-  pkgs-unstable = import inputs.nixpkgs-unstable {
-    inherit (config.nixpkgs) system;
-    config.allowUnfree = true;
-  };
-in
 {
   boot.initrd.availableKernelModules = [
     "nvme"
