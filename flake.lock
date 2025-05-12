@@ -22,11 +22,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1736864502,
-        "narHash": "sha256-ItkIZyebGvNH2dK9jVGzJHGPtb6BSWLN8Gmef16NeY0=",
+        "lastModified": 1746728054,
+        "narHash": "sha256-eDoSOhxGEm2PykZFa/x9QG5eTH0MJdiJ9aR00VAofXE=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "0141aabed359f063de7413f80d906e1d98c0c123",
+        "rev": "ff442f5d1425feb86344c028298548024f21256d",
         "type": "github"
       },
       "original": {
@@ -167,11 +167,11 @@
         "spectrum": "spectrum"
       },
       "locked": {
-        "lastModified": 1746204357,
-        "narHash": "sha256-wg1VlK0OynQOrC7kB5pkjkDG13HuHy0AXpxLCStFKZg=",
+        "lastModified": 1747016581,
+        "narHash": "sha256-iQrEuBs23Cd+bSfcY85GLykHP0vmGrkVfMwUlzvqMQQ=",
         "owner": "astro",
         "repo": "microvm.nix",
-        "rev": "717cbf49d61e46ad68cb8dcc183b3bf33678e1c2",
+        "rev": "5aff25e6e861e7d96ce10452ca976c16d073cf16",
         "type": "github"
       },
       "original": {
@@ -203,11 +203,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1746341346,
-        "narHash": "sha256-WjupK5Xpc+viJlJWiyPHp/dF4aJItp1BPuFsEdv2/fI=",
+        "lastModified": 1746814339,
+        "narHash": "sha256-hf2lICJzwACWuzHCmZn5NI6LUAOgGdR1yh8ip+duyhk=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "0833dc8bbc4ffa9cf9b0cbfccf1c5ec8632fc66e",
+        "rev": "3c5e12673265dfb0de3d9121420c0c2153bf21e0",
         "type": "github"
       },
       "original": {
@@ -251,11 +251,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1746301764,
-        "narHash": "sha256-5odz+NZszRya//Zd0P8h+sIwOnV35qJi+73f4I+iv1M=",
+        "lastModified": 1746810718,
+        "narHash": "sha256-VljtYzyttmvkWUKTVJVW93qAsJsrBbgAzy7DdnJaQfI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "537ee98218704e21ea465251de512ab6bbb9012e",
+        "rev": "0c0bf9c057382d5f6f63d54fd61f1abd5e1c2f63",
         "type": "github"
       },
       "original": {
@@ -267,11 +267,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1746300365,
-        "narHash": "sha256-thYTdWqCRipwPRxWiTiH1vusLuAy0okjOyzRx4hLWh4=",
+        "lastModified": 1746576598,
+        "narHash": "sha256-FshoQvr6Aor5SnORVvh/ZdJ1Sa2U4ZrIMwKBX5k2wu0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f21e4546e3ede7ae34d12a84602a22246b31f7e0",
+        "rev": "b3582c75c7f21ce0b429898980eddbbf05c68e55",
         "type": "github"
       },
       "original": {
@@ -378,11 +378,11 @@
     "spectrum": {
       "flake": false,
       "locked": {
-        "lastModified": 1745937988,
-        "narHash": "sha256-8BsgirAbalgq7XRHE9il8XBX/RYCALVj5zGqDvbOEc4=",
+        "lastModified": 1746869549,
+        "narHash": "sha256-BKZ/yZO/qeLKh9YqVkKB6wJiDQJAZNN5rk5NsMImsWs=",
         "ref": "refs/heads/main",
-        "rev": "65a511b120aa28f40bcdbb333fd221f33ced4760",
-        "revCount": 854,
+        "rev": "d927e78530892ec8ed389e8fae5f38abee00ad87",
+        "revCount": 862,
         "type": "git",
         "url": "https://spectrum-os.org/git/spectrum"
       },
