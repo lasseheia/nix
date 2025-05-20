@@ -7,14 +7,10 @@
     pkgs.yarn
     pkgs.ipcalc
     pkgs.killall
-    (pkgs.nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "DroidSansMono"
-        "Hack"
-        "SourceCodePro"
-      ];
-    })
+    pkgs.nerd-fonts.fira-code
+    pkgs.nerd-fonts.droid-sans-mono
+    pkgs.nerd-fonts.hack
+    pkgs.nerd-fonts.sauce-code-pro
     pkgs.devenv
   ];
 
@@ -27,7 +23,7 @@
     zsh = {
       enable = true;
       autosuggestion.enable = true;
-      initExtra = builtins.readFile ./zshrc;
+      initContent = builtins.readFile ./zshrc;
       oh-my-zsh = {
         enable = true;
       };

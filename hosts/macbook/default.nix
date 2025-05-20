@@ -11,8 +11,11 @@
   nix.enable = false; # Required to use nix-darwin
   nix.package = pkgs-unstable.nix;
   nixpkgs.config.allowUnfree = true;
-  nix.useDaemon = true;
   nix.settings.experimental-features = "nix-command flakes";
+
+  nixpkgs.hostPlatform = {
+    system = "aarch64-darwin";
+  };
 
   networking = {
     hostName = "lasseheiamacbook";
