@@ -9,6 +9,11 @@
     skhdConfig = builtins.readFile ./skhdrc;
   };
 
+  services.sketchybar = {
+    enable = true;
+    config = builtins.readFile ./sketchybarrc;
+  };
+
   # - Previously, some nix-darwin options applied to the user running
   #   `darwin-rebuild`. As part of a long‐term migration to make
   #   nix-darwin focus on system‐wide activation and support first‐class
