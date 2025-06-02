@@ -41,7 +41,7 @@ jobs:
           echo "nixpkgs_keys=$nixpkgs_keys" >> $GITHUB_OUTPUT
 
       - name: Check Nix flake inputs
-        uses: DeterminateSystems/flake-checker-action@v9
+        uses: DeterminateSystems/flake-checker-action@v10
         with:
           nixpkgs-keys: ${{ steps.extract-keys.outputs.nixpkgs_keys }}
 
