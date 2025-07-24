@@ -19,6 +19,7 @@
         core.untrackedcache = true;
         core.fsmonitor = true;
         push.autoSetupRemote = true;
+        core.ignorecase = false;
       };
     };
 
