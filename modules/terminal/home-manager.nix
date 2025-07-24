@@ -11,7 +11,6 @@
     pkgs.nerd-fonts.droid-sans-mono
     pkgs.nerd-fonts.hack
     pkgs.nerd-fonts.sauce-code-pro
-    pkgs.devenv
   ];
 
   xdg.configFile."zellij/config.kdl" = {
