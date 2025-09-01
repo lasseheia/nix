@@ -23,7 +23,7 @@
     };
 
     nixvirt = {
-      url = "https://flakehub.com/f/AshleyYakeley/NixVirt/*.tar.gz";
+      url = "github:AshleyYakeley/NixVirt/v0.6.0";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
