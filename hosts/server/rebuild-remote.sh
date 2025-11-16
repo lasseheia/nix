@@ -1,7 +1,7 @@
 REPO_ROOT=$(git rev-parse --show-toplevel)
 CONFIG="server"
 USER="root"
-IP_ADDRESS="192.168.1.206"
+IP_ADDRESS="10.0.0.171"
 
 nixos-rebuild switch \
   --flake ${REPO_ROOT}#${CONFIG} \
