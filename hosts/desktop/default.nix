@@ -18,10 +18,13 @@
     pkgs.prusa-slicer
     pkgs-unstable.azuredatastudio
     pkgs-unstable.rustdesk-flutter
-    pkgs-unstable.rpi-imager
     pkgs-unstable.firefox
     pkgs.signal-desktop
     pkgs-unstable.krita
     pkgs-unstable.opentabletdriver
+    pkgs-unstable.orca-slicer
+    pkgs-unstable.blender
+    pkgs-unstable.sqlcmd
+    pkgs-unstable.cura-appimage
   ];
 }
