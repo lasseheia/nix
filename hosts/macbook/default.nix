@@ -4,7 +4,6 @@
   imports = [
     inputs.home-manager.darwinModules.default
     ../../modules/yabai
-    ../../modules/flox
   ];
 
   system.stateVersion = 4;

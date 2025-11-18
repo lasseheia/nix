@@ -32,8 +32,6 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
-    flox.url = "github:flox/flox/latest";
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs-stable";
