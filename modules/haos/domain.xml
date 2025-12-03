@@ -1,0 +1,50 @@
+<domain type='kvm'>
+  <name>homeassistant</name>
+  <uuid>c3b0ad4b-3e21-46a6-81a2-46f3a9ad52c4</uuid>
+  <memory unit='MiB'>4096</memory>
+  <vcpu>2</vcpu>
+
+  <os>
+    <type arch='x86_64' machine='q35'>hvm</type>
+    <loader readonly="yes" type="pflash">/var/run/libvirt/nix-ovmf/OVMF_CODE.fd</loader>
+    <nvram template="/run/libvirt/nix-ovmf/OVMF_VARS.fd">/var/lib/libvirt/qemu/nvram/haos_VARS.fd</nvram>
+  </os>
+
+  <features>
+    <acpi/>
+    <apic/>
+    <pae/>
+  </features>
+
+  <cpu mode='host-passthrough'/>
+
+  <devices>
+
+    <!-- Storage -->
+    <disk type='file' device='disk'>
+      <driver name='qemu' type='qcow2'/>
+      <source file='/var/lib/libvirt/haos/haos.qcow2'/>
+      <target dev='vda' bus='virtio'/>
+    </disk>
+
+    <!-- Network -->
+    <interface type='network'>
+      <source network='default'/>
+      <mac address='52:54:00:12:34:56'/>
+      <model type='virtio'/>
+    </interface>
+
+    <!-- TPM -->
+    <tpm model='tpm-tis'>
+      <backend type='emulator' version='2.0'/>
+    </tpm>
+
+    <!-- Video -->
+    <video>
+      <model type='virtio'/>
+    </video>
+
+    <graphics type='vnc' port='-1' autoport='yes'/>
+
+  </devices>
+</domain>

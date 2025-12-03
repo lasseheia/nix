@@ -1,0 +1,21 @@
+<network>
+  <name>default</name>
+  <uuid>d6f7c6aa-3f5f-41ad-bd34-aa3c8dfec901</uuid>
+
+  <forward mode='nat'>
+    <nat>
+      <!-- libvirt REQUIRES a real range (not single-port) -->
+      <port start='8123' end='8124'/>
+    </nat>
+  </forward>
+
+  <bridge name='virbr0' stp='on' delay='0'/>
+
+  <ip address='192.168.122.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.122.2' end='192.168.122.254'/>
+      <!-- reserve stable IP -->
+      <host mac='52:54:00:12:34:56' name='homeassistant' ip='192.168.122.10'/>
+    </dhcp>
+  </ip>
+</network>
