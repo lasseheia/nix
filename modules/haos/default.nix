@@ -6,7 +6,7 @@ let
     sha256 = "sha256-8/VsrnLNwXMsNbGyp1R6ETl+qqyMTeL/Y7sQ9FchyM4=";
     downloadToTemp = true;
     postFetch = ''
-      ${pkgs.xz}/bin/xz -d $downloadedFile
+      ${pkgs.xz}/bin/xz --decompress $downloadedFile
     '';
   };
 in
@@ -16,12 +16,6 @@ in
   ];
 
   users.users.lasse.extraGroups = [ "libvirtd" ];
-
-  networking = {
-    firewall = {
-      allowedTCPPorts = [ 8123 ];
-    };
-  };
 
   virtualisation.libvirt = {
     enable = true;
@@ -39,18 +33,6 @@ in
     allowedBridges = [ "virbr0" ];
   };
 
-  systemd.tmpfiles.rules = [
-    "d /var/lib/libvirt/haos 0755 root root -"
-  ];
-
-  system.activationScripts.prepareHaos = {
-    text = ''
-      if [ ! -f /var/lib/libvirt/haos/haos.qcow2 ]; then
-        cp ${image}/haos.qcow2 /var/lib/libvirt/haos/haos.qcow2
-      fi
-    '';
-  };
-
   systemd.services."libvirt-guests" = {
     enable = false;
     unitConfig.Mask = true;
@@ -60,9 +42,27 @@ in
     "qemu:///system" = {
       domains = [
         {
-          definition = ./domain.xml;
-          active = true;
-          restart = true;
+          definition = inputs.nixvirt.lib.domain.writeXML (inputs.nixvirt.lib.domain.templates.linux
+          {
+            name = "haos";
+            uuid = "cc7439ed-36af-4696-a6f2-1f0c4474d87e";
+            memory = { count = 6; unit = "GiB"; };
+            #storage_vol = image;
+            storage_vol = {
+              type = "file";
+              path = image;
+              device = "disk";
+              driver = {
+                name = "qemu";
+                type = "qcow2";
+              };
+            };
+            #storage_vol = {
+            #  pool = "default";
+            #  volume = "haos-disk1.qcow2";
+            #};
+            #backing_vol = image;
+          });
         }
       ];
       networks = [
@@ -71,6 +71,12 @@ in
           active = true;
         }
       ];
+    };
+  };
+
+  networking = {
+    firewall = {
+      allowedTCPPorts = [ 8123 ];
     };
   };
 }
