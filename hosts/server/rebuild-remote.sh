@@ -6,4 +6,5 @@ IP_ADDRESS="10.0.0.171"
 nixos-rebuild switch \
   --flake ${REPO_ROOT}#${CONFIG} \
   --target-host ${USER}@${IP_ADDRESS} \
-  --build-host ${USER}@${IP_ADDRESS} --fast # Build on the target host to match the target architecture
+  --build-host ${USER}@${IP_ADDRESS} \
+  --fast # Build on the target host to match the target architecture
