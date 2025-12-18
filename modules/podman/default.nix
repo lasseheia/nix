@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   virtualisation = {
     containers.enable = true;
@@ -8,4 +10,7 @@
     };
   };
   users.users.lasse.extraGroups = [ "podman" ];
+  environment.systemPackages = [
+    pkgs.podman-compose
+  ];
 }
