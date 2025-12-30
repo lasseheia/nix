@@ -1,16 +1,17 @@
-{ inputs, pkgs-unstable, ... }:
+{ inputs, pkgs, pkgs-unstable, ... }:
 
 {
   imports = [
     inputs.home-manager.darwinModules.default
-    ../../modules/yabai
   ];
 
   system.stateVersion = 4;
-  nix.enable = false; # Required to use nix-darwin
-  nix.package = pkgs-unstable.nix;
+  nix = {
+    enable = false; # Required to use nix-darwin
+    package = pkgs.lixPackageSets.stable.lix;
+    settings.experimental-features = "nix-command flakes";
+  };
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = "nix-command flakes";
 
   nixpkgs.hostPlatform = {
     system = "aarch64-darwin";
@@ -32,6 +33,8 @@
     pkgs-unstable.podman
     pkgs-unstable.brave
     pkgs-unstable.docker
+    (pkgs.azure-cli.withExtensions [ pkgs.azure-cli.extensions.account ])
+    pkgs-unstable.linkerd
   ];
 
   home-manager.useGlobalPkgs = true;

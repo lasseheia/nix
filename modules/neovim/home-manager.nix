@@ -87,6 +87,9 @@
           type = "lua";
           config = builtins.readFile ./plugins/gitsigns-nvim.lua;
         }
+        {
+          plugin = pkgs.vimPlugins.vim-easymotion;
+        }
       ]
       ++ telescope
       ++ cmp

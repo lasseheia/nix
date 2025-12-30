@@ -53,7 +53,7 @@
         window = {
           opacity = 0.8;
           option_as_alt = "OnlyLeft";
-          decorations = "None";
+          #decorations = "None";
         };
         selection = {
           save_to_clipboard = true;
