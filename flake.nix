@@ -40,6 +40,7 @@
 
   outputs = inputs:
     let
+      systems = inputs.nixpkgs-stable.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ];
       nixosConfiguration =
         hostname:
         system:
@@ -73,6 +74,17 @@
         };
     in
     {
+      devShells = systems (system:
+        let
+          pkgs = import inputs.nixpkgs-stable { inherit system; };
+        in
+        {
+          default = pkgs.mkShell {
+            packages = with pkgs; [
+              nixos-rebuild
+            ];
+          };
+        });
       nixosConfigurations = {
         installer = nixosConfiguration "installer" "x86_64-linux";
         desktop = nixosConfiguration "desktop" "x86_64-linux";
