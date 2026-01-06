@@ -67,6 +67,16 @@
       };
     };
 
+    ghostty = {
+      enable = true;
+      package = null;
+      clearDefaultKeybinds = true;
+      settings = {
+        macos-option-as-alt = true;
+        background-opacity = 0.8;
+      };
+    };
+
     zellij.enable = true;
 
     starship = {
