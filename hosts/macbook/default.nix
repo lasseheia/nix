@@ -8,7 +8,7 @@
 
   system.stateVersion = 4;
   nix.enable = false; # Required to use nix-darwin
-  nix.package = pkgs-unstable.nix;
+  nix.package = pkgs-unstable.lix;
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = "nix-command flakes";
 
