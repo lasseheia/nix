@@ -37,6 +37,7 @@
           pkgs.vimPlugins.nvim-cmp
           pkgs.vimPlugins.cmp-vsnip
           pkgs.vimPlugins.vim-vsnip
+          pkgs.vimPlugins.markdown-preview-nvim
         ];
         telescope = [
           {
