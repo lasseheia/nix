@@ -16,11 +16,6 @@
     system = "aarch64-darwin";
   };
 
-  networking = {
-    hostName = "lasseheiamacbook";
-    computerName = "Lasse Heia's MacBook";
-  };
-
   programs.zsh.enable = true;
 
   users.users.lasse = {
