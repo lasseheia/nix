@@ -8,7 +8,6 @@ in
   console.keyMap = "no";
 
   networking = {
-    wireless.iwd.enable = true;
     hostName = "server";
     firewall = {
       enable = true;
