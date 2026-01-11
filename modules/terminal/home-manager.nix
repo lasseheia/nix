@@ -69,7 +69,6 @@
 
     ghostty = {
       enable = true;
-      package = null;
       clearDefaultKeybinds = true;
       settings = {
         macos-option-as-alt = true;
