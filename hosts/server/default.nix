@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let
   ssh_keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH8V+W2mKUj8QpWJe5N8Z6zrekUISHwdXy6vp4nkte4l" ];
 in
@@ -36,6 +37,7 @@ in
   networking.nftables.enable = true;
   virtualisation.incus = {
     enable = true;
+    package = pkgs.incus;
     agent.enable = true;
     ui.enable = true;
     preseed = {
