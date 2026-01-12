@@ -2,9 +2,11 @@
   programs = {
     git = {
       enable = true;
-      userName = "Lasse Heia";
-      userEmail = "23742718+lasseheia@users.noreply.github.com";
-      extraConfig = {
+      settings = {
+        user = {
+          name = "Lasse Heia";
+          email = "23742718+lasseheia@users.noreply.github.com";
+        };
         pull.rebase = true;
         rebase.autoStash = true;
         commit.gpgsign = true;
@@ -32,7 +34,7 @@
 
     # Workaround for https://github.com/NixOS/nixpkgs/issues/169115
     gh.gitCredentialHelper.enable = false;
-    git.extraConfig.credential = {
+    git.settings.credential = {
       "https://github.com" = {
         helper = "!gh auth git-credential";
       };
