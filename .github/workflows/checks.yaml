@@ -65,7 +65,7 @@ jobs:
             echo '```bash'
             nix flake check --all-systems 2>&1
             echo '```'
-          } >> $GITHUB_STEP_SUMMARY
+          } | tee -a $GITHUB_STEP_SUMMARY
 
   nix-lint:
     name: Nix Lint
