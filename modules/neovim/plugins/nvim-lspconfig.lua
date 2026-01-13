@@ -1,5 +1,5 @@
-require'lspconfig'.dartls.setup{}
-require'lspconfig'.terraformls.setup{}
-require'lspconfig'.ts_ls.setup{}
-require'lspconfig'.yamlls.setup{}
-require'lspconfig'.nixd.setup{}
+vim.lsp.enable('dartls')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('yamlls')
+vim.lsp.enable('nixd')
+vim.lsp.enable('terraform-ls')
