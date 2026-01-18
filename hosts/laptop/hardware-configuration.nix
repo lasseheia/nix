@@ -15,28 +15,82 @@
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
 
-  boot.initrd.luks.devices = {
-    root = {
-      device = "/dev/nvme0n1p2";
-      preLVM = true;
-      allowDiscards = true;
+  networking.hostId = "b648d919"; # Randomly generated host ID, required for ZFS
+  disko.devices = {
+    disk = {
+      root = {
+        type = "disk";
+        device = "/dev/nvme0n1";
+        content = {
+          type = "gpt";
+          partitions = {
+            ESP = {
+              size = "1G";
+              type = "EF00";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = [ "nofail" ];
+              };
+            };
+            zfs = {
+              size = "100%";
+              content = {
+                type = "zfs";
+                pool = "zroot";
+              };
+            };
+          };
+        };
+      };
+    };
+    zpool = {
+      zroot = {
+        type = "zpool";
+        rootFsOptions = {
+          mountpoint = "none";
+          compression = "zstd";
+          acltype = "posixacl";
+          xattr = "sa";
+          "com.sun:auto-snapshot" = "true";
+        };
+        options.ashift = "12";
+        datasets = {
+          "root" = {
+            type = "zfs_fs";
+            options = {
+              encryption = "aes-256-gcm";
+              keyformat = "passphrase";
+              keylocation = "prompt";
+            };
+            mountpoint = "/";
+
+          };
+          "root/nix" = {
+            type = "zfs_fs";
+            options.mountpoint = "/nix";
+            mountpoint = "/nix";
+          };
+
+          "root/swap" = {
+            type = "zfs_volume";
+            size = "10M";
+            content = {
+              type = "swap";
+            };
+            options = {
+              volblocksize = "4096";
+              compression = "zle";
+              logbias = "throughput";
+              sync = "always";
+              primarycache = "metadata";
+              secondarycache = "none";
+              "com.sun:auto-snapshot" = "false";
+            };
+          };
+        };
+      };
     };
   };
-
-  fileSystems = {
-    "/boot" = {
-      device = "/dev/nvme0n1p1";
-      fsType = "vfat";
-    };
-    "/" = {
-      device = "/dev/vg/root";
-      fsType = "ext4";
-    };
-    "/home" = {
-      device = "/dev/vg/home";
-      fsType = "ext4";
-    };
-  };
-
-  swapDevices = [ ];
 }
