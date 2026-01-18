@@ -1,11 +1,6 @@
 {
   nix.settings.experimental-features = "nix-command flakes";
 
-  networking.wireless = {
-    enable = false;
-    iwd.enable = true;
-  };
-
   services.openssh = {
     enable = true;
     settings.PasswordAuthentication = false;
