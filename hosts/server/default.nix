@@ -50,4 +50,10 @@ in
   networking.firewall.interfaces.incusbr0.allowedTCPPorts = [ 53 67 ];
   networking.firewall.interfaces.incusbr0.allowedUDPPorts = [ 53 67 ];
   security.apparmor.enable = true;
+  services.gpsd.enable = true;
+  hardware.bluetooth.enable = false;
+
+  imports = [
+    ../../modules/home-assistant
+  ];
 }
