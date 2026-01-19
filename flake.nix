@@ -96,6 +96,7 @@
           default = pkgs.mkShell {
             packages = with pkgs; [
               nixos-rebuild
+              nixos-anywhere
             ];
           };
         });
