@@ -10,7 +10,6 @@ in
     pamixer
     pavucontrol
     brave
-    whatsapp-for-linux
   ];
 
   home.sessionVariables = {
