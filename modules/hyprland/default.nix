@@ -23,9 +23,6 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  # https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/#prerequisites
-  environment.systemPackages = [ pkgs.kdePackages.xwaylandvideobridge ];
-
   services.blueman.enable = true;
 
   home-manager.users.lasse = ./home-manager.nix;
