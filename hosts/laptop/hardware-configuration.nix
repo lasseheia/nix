@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.nixos-hardware.nixosModules.dell-latitude-7490
+    inputs.disko.nixosModules.disko
   ];
 
   boot.initrd.availableKernelModules = [
