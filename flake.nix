@@ -105,7 +105,6 @@
         desktop = nixosConfiguration "desktop" "x86_64-linux";
         laptop = nixosConfiguration "laptop" "x86_64-linux";
         rpi = nixosConfiguration "rpi" "aarch64-linux";
-        server = nixosConfiguration "server" "x86_64-linux";
       };
       darwinConfigurations = {
         macbook = darwinConfiguration "macbook" "aarch64-darwin";
