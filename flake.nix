@@ -72,20 +72,6 @@
             };
           };
         };
-      homeConfiguration =
-        hostname:
-        system:
-        inputs.home-manager.lib.homeManagerConfiguration {
-          pkgs = inputs.nixpkgs-stable.legacyPackages.${system};
-          modules = [ ./hosts/${hostname} ];
-          extraSpecialArgs = {
-            inherit inputs;
-            pkgs-unstable = import inputs.nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-	    };
-	  };
-        };
     in
     {
       devShells = systems (system:
@@ -108,9 +94,6 @@
       };
       darwinConfigurations = {
         macbook = darwinConfiguration "macbook" "aarch64-darwin";
-      };
-      homeConfigurations = {
-        debian = homeConfiguration "debian" "x86_64-linux";
       };
     };
 }
