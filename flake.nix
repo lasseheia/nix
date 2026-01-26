@@ -12,11 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
-    nix-darwin = {
-      url = "github:lnl7/nix-darwin/nix-darwin-25.11";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -59,19 +54,6 @@
             };
           };
         };
-      darwinConfiguration =
-        hostname:
-        system:
-        inputs.nix-darwin.lib.darwinSystem {
-          modules = [ ./hosts/${hostname} ];
-          specialArgs = {
-            inherit inputs;
-            pkgs-unstable = import inputs.nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          };
-        };
     in
     {
       devShells = systems (system:
@@ -90,9 +72,6 @@
         desktop = nixosConfiguration "desktop" "x86_64-linux";
         laptop = nixosConfiguration "laptop" "x86_64-linux";
         rpi = nixosConfiguration "rpi" "aarch64-linux";
-      };
-      darwinConfigurations = {
-        macbook = darwinConfiguration "macbook" "aarch64-darwin";
       };
     };
 }

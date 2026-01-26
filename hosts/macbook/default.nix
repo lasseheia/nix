@@ -1,4 +1,4 @@
-{ inputs, pkgs-unstable, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -8,7 +8,7 @@
 
   system.stateVersion = 4;
   nix.enable = false; # Required to use nix-darwin
-  nix.package = pkgs-unstable.lix;
+  nix.package = pkgs.lix;
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = "nix-command flakes";
 
@@ -23,15 +23,13 @@
     home = "/Users/lasse";
   };
 
-  environment.systemPackages = [
-    pkgs-unstable.podman
-    pkgs-unstable.brave
-    pkgs-unstable.docker
+  environment.systemPackages = with pkgs; [
+    podman
+    brave
   ];
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.extraSpecialArgs = { inherit pkgs-unstable; };
   home-manager.users.lasse = {
     home.stateVersion = "23.11";
     imports = [
