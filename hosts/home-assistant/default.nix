@@ -21,12 +21,12 @@
   users.users.lasse.openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH8V+W2mKUj8QpWJe5N8Z6zrekUISHwdXy6vp4nkte4l" ];
 
   networking.useDHCP = true;
-  networking.firewall.allowedTCPPorts = [ 8123 ];
 
   time.timeZone = "Europe/Oslo";
 
   services.home-assistant = {
     enable = true;
+    openFirewall = true;
     config = {
       homeassistant = {
         name = "Home";
