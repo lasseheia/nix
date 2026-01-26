@@ -3,7 +3,6 @@
 {
   imports = [
     inputs.home-manager.darwinModules.default
-    ../../modules/yabai
   ];
 
   system.stateVersion = 4;
