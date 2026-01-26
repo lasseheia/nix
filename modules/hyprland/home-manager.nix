@@ -1,4 +1,4 @@
-{ osConfig, pkgs, pkgs-unstable, ... }:
+{ osConfig, pkgs, ... }:
 
 let
   hostname = osConfig.networking.hostName;
@@ -69,6 +69,6 @@ in
 
   services.flameshot = {
     enable = true;
-    package = pkgs-unstable.flameshot.override { enableWlrSupport = true; };
+    package = pkgs.flameshot.override { enableWlrSupport = true; };
   };
 }

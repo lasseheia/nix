@@ -1,10 +1,24 @@
-{ inputs, ... }:
+{ inputs, modulesPath, ... }:
 
 {
   imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
     inputs.nixos-hardware.nixosModules.dell-latitude-7490
     inputs.disko.nixosModules.disko
   ];
+
+  # https://nixos.wiki/wiki/Bluetooth
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  networking.hostName = "laptop";
+
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
+
+  # Limit the number of generations to keep
+  boot.loader.systemd-boot.configurationLimit = 10;
 
   boot.initrd.availableKernelModules = [
     "xhci_pci"

@@ -1,16 +1,50 @@
-{ pkgs-unstable, ... }:
+{ inputs, pkgs, ... }:
 
 {
+  system.stateVersion = "23.05";
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.optimise.automatic = true;
+  nix.settings.auto-optimise-store = true;
+  nixpkgs.hostPlatform = "x86_64-linux";
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
-    ../../modules/nixos
-    ../../modules/home-manager
-    ../../modules/terminal
-    ../../modules/neovim
-    ../../modules/git
+    inputs.home-manager.nixosModules.default
     ../../modules/hyprland
+    ../../modules/neovim
+    ../../modules/terminal
+    ../../modules/git
   ];
 
-  environment.systemPackages = [
-    pkgs-unstable.rustdesk-flutter
+  environment.systemPackages = with pkgs; [
+    rustdesk-flutter
   ];
+
+  networking = {
+    wireless.iwd.enable = true;
+    firewall.enable = true;
+  };
+
+  time.timeZone = "Europe/Oslo";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_TIME = "nb_NO.UTF-8";
+    };
+  };
+
+  security.polkit.enable = true;
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.lasse = {
+      programs.home-manager.enable = true;
+      home = {
+        stateVersion = "23.05";
+        username = "lasse";
+        homeDirectory = "/home/lasse";
+      };
+    };
+  };
 }
