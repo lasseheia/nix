@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = [
@@ -11,7 +11,7 @@
     pkgs.nixd # For nvim-lspconfig
     pkgs.nodePackages.typescript-language-server # For nvim-lspconfig
     pkgs.yaml-language-server # For nvim-lspconfig
-    pkgs-unstable.terraform-ls # For nvim-lspconfig
+    pkgs.terraform-ls # For nvim-lspconfig
   ];
 
   programs.neovim = {
