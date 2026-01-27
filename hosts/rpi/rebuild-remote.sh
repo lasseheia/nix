@@ -1,9 +1,10 @@
 REPO_ROOT=$(git rev-parse --show-toplevel)
 CONFIG="rpi"
+FLAKE_PATH="${REPO_ROOT}/hosts/${CONFIG}"
 USER="root"
-IP_ADDRESS="192.168.1.239"
+IP_ADDRESS="10.0.0.186"
 
 nixos-rebuild switch \
-  --flake ${REPO_ROOT}#${CONFIG} \
+  --flake ${FLAKE_PATH}#${CONFIG} \
   --target-host ${USER}@${IP_ADDRESS} \
   --build-host ${USER}@${IP_ADDRESS} --fast # Build on the target host to match the target architecture

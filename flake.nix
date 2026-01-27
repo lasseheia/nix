@@ -70,7 +70,6 @@
         });
       nixosConfigurations = {
         desktop = nixosConfiguration "desktop" "x86_64-linux";
-        rpi = nixosConfiguration "rpi" "aarch64-linux";
       };
     };
 }
