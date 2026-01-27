@@ -49,8 +49,4 @@ in
   networking.firewall.interfaces.incusbr0.allowedTCPPorts = [ 53 67 ];
   networking.firewall.interfaces.incusbr0.allowedUDPPorts = [ 53 67 ];
   security.apparmor.enable = true;
-
-  imports = [
-    ../../modules/home-assistant
-  ];
 }
