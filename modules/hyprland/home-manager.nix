@@ -58,7 +58,7 @@ in
   };
 
   programs.zsh.initExtraFirst = ''
-    [[ "$(tty)" = "/dev/tty1" ]] && exec Hyprland
+    [[ "$(tty)" = "/dev/tty1" ]] && exec start-hyprland
   '';
 
   programs.waybar = {
