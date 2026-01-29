@@ -25,6 +25,7 @@
   environment.systemPackages = with pkgs; [
     podman
     brave
+    alacritty
   ];
 
   home-manager.useGlobalPkgs = true;
