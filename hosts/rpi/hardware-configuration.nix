@@ -1,6 +1,25 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.nixos-hardware.nixosModules.raspberry-pi-4
+  ];
+
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+    raspberry-pi = {
+      "4" = {
+        bluetooth.enable = true;
+        #tv-hat.enable = true;
+      };
+    };
+  #  enableRedistributableFirmware = true;
+  };
+  services.blueman.enable = true;
+
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
     initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
