@@ -54,7 +54,7 @@ in
         disable_hyprland_logo = true;
       };
     };
-    extraConfig = builtins.readFile ./hyprland.conf;
+    extraConfig = builtins.readFile ./hyprland/${hostname}.conf;
   };
 
   programs.zsh.initExtraFirst = ''

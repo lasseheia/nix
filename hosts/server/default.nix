@@ -1,9 +1,19 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 let
   ssh_keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH8V+W2mKUj8QpWJe5N8Z6zrekUISHwdXy6vp4nkte4l" ];
 in
 {
+  imports = [
+    inputs.home-manager.nixosModules.default
+    ../../modules/terminal
+    ../../modules/hyprland
+    ../../modules/neovim
+    ../../modules/git
+    ../../modules/home-assistant
+  ];
+
   nix.settings.experimental-features = "nix-command flakes";
+  nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "24.11";
   console.keyMap = "no";
@@ -31,6 +41,19 @@ in
       home = "/home/lasse";
       openssh.authorizedKeys.keys = ssh_keys;
       extraGroups  = [ "wheel" "incus-admin" ];
+    };
+  };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.lasse = {
+      programs.home-manager.enable = true;
+      home = {
+        stateVersion = "23.05";
+        username = "lasse";
+        homeDirectory = "/home/lasse";
+      };
     };
   };
 

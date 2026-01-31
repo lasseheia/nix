@@ -76,4 +76,11 @@
       };
     };
   };
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  hardware.enableRedistributableFirmware = true;
 }
