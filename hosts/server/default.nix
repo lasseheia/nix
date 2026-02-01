@@ -16,6 +16,7 @@ in
 
   system.stateVersion = "24.11";
   console.keyMap = "no";
+  time.timeZone = "Europe/Oslo";
 
   networking = {
     hostName = "server";
