@@ -9,7 +9,6 @@ in
     ../../modules/hyprland
     ../../modules/neovim
     ../../modules/git
-    ../../modules/home-assistant
   ];
 
   nix.settings.experimental-features = "nix-command flakes";
