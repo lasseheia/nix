@@ -2,7 +2,7 @@
   "mainBar": {
     "layer": "top",
     "position": "top",
-    "modules-left": ["cpu", "memory", "disk#root", "disk#home", "network"],
+    "modules-left": ["cpu", "memory", "disk#root", "disk#home", "disk#nix", "network"],
     "modules-center": ["clock"],
     "modules-right": ["tray", "pulseaudio"],
     "clock": {
@@ -38,6 +38,11 @@
       "interval": 5,
       "format": "Home {percentage_used}%",
       "path": "/home"
+    },
+    "disk#nix": {
+      "interval": 5,
+      "format": "Nix {percentage_used}%",
+      "path": "/nix"
     },
     "network": {
       "format": "{ifname}",
