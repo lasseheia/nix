@@ -73,35 +73,4 @@ in
   networking.firewall.interfaces.incusbr0.allowedTCPPorts = [ 53 67 ];
   networking.firewall.interfaces.incusbr0.allowedUDPPorts = [ 53 67 ];
   security.apparmor.enable = true;
-
-  services.home-assistant = {
-    enable = true;
-    openFirewall = true;
-    config = {
-      homeassistant = {
-        name = "Home";
-        time_zone = "Europe/Oslo";
-      };
-    };
-
-    extraComponents = [
-      # Components required to complete the onboarding
-      "analytics"
-      "google_translate"
-      "met"
-      "radio_browser"
-      "shopping_list"
-      # Recommended for fast zlib compression
-      # https://www.home-assistant.io/integrations/isal
-      "isal"
-      # Zigbee
-      "zha"
-      "airthings_ble"
-      "cast"
-      "azure_storage"
-      "mobile_app"
-      "lg_thinq"
-      "go2rtc"
-    ];
-  };
 }
