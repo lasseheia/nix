@@ -1,10 +1,11 @@
-{ pkgs, inputs, ... }:
+{ inputs, ... }:
 let
   ssh_keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH8V+W2mKUj8QpWJe5N8Z6zrekUISHwdXy6vp4nkte4l" ];
 in
 {
   imports = [
     inputs.home-manager.nixosModules.default
+    ../../modules/incus
     ../../modules/terminal
     ../../modules/hyprland
     ../../modules/neovim
@@ -56,21 +57,4 @@ in
       };
     };
   };
-
-  networking.nftables.enable = true;
-  virtualisation.incus = {
-    enable = true;
-    package = pkgs.incus;
-    agent.enable = true;
-    ui.enable = true;
-    preseed = {
-      config = {
-        "core.https_address" = ":8443";
-      };
-    };
-  };
-  networking.firewall.allowedTCPPorts = [ 8443 ];
-  networking.firewall.interfaces.incusbr0.allowedTCPPorts = [ 53 67 ];
-  networking.firewall.interfaces.incusbr0.allowedUDPPorts = [ 53 67 ];
-  security.apparmor.enable = true;
 }
