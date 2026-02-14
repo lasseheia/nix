@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   system.stateVersion = "26.05";
 
@@ -14,20 +12,9 @@
     openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH8V+W2mKUj8QpWJe5N8Z6zrekUISHwdXy6vp4nkte4l" ];
   };
 
-  services.kubernetes = {
-    roles = [ "master" "node" ];
-    masterAddress = "localhost";
-    apiserverAddress = "https://localhost:8080";
-    easyCerts = true;
-    kubelet.extraOpts = "--fail-swap-on=false";
-    apiserver = {
-      enable = true;
-      securePort = 8080;
-    };
-    addons.dns.enable = true;
+  services.k3s = {
+    enable = true;
+    extraFlags = [ "--tls-san=10.0.0.171" ];
   };
-
-  environment.systemPackages = with pkgs; [
-    kubectl
-  ];
+  networking.firewall.allowedTCPPorts = [ 6443 ];
 }
