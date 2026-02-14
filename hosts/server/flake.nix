@@ -13,17 +13,16 @@
     };
   };
 
-  outputs = inputs:
-    {
-      nixosConfigurations.server = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./default.nix
-          ./hardware-configuration.nix
-        ];
-        specialArgs = {
-          inherit inputs;
-        };
+  outputs = inputs: {
+    nixosConfigurations.server = inputs.nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./default.nix
+        ./hardware-configuration.nix
+      ];
+      specialArgs = {
+        inherit inputs;
       };
     };
+  };
 }
