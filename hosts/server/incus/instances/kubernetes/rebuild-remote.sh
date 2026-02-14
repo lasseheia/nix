@@ -1,5 +1,5 @@
 REPO_ROOT=$(git rev-parse --show-toplevel)
-FLAKE="${REPO_ROOT}/hosts/kubernetes#default"
+FLAKE="${REPO_ROOT}/hosts/server/incus/instances/kubernetes#default"
 HOST="root@10.0.0.171"
 
 NIX_SSHOPTS="-p 2222" nixos-rebuild switch \
