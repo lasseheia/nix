@@ -94,5 +94,7 @@
       enable = true;
       enableZshIntegration = true;
     };
+
+    opencode.enable = true;
   };
 }
