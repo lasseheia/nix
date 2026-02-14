@@ -5,7 +5,7 @@ in
 {
   imports = [
     inputs.home-manager.nixosModules.default
-    ../../modules/incus
+    ./incus/nixos
     ../../modules/terminal
     ../../modules/hyprland
     ../../modules/neovim
