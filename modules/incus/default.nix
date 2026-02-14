@@ -16,4 +16,10 @@
   networking.firewall.interfaces.incusbr0.allowedTCPPorts = [ 53 67 ];
   networking.firewall.interfaces.incusbr0.allowedUDPPorts = [ 53 67 ];
   security.apparmor.enable = true;
+  security.apparmor.includes."abstractions/base" = pkgs.lib.mkAfter ''
+    # Allow incusd to execute binaries from the Nix store (gzip, xz, zstd, etc.)
+    # Needed for image unpacking which shells out to tar + compression tools
+    mrix /nix/store/*/bin/*,
+    mrix /nix/store/*/bin/.*,
+  '';
 }
