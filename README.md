@@ -1,4 +1,4 @@
-[![CI Checks](https://github.com/lasseheia/nix/actions/workflows/checks.yaml/badge.svg?branch=main&event=push)](https://github.com/lasseheia/nix/actions/workflows/checks.yaml)
+[![CI Checks](https://github.com/lasseheia/systems/actions/workflows/checks.yaml/badge.svg?branch=main&event=push)](https://github.com/lasseheia/systems/actions/workflows/checks.yaml)
 
 # NixOS and Home Manager Configurations
 

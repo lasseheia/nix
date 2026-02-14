@@ -22,7 +22,7 @@ in
     enable = true;
     settings = {
       default = {
-        path = "/home/lasse/git/github/lasseheia/nix/modules/hyprland/wallpapers";
+        path = "/home/lasse/git/github/lasseheia/systems/modules/hyprland/wallpapers";
         duration = "30m";
         apply-shadow = true;
         sorting = "random";
