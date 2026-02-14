@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/lasseheia/systems
-    path: hosts/server/incus/instances/kubernetes/manifests/argocd
-    targetRevision: main
+    repoURL: https://github.com/argoproj/argo-cd
+    path: manifests/cluster-install
+    targetRevision: stable
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
