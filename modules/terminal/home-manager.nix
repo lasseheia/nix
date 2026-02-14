@@ -2,6 +2,7 @@
 
 {
   home.packages = [
+    pkgs.kubectl
     pkgs.jq
     pkgs.yq-go
     pkgs.yarn
