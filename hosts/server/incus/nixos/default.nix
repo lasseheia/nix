@@ -9,10 +9,11 @@
     preseed = {
       config = {
         "core.https_address" = ":8443";
+        "core.storage_buckets_address" = ":8555";
       };
     };
   };
-  networking.firewall.allowedTCPPorts = [ 8443 ];
+  networking.firewall.allowedTCPPorts = [ 8443 8555 ];
   networking.firewall.interfaces.incusbr0.allowedTCPPorts = [ 53 67 ];
   networking.firewall.interfaces.incusbr0.allowedUDPPorts = [ 53 67 ];
   security.apparmor.enable = true;

@@ -13,6 +13,11 @@ resource "incus_storage_pool" "main" {
   driver = "zfs"
 }
 
+resource "incus_storage_bucket" "opentofu" {
+  name = "opentofu"
+  pool = incus_storage_pool.main.name
+}
+
 resource "incus_network" "bridge" {
   name = "incusbr0"
 
