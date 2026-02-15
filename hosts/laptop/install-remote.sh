@@ -1,9 +1,0 @@
-REPO_ROOT=$(git rev-parse --show-toplevel)
-CONFIG="laptop"
-FLAKE_PATH="${REPO_ROOT}/hosts/${CONFIG}"
-IP_ADDRESS="10.0.0.197"
-
-nixos-anywhere \
-  --flake ${FLAKE_PATH}#${CONFIG}
-  --target-host ${USER}@${IP_ADDRESS} \
-  --build-on remote
