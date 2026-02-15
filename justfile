@@ -1,4 +1,5 @@
 repo_root := justfile_directory()
+tofu_dir := repo_root / "hosts/server/incus/opentofu"
 
 # List available recipes
 default:
@@ -48,3 +49,10 @@ flash-usb device image:
 build-incus instance:
     nix build {{ repo_root }}/hosts/server/incus/instances/{{ instance }}#nixosConfigurations.default.config.system.build.metadata --print-out-paths
     nix build {{ repo_root }}/hosts/server/incus/instances/{{ instance }}#nixosConfigurations.default.config.system.build.qemuImage --print-out-paths
+
+# Run an OpenTofu command (e.g. just tofu plan, just tofu apply)
+tofu *args:
+    #!/usr/bin/env bash
+    eval "$(grep -v 'use flake' {{ tofu_dir }}/.envrc)"
+    cd {{ tofu_dir }}
+    nix develop --command tofu {{ args }}
