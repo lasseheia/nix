@@ -12,7 +12,7 @@ resource "incus_instance" "kubernetes" {
 
   config = {
     "limits.cpu"          = "4"
-    "limits.memory"       = "4GB"
+    "limits.memory"       = "12GB"
     "security.secureboot" = "false"
   }
 
