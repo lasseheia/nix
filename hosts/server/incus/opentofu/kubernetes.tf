@@ -29,7 +29,7 @@ resource "incus_instance" "kubernetes" {
   device {
     name = "eth0"
     type = "nic"
-  
+
     properties = {
       network = incus_network.bridge.name
     }

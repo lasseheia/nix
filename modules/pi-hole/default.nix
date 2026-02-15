@@ -1,8 +1,14 @@
 {
   networking = {
     firewall = {
-      allowedTCPPorts = [ 53 80 ];
-      allowedUDPPorts = [ 53 67 ];
+      allowedTCPPorts = [
+        53
+        80
+      ];
+      allowedUDPPorts = [
+        53
+        67
+      ];
     };
   };
 
@@ -15,7 +21,12 @@
         "--network=host"
         "--cap-add=NET_ADMIN"
       ];
-      ports = [ "53:53/tcp" "53:53/udp" "67:67/udp" "80:80/tcp" ];
+      ports = [
+        "53:53/tcp"
+        "53:53/udp"
+        "67:67/udp"
+        "80:80/tcp"
+      ];
       environment = {
         TZ = "America/Chicago";
         WEBPASSWORD = "your_secure_password";

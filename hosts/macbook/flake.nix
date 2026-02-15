@@ -15,13 +15,12 @@
     };
   };
 
-  outputs = inputs:
-    {
-      darwinConfigurations.macbook = inputs.nix-darwin.lib.darwinSystem {
-        modules = [ ./default.nix ];
-        specialArgs = {
-          inherit inputs;
-        };
+  outputs = inputs: {
+    darwinConfigurations.macbook = inputs.nix-darwin.lib.darwinSystem {
+      modules = [ ./default.nix ];
+      specialArgs = {
+        inherit inputs;
       };
     };
+  };
 }

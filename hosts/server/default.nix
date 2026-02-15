@@ -41,7 +41,10 @@ in
       isNormalUser = true;
       home = "/home/lasse";
       openssh.authorizedKeys.keys = ssh_keys;
-      extraGroups  = [ "wheel" "incus-admin" ];
+      extraGroups = [
+        "wheel"
+        "incus-admin"
+      ];
     };
   };
 

@@ -10,17 +10,16 @@
     };
   };
 
-  outputs = inputs:
-    {
-      nixosConfigurations.rpi = inputs.nixpkgs.lib.nixosSystem {
-        system = "aarch64-linux";
-        modules = [
-          ./default.nix
-          ./hardware-configuration.nix
-        ];
-        specialArgs = {
-          inherit inputs;
-        };
+  outputs = inputs: {
+    nixosConfigurations.rpi = inputs.nixpkgs.lib.nixosSystem {
+      system = "aarch64-linux";
+      modules = [
+        ./default.nix
+        ./hardware-configuration.nix
+      ];
+      specialArgs = {
+        inherit inputs;
       };
     };
+  };
 }

@@ -15,7 +15,7 @@
 
   virtualisation.libvirt.connections = {
     "qemu:///system" = {
-      domains = [{ definition = ./domains/gaming.xml; }];
+      domains = [ { definition = ./domains/gaming.xml; } ];
     };
   };
 

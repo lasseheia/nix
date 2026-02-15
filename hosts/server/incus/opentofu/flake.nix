@@ -1,12 +1,17 @@
 {
   inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
 
-  outputs = inputs:
+  outputs =
+    inputs:
     let
-      systems = inputs.nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-darwin" ];
+      systems = inputs.nixpkgs.lib.genAttrs [
+        "x86_64-linux"
+        "aarch64-darwin"
+      ];
     in
     {
-      devShells = systems (system:
+      devShells = systems (
+        system:
         let
           pkgs = import inputs.nixpkgs { inherit system; };
         in
@@ -19,6 +24,7 @@
               qemu
             ];
           };
-        });
+        }
+      );
     };
 }

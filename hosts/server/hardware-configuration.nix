@@ -26,7 +26,7 @@
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
-                mountOptions = [ "nofail" ];  # Continue boot even if /boot fails to mount
+                mountOptions = [ "nofail" ]; # Continue boot even if /boot fails to mount
               };
             };
             zfs = {
@@ -45,10 +45,10 @@
       zroot = {
         type = "zpool";
         rootFsOptions = {
-          mountpoint = "none";  # Disable automatic mounting; set mountpoints per dataset below
+          mountpoint = "none"; # Disable automatic mounting; set mountpoints per dataset below
           compression = "zstd"; # Efficient, modern compression
         };
-        options.ashift = "12";  # Ensures proper 4K alignment for NVMe/SSD devices
+        options.ashift = "12"; # Ensures proper 4K alignment for NVMe/SSD devices
         datasets = {
           "root" = {
             type = "zfs_fs";
@@ -69,7 +69,7 @@
               type = "swap";
             };
             options = {
-              volblocksize = "4096";  # Basic block size setting for swap
+              volblocksize = "4096"; # Basic block size setting for swap
             };
           };
         };

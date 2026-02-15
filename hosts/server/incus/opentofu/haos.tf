@@ -9,7 +9,7 @@ resource "incus_instance" "haos" {
   }
   ephemeral    = false
   profiles     = ["default"]
-  
+
   device {
     name       = "root"
     properties = {
@@ -22,7 +22,7 @@ resource "incus_instance" "haos" {
   device {
     name = "eth0"
     type = "nic"
-  
+
     properties = {
       network = incus_network.bridge.name
     }

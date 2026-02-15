@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     disko = {
@@ -20,17 +20,16 @@
     };
   };
 
-  outputs = inputs:
-    {
-      nixosConfigurations.desktop = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./default.nix
-          ./hardware-configuration.nix
-        ];
-        specialArgs = {
-          inherit inputs;
-        };
+  outputs = inputs: {
+    nixosConfigurations.desktop = inputs.nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./default.nix
+        ./hardware-configuration.nix
+      ];
+      specialArgs = {
+        inherit inputs;
       };
     };
+  };
 }

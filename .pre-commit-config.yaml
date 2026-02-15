@@ -3,3 +3,49 @@ repos:
     rev: v5.0.0
     hooks:
       - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-merge-conflict
+      - id: check-yaml
+        args: [--allow-multiple-documents]
+
+  # Nix
+  - repo: local
+    hooks:
+      - id: nixfmt
+        name: nixfmt
+        entry: nixfmt
+        language: system
+        files: \.nix$
+
+      - id: deadnix
+        name: deadnix
+        entry: deadnix --fail
+        language: system
+        files: \.nix$
+
+      - id: statix
+        name: statix
+        entry: statix check
+        language: system
+        files: \.nix$
+        pass_filenames: false
+
+  # OpenTofu
+  - repo: local
+    hooks:
+      - id: tofu-fmt
+        name: tofu fmt
+        entry: tofu fmt -check -diff
+        language: system
+        files: \.tf$
+        pass_filenames: false
+
+  # Kubernetes
+  - repo: local
+    hooks:
+      - id: kubeconform
+        name: kubeconform
+        entry: kubeconform -strict -ignore-missing-schemas
+        language: system
+        files: hosts/server/incus/instances/kubernetes/manifests/.*\.yaml$
+        exclude: kustomization\.yaml$
